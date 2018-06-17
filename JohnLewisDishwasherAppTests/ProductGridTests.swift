@@ -11,19 +11,14 @@ import XCTest
 
 class ProductGridTests: XCTestCase {
     
-    private var productGridView: ProductGridView? {
-        return ProductGridRouter.createProductGridModule().childViewControllers.first as? ProductGridView
-    }
-    
-    func testCreateProductGridView() {
+    func testProductGridModule() {
         
         let productsNavigationController = ProductGridRouter.createProductGridModule()
         
         XCTAssertTrue(productsNavigationController.childViewControllers.first is ProductGridView)
-    }
-    
-    func testProductGridViewPresenter() {
         
-        XCTAssertNotNil(productGridView?.presenter)
+        let productGridView = productsNavigationController.childViewControllers.first as! ProductGridView
+        
+        XCTAssertNotNil(productGridView.presenter)
     }
 }
