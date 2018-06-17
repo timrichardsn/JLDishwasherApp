@@ -14,6 +14,6 @@ class ProductGridInteractor: ProductGridInteractorProtocol {
     var remoteDataManager: ProductGridRemoteDataProtocol?
     
     func fetchProducts() {
-        
+        remoteDataManager?.fetchProducts()
     }
 }

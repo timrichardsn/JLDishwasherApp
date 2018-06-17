@@ -33,5 +33,5 @@ protocol ProductGridInteractorProtocol: class {
 }
 
 protocol ProductGridRemoteDataProtocol: class {
-    
+    func fetchProducts()
 }
