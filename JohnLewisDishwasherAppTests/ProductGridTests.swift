@@ -68,7 +68,7 @@ class ProductGridTests: XCTestCase {
     
     func testRequestData() {
         
-        let parameters: [RequestParameter: Any] = [
+        let parameters: [RequestParameterKey: Any] = [
             .product : "dishwasher",
             .pageSize: "20"
         ]
@@ -82,9 +82,9 @@ class ProductGridTests: XCTestCase {
     
     func testRequestParameters() {
         
-        XCTAssertEqual(RequestParameter.product.stringValue, "q")
-        XCTAssertEqual(RequestParameter.key.stringValue, "key")
-        XCTAssertEqual(RequestParameter.pageSize.stringValue, "pageSize")
+        XCTAssertEqual(RequestParameterKey.product.stringValue, "q")
+        XCTAssertEqual(RequestParameterKey.key.stringValue, "key")
+        XCTAssertEqual(RequestParameterKey.pageSize.stringValue, "pageSize")
     }
 }
 

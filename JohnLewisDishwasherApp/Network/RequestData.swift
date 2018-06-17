@@ -34,7 +34,19 @@ enum Endpoint {
     }
 }
 
+enum RequestParameterKey {
+    case product, key, pageSize
+    
+    var stringValue: String {
+        switch self {
+        case .product: return "q"
+        case .key: return "key"
+        case .pageSize: return "pageSize"
+        }
+    }
+}
+
 struct RequestData {
     let endPoint: Endpoint
-    let parameters: [String: Any]
+    let parameters: [RequestParameterKey: Any]
 }
