@@ -40,6 +40,17 @@ class ProductGridTests: XCTestCase {
         
         XCTAssertTrue(presenter.viewDidLoadWasCalled)
     }
+    
+    func testInteractorFetchProductsCalled() {
+        
+        let presenter = ProductGridPresenter()
+        let interactor = MockProductGridInteractor()
+        
+        presenter.interactor = interactor
+        presenter.viewDidLoad()
+        
+        XCTAssertTrue(interactor.fetchProductsWasCalled)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
@@ -52,5 +63,15 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     
     func viewDidLoad() {
         viewDidLoadWasCalled = true
+    }
+}
+
+private class MockProductGridInteractor: ProductGridInteractorProtocol {
+    
+    var presenter: ProductGridPresenterProtocol?
+    var fetchProductsWasCalled = false
+    
+    func fetchProducts() {
+        fetchProductsWasCalled = true
     }
 }
