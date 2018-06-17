@@ -26,6 +26,8 @@ class ProductGridTests: XCTestCase {
         XCTAssertNotNil(interactor)
         XCTAssertNotNil(presenter?.router)
         XCTAssertNotNil(interactor?.presenter)
+        XCTAssertNotNil(interactor?.remoteDataManager)
+        
         XCTAssert(interactor?.presenter === presenter)
     }
     
