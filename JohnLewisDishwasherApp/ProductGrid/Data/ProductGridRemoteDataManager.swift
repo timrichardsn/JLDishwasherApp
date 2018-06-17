@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
     
@@ -19,9 +20,14 @@ class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
     
     func performRequest(with requestData: RequestData, networkDataRequest: NetworkDataRequest? = nil) {
         
+        var networkDataRequest = networkDataRequest
+        networkDataRequest = networkDataRequest ?? Alamofire.request(requestData.endPoint.urlString,
+                                                                     parameters: requestData.parametersForRequest(includeKey: true))
+        
         networkDataRequest?.checkResponse(callback: { [remoteDataOutputHandler] json, error in
             
-            if let _ = json {
+            if let json = json {
+                print("Success: \(json)")
                 remoteDataOutputHandler?.onProductsReceived()
             } else {
                 remoteDataOutputHandler?.onError()
@@ -29,5 +35,17 @@ class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
         })
     }
 }
+
+extension DataRequest: NetworkDataRequest {
+    
+    func checkResponse(callback: @escaping (Any?, Error?) -> Void) {
+        
+        validate().responseJSON { response in
+            
+            switch response.result {
+            case .success(let json): callback(json, nil)
+            case .failure(let error): callback(nil, error)
+            }
+        }
     }
 }
