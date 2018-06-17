@@ -18,6 +18,7 @@
 		0103F22C20D6640700AB56F3 /* ProductGridPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F22B20D6640700AB56F3 /* ProductGridPresenter.swift */; };
 		0103F22F20D665BF00AB56F3 /* ProductGridInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F22E20D665BF00AB56F3 /* ProductGridInteractor.swift */; };
 		0103F23220D66C5D00AB56F3 /* ProductGridRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F23120D66C5D00AB56F3 /* ProductGridRemoteDataManager.swift */; };
+		0103F23520D674D700AB56F3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103F23420D674D700AB56F3 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		0103F22B20D6640700AB56F3 /* ProductGridPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridPresenter.swift; sourceTree = "<group>"; };
 		0103F22E20D665BF00AB56F3 /* ProductGridInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridInteractor.swift; sourceTree = "<group>"; };
 		0103F23120D66C5D00AB56F3 /* ProductGridRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridRemoteDataManager.swift; sourceTree = "<group>"; };
+		0103F23420D674D700AB56F3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0103F23520D674D700AB56F3 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +75,7 @@
 				0103F1FE20D65EF800AB56F3 /* JohnLewisDishwasherApp */,
 				0103F21320D65EFA00AB56F3 /* JohnLewisDishwasherAppTests */,
 				0103F1FD20D65EF800AB56F3 /* Products */,
+				0103F23320D674D600AB56F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +163,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		0103F23320D674D600AB56F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0103F23420D674D700AB56F3 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,6 +181,7 @@
 				0103F1F820D65EF800AB56F3 /* Sources */,
 				0103F1F920D65EF800AB56F3 /* Frameworks */,
 				0103F1FA20D65EF800AB56F3 /* Resources */,
+				0103F23620D674E700AB56F3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -255,6 +268,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0103F23620D674E700AB56F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0103F1F820D65EF800AB56F3 /* Sources */ = {
@@ -428,6 +459,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JohnLewisDishwasherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -445,6 +480,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JohnLewisDishwasherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
