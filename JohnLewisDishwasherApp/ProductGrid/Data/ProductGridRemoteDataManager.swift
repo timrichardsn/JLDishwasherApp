@@ -10,7 +10,7 @@ import Foundation
 
 class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
     
-    func fetchProducts() {
+    func performRequest(with requestData: RequestData) {
         
     }
 }

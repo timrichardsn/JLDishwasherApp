@@ -70,7 +70,7 @@ class ProductGridTests: XCTestCase {
         
         let requestData = RequestData(endPoint: .products(action: .search))
         
-        XCTAssertEqual(requestData.endPoint.endpointString, "products/search/")
+        XCTAssertEqual(requestData.endPoint.endpointString, "products/search")
     }
 }
 
