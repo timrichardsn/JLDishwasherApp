@@ -10,6 +10,9 @@ import UIKit
 
 class ProductGridView: UIViewController {
 
+    var presenter: ProductGridPresenterProtocol?
+    
+    
 }
 
 extension ProductGridView: ProductGridViewProtocol {

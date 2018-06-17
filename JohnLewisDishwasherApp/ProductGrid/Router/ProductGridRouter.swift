@@ -14,6 +14,13 @@ class ProductGridRouter: ProductGridRouterProtocol {
         
         let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductsNavigationController")
         
+        if let productGridView = navigationController.childViewControllers.first as? ProductGridView {
+            
+            let presenter = ProductGridPresenter()
+            
+            productGridView.presenter = presenter
+        }
+        
         return navigationController
     }
     

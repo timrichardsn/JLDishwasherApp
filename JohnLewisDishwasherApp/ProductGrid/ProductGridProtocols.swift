@@ -13,5 +13,9 @@ protocol ProductGridRouterProtocol: class {
 }
 
 protocol ProductGridViewProtocol: class {
+    var presenter: ProductGridPresenterProtocol? { get set }
+}
+
+protocol ProductGridPresenterProtocol: class {
     
 }
