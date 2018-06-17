@@ -28,6 +28,10 @@ enum Endpoint {
             return "products/\(action.endpointString)"
         }
     }
+    
+    var urlString: String {
+        return "https://api.johnlewis.com/v1/\(endpointString)"
+    }
 }
 
 struct RequestData {
