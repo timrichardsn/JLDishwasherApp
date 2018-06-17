@@ -28,4 +28,29 @@ class ProductGridTests: XCTestCase {
         XCTAssertNotNil(interactor?.presenter)
         XCTAssert(interactor?.presenter === presenter)
     }
+    
+    func testPresenterViewDidLoadCalled() {
+        
+        let productGridView = ProductGridRouter.createProductGridModule().childViewControllers.first as? ProductGridView
+        let presenter = MockProductGridPresenter()
+        
+        productGridView?.presenter = presenter
+        
+        productGridView?.view.setNeedsLayout()
+        
+        XCTAssertTrue(presenter.viewDidLoadWasCalled)
+    }
+}
+
+private class MockProductGridPresenter: ProductGridPresenterProtocol {
+    
+    var view: ProductGridViewProtocol?
+    var interactor: ProductGridInteractorProtocol?
+    var router: ProductGridRouterProtocol?
+    
+    var viewDidLoadWasCalled = false
+    
+    func viewDidLoad() {
+        viewDidLoadWasCalled = true
+    }
 }
