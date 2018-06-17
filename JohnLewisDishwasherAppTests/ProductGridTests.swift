@@ -53,6 +53,17 @@ class ProductGridTests: XCTestCase {
         
         XCTAssertTrue(interactor.fetchProductsWasCalled)
     }
+    
+    func testDataManagerFetchProductsCalled() {
+        
+        let interactor = ProductGridInteractor()
+        let remoteDataManager = MockProductRemoteDataManager()
+        
+        interactor.remoteDataManager = remoteDataManager
+        interactor.fetchProducts()
+        
+        XCTAssertTrue(remoteDataManager.fetchProductsWasCalled)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
@@ -72,6 +83,15 @@ private class MockProductGridInteractor: ProductGridInteractorProtocol {
     
     var remoteDataManager: ProductGridRemoteDataProtocol?
     var presenter: ProductGridPresenterProtocol?
+    var fetchProductsWasCalled = false
+    
+    func fetchProducts() {
+        fetchProductsWasCalled = true
+    }
+}
+
+private class MockProductRemoteDataManager: ProductGridRemoteDataProtocol {
+    
     var fetchProductsWasCalled = false
     
     func fetchProducts() {
