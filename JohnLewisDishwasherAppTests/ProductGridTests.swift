@@ -93,6 +93,26 @@ class ProductGridTests: XCTestCase {
         XCTAssertEqual(RequestParameterKey.key.stringValue, "key")
         XCTAssertEqual(RequestParameterKey.pageSize.stringValue, "pageSize")
     }
+    
+    func testPerformRequestCallbackCalled() {
+        
+        let remoteDataManager = ProductGridRemoteDataManager()
+        let mockRemoteDataOutput = MockProductRemoteDataOutput()
+        let mockNetworkDataRequest = MockNetworkDataRequest()
+        
+        remoteDataManager.remoteDataOutputHandler = mockRemoteDataOutput
+        
+        let parameters: [RequestParameterKey: Any] = [
+            .product : "dishwasher",
+            .pageSize: "20"
+        ]
+        
+        let requestData = RequestData(endPoint: .products(action: .search), parameters: parameters)
+        
+        remoteDataManager.performRequest(with: requestData, networkDataRequest: mockNetworkDataRequest)
+        
+        XCTAssertTrue(mockRemoteDataOutput.onProductsReceivedCalled)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
@@ -127,5 +147,25 @@ private class MockProductRemoteDataManager: ProductGridRemoteDataProtocol {
     func performRequest(with requestData: RequestData) {
         performRequestWasCalled = true
         self.requestData = requestData
+    }
+}
+
+private class MockProductRemoteDataOutput: ProductGridRemoteDataOutputProtocol {
+    
+    var onProductsReceivedCalled = false
+    
+    func onProductsReceived() {
+        onProductsReceivedCalled = true
+    }
+    
+    func onError() {
+        
+    }
+}
+
+private class MockNetworkDataRequest: NetworkDataRequest {
+    
+    func checkResponse(callback: @escaping (Any?, Error?) -> Void) {
+        callback("success", nil)
     }
 }
