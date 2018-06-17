@@ -16,6 +16,7 @@
 		0103F22620D6613500AB56F3 /* ProductGridRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F22520D6613500AB56F3 /* ProductGridRouter.swift */; };
 		0103F22920D6618400AB56F3 /* ProductGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F22820D6618400AB56F3 /* ProductGridView.swift */; };
 		0103F22C20D6640700AB56F3 /* ProductGridPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F22B20D6640700AB56F3 /* ProductGridPresenter.swift */; };
+		0103F22F20D665BF00AB56F3 /* ProductGridInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F22E20D665BF00AB56F3 /* ProductGridInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		0103F22520D6613500AB56F3 /* ProductGridRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridRouter.swift; sourceTree = "<group>"; };
 		0103F22820D6618400AB56F3 /* ProductGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridView.swift; sourceTree = "<group>"; };
 		0103F22B20D6640700AB56F3 /* ProductGridPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridPresenter.swift; sourceTree = "<group>"; };
+		0103F22E20D665BF00AB56F3 /* ProductGridInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		0103F22120D6605B00AB56F3 /* ProductGrid */ = {
 			isa = PBXGroup;
 			children = (
+				0103F22D20D665AF00AB56F3 /* Interactor */,
 				0103F22A20D663F200AB56F3 /* Presenter */,
 				0103F22720D6617100AB56F3 /* View */,
 				0103F22220D6606B00AB56F3 /* Router */,
@@ -135,6 +138,14 @@
 				0103F22B20D6640700AB56F3 /* ProductGridPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0103F22D20D665AF00AB56F3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0103F22E20D665BF00AB56F3 /* ProductGridInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +254,7 @@
 				0103F22620D6613500AB56F3 /* ProductGridRouter.swift in Sources */,
 				0103F22C20D6640700AB56F3 /* ProductGridPresenter.swift in Sources */,
 				0103F22920D6618400AB56F3 /* ProductGridView.swift in Sources */,
+				0103F22F20D665BF00AB56F3 /* ProductGridInteractor.swift in Sources */,
 				0103F22420D6608700AB56F3 /* ProductGridProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

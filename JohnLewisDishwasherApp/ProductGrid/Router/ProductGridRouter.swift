@@ -17,8 +17,14 @@ class ProductGridRouter: ProductGridRouterProtocol {
         if let productGridView = navigationController.childViewControllers.first as? ProductGridView {
             
             let presenter = ProductGridPresenter()
+            let interactor = ProductGridInteractor()
+            let router = ProductGridRouter()
             
             productGridView.presenter = presenter
+            
+            presenter.view = productGridView
+            presenter.interactor = interactor
+            presenter.router = router
         }
         
         return navigationController

@@ -18,4 +18,12 @@ protocol ProductGridViewProtocol: class {
 
 protocol ProductGridPresenterProtocol: class {
     
+    var view: ProductGridViewProtocol? { get set }
+    var interactor: ProductGridInteractorProtocol? { get set }
+    var router: ProductGridRouterProtocol? { get set }
+    
+}
+
+protocol ProductGridInteractorProtocol: class {
+    
 }

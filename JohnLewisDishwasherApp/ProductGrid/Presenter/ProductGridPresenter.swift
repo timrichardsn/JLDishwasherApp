@@ -10,4 +10,7 @@ import Foundation
 
 class ProductGridPresenter: ProductGridPresenterProtocol {
     
+    var view: ProductGridViewProtocol?
+    var interactor: ProductGridInteractorProtocol?
+    var router: ProductGridRouterProtocol?
 }
