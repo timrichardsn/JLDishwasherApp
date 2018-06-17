@@ -13,9 +13,11 @@ class ProductGridTests: XCTestCase {
     
     func testCreateProductGridView() {
         
-        let productGridView = ProductGridRouter.createProductGridModule()
+        let productsNavigationController = ProductGridRouter.createProductGridModule()
         
-        XCTAssertTrue(productGridView.childViewControllers.first is ProductGridView)
+        XCTAssertTrue(productsNavigationController.childViewControllers.first is ProductGridView)
     }
+    
+    
 
 }
