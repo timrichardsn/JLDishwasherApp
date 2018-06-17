@@ -68,10 +68,12 @@ class ProductGridTests: XCTestCase {
     
     func testRequestData() {
         
-        let requestData = RequestData(endPoint: .products(action: .search))
+        let parameters: [String: Any] = [:]
+        let requestData = RequestData(endPoint: .products(action: .search), parameters: parameters)
         
         XCTAssertEqual(requestData.endPoint.endpointString, "products/search")
         XCTAssertEqual(requestData.endPoint.urlString, "https://api.johnlewis.com/v1/products/search")
+        XCTAssertNotNil(requestData.parameters)
     }
 }
 
