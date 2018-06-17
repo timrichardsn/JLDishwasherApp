@@ -18,10 +18,11 @@ class ProductGridTests: XCTestCase {
         XCTAssertTrue(productsNavigationController.childViewControllers.first is ProductGridView)
         
         let productGridView = productsNavigationController.childViewControllers.first as! ProductGridView
+        let presenter = productGridView.presenter
         
-        XCTAssertNotNil(productGridView.presenter)
-        XCTAssertNotNil(productGridView.presenter?.view)
-        XCTAssertNotNil(productGridView.presenter?.interactor)
-        XCTAssertNotNil(productGridView.presenter?.router)
+        XCTAssertNotNil(presenter)
+        XCTAssertNotNil(presenter?.view)
+        XCTAssertNotNil(presenter?.interactor)
+        XCTAssertNotNil(presenter?.router)
     }
 }
