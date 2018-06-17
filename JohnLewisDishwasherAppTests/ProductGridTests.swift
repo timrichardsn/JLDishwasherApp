@@ -63,8 +63,14 @@ class ProductGridTests: XCTestCase {
         interactor.fetchProducts()
         
         XCTAssertTrue(remoteDataManager.performRequestWasCalled)
-        XCTAssertEqual(remoteDataManager.requestData!.endPoint, .products)
-        XCTAssertEqual(remoteDataManager.requestData!.endPoint.action, .search)
+        XCTAssertNotNil(remoteDataManager.requestData)
+    }
+    
+    func testRequestData() {
+        
+        let requestData = RequestData(endPoint: .products(action: .search))
+        
+        XCTAssertEqual(requestData.endPoint.endpointString, "products/search/")
     }
 }
 
