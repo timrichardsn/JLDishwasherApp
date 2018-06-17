@@ -12,7 +12,11 @@ class ProductGridView: UIViewController {
 
     var presenter: ProductGridPresenterProtocol?
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter?.viewDidLoad()
+    }
 }
 
 extension ProductGridView: ProductGridViewProtocol {

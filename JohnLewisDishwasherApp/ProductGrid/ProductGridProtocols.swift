@@ -22,6 +22,7 @@ protocol ProductGridPresenterProtocol: class {
     var interactor: ProductGridInteractorProtocol? { get set }
     var router: ProductGridRouterProtocol? { get set }
     
+    func viewDidLoad()
 }
 
 protocol ProductGridInteractorProtocol: class {

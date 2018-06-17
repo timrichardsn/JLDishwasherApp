@@ -13,4 +13,8 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     var view: ProductGridViewProtocol?
     var interactor: ProductGridInteractorProtocol?
     var router: ProductGridRouterProtocol?
+    
+    func viewDidLoad() {
+        
+    }
 }
