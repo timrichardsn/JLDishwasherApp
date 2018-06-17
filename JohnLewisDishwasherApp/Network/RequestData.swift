@@ -36,4 +36,5 @@ enum Endpoint {
 
 struct RequestData {
     let endPoint: Endpoint
+    let parameters: [String: Any]
 }
