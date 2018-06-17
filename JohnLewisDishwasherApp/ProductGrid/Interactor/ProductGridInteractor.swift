@@ -12,4 +12,7 @@ class ProductGridInteractor: ProductGridInteractorProtocol {
     
     weak var presenter: ProductGridPresenterProtocol?
     
+    func fetchProducts() {
+        
+    }
 }

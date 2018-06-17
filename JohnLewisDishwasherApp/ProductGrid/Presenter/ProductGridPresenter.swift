@@ -15,6 +15,6 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     var router: ProductGridRouterProtocol?
     
     func viewDidLoad() {
-        
+        interactor?.fetchProducts()
     }
 }
