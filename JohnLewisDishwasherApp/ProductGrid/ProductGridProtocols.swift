@@ -25,5 +25,5 @@ protocol ProductGridPresenterProtocol: class {
 }
 
 protocol ProductGridInteractorProtocol: class {
-    
+    var presenter: ProductGridPresenterProtocol? { get set }
 }

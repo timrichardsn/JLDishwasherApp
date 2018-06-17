@@ -10,4 +10,6 @@ import Foundation
 
 class ProductGridInteractor: ProductGridInteractorProtocol {
     
+    weak var presenter: ProductGridPresenterProtocol?
+    
 }

@@ -25,6 +25,8 @@ class ProductGridRouter: ProductGridRouterProtocol {
             presenter.view = productGridView
             presenter.interactor = interactor
             presenter.router = router
+            
+            interactor.presenter = presenter
         }
         
         return navigationController
