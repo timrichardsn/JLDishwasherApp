@@ -11,6 +11,7 @@
 		0103F20520D65EF800AB56F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0103F20320D65EF800AB56F3 /* Main.storyboard */; };
 		0103F20720D65EF900AB56F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0103F20620D65EF900AB56F3 /* Assets.xcassets */; };
 		0103F20A20D65EF900AB56F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0103F20820D65EF900AB56F3 /* LaunchScreen.storyboard */; };
+		0103F22020D65FE500AB56F3 /* ProductGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F21F20D65FE500AB56F3 /* ProductGridTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		0103F20B20D65EFA00AB56F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0103F21020D65EFA00AB56F3 /* JohnLewisDishwasherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JohnLewisDishwasherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0103F21620D65EFA00AB56F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0103F21F20D65FE500AB56F3 /* ProductGridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				0103F21620D65EFA00AB56F3 /* Info.plist */,
+				0103F21F20D65FE500AB56F3 /* ProductGridTests.swift */,
 			);
 			path = JohnLewisDishwasherAppTests;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 					};
 					0103F20F20D65EFA00AB56F3 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 						TestTargetID = 0103F1FB20D65EF800AB56F3;
 					};
 				};
@@ -199,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0103F22020D65FE500AB56F3 /* ProductGridTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +390,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JohnLewisDishwasherAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -394,6 +400,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.timrichardson.JohnLewisDishwasherAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JohnLewisDishwasherApp.app/JohnLewisDishwasherApp";
@@ -405,6 +412,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JohnLewisDishwasherAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
