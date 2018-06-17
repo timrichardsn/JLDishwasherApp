@@ -30,7 +30,7 @@ enum Endpoint {
     }
     
     var urlString: String {
-        return "https://api.johnlewis.com/v1/\(endpointString)"
+        return "\(API.rootUrlString)/\(endpointString)"
     }
 }
 
@@ -47,6 +47,7 @@ enum RequestParameterKey {
 }
 
 struct API {
+    static let rootUrlString = "https://api.johnlewis.com/v1"
     static let key = "Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb"
 }
 
