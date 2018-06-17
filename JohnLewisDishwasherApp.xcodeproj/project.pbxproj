@@ -19,7 +19,7 @@
 		0103F22F20D665BF00AB56F3 /* ProductGridInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F22E20D665BF00AB56F3 /* ProductGridInteractor.swift */; };
 		0103F23220D66C5D00AB56F3 /* ProductGridRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F23120D66C5D00AB56F3 /* ProductGridRemoteDataManager.swift */; };
 		0103F23520D674D700AB56F3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103F23420D674D700AB56F3 /* Alamofire.framework */; };
-		0103F23920D6772300AB56F3 /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F23820D6772300AB56F3 /* RequestData.swift */; };
+		0103F23920D6772300AB56F3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F23820D6772300AB56F3 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		0103F22E20D665BF00AB56F3 /* ProductGridInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridInteractor.swift; sourceTree = "<group>"; };
 		0103F23120D66C5D00AB56F3 /* ProductGridRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridRemoteDataManager.swift; sourceTree = "<group>"; };
 		0103F23420D674D700AB56F3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		0103F23820D6772300AB56F3 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
+		0103F23820D6772300AB56F3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +177,7 @@
 		0103F23720D6771400AB56F3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				0103F23820D6772300AB56F3 /* RequestData.swift */,
+				0103F23820D6772300AB56F3 /* Network.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 				0103F22920D6618400AB56F3 /* ProductGridView.swift in Sources */,
 				0103F22F20D665BF00AB56F3 /* ProductGridInteractor.swift in Sources */,
 				0103F22420D6608700AB56F3 /* ProductGridProtocols.swift in Sources */,
-				0103F23920D6772300AB56F3 /* RequestData.swift in Sources */,
+				0103F23920D6772300AB56F3 /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
