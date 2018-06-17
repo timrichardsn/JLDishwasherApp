@@ -64,6 +64,7 @@ class ProductGridTests: XCTestCase {
         
         XCTAssertTrue(remoteDataManager.performRequestWasCalled)
         XCTAssertEqual(remoteDataManager.requestData!.endPoint, .products)
+        XCTAssertEqual(remoteDataManager.requestData!.endPoint.action, .search)
     }
 }
 
