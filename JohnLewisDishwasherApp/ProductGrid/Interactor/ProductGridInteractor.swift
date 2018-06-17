@@ -11,6 +11,7 @@ import Foundation
 class ProductGridInteractor: ProductGridInteractorProtocol {
     
     weak var presenter: ProductGridPresenterProtocol?
+    var remoteDataManager: ProductGridRemoteDataProtocol?
     
     func fetchProducts() {
         

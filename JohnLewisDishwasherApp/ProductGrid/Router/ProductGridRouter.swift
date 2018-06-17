@@ -19,6 +19,7 @@ class ProductGridRouter: ProductGridRouterProtocol {
             let presenter = ProductGridPresenter()
             let interactor = ProductGridInteractor()
             let router = ProductGridRouter()
+            let remoteDataManager = ProductGridRemoteDataManager()
             
             productGridView.presenter = presenter
             
@@ -27,6 +28,7 @@ class ProductGridRouter: ProductGridRouterProtocol {
             presenter.router = router
             
             interactor.presenter = presenter
+            interactor.remoteDataManager = remoteDataManager
         }
         
         return navigationController

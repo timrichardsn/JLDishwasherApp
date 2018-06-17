@@ -70,6 +70,7 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
 
 private class MockProductGridInteractor: ProductGridInteractorProtocol {
     
+    var remoteDataManager: ProductGridRemoteDataProtocol?
     var presenter: ProductGridPresenterProtocol?
     var fetchProductsWasCalled = false
     

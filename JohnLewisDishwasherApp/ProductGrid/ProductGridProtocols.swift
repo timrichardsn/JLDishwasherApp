@@ -27,6 +27,11 @@ protocol ProductGridPresenterProtocol: class {
 
 protocol ProductGridInteractorProtocol: class {
     var presenter: ProductGridPresenterProtocol? { get set }
+    var remoteDataManager: ProductGridRemoteDataProtocol? { get set }
     
     func fetchProducts()
+}
+
+protocol ProductGridRemoteDataProtocol: class {
+    
 }
