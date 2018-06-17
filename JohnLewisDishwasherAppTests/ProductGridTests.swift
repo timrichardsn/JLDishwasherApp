@@ -82,9 +82,9 @@ class ProductGridTests: XCTestCase {
         let parametersForRequest = requestData.parametersForRequest(includeKey: true)
         
         XCTAssertEqual(parametersForRequest.count, 3)
-        XCTAssertEqual(parametersForRequest[RequestParameterKey.product.stringValue], parameters[.product])
-        XCTAssertEqual(parametersForRequest[RequestParameterKey.pageSize.stringValue], parameters[.pageSize])
-        XCTAssertEqual(parametersForRequest[RequestParameterKey.key.stringValue], API.key)
+        XCTAssertEqual(parametersForRequest[RequestParameterKey.product.stringValue] as? String, parameters[.product] as? String)
+        XCTAssertEqual(parametersForRequest[RequestParameterKey.pageSize.stringValue] as? String, parameters[.pageSize] as? String)
+        XCTAssertEqual(parametersForRequest[RequestParameterKey.key.stringValue] as? String, API.key)
     }
     
     func testRequestParameters() {

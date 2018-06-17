@@ -46,7 +46,22 @@ enum RequestParameterKey {
     }
 }
 
+struct API {
+    static let key = "Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb"
+}
+
 struct RequestData {
     let endPoint: Endpoint
     let parameters: [RequestParameterKey: Any]
+    
+    func parametersForRequest(includeKey: Bool) -> [String: Any] {
+        
+        var parametersForRequest = Dictionary(uniqueKeysWithValues: parameters.map { ($0.key.stringValue, $0.value) })
+        
+        if includeKey {
+            parametersForRequest[RequestParameterKey.key.stringValue] = API.key
+        }
+        
+        return parametersForRequest
+    }
 }
