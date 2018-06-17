@@ -12,6 +12,9 @@
 		0103F20720D65EF900AB56F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0103F20620D65EF900AB56F3 /* Assets.xcassets */; };
 		0103F20A20D65EF900AB56F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0103F20820D65EF900AB56F3 /* LaunchScreen.storyboard */; };
 		0103F22020D65FE500AB56F3 /* ProductGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F21F20D65FE500AB56F3 /* ProductGridTests.swift */; };
+		0103F22420D6608700AB56F3 /* ProductGridProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F22320D6608700AB56F3 /* ProductGridProtocols.swift */; };
+		0103F22620D6613500AB56F3 /* ProductGridRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F22520D6613500AB56F3 /* ProductGridRouter.swift */; };
+		0103F22920D6618400AB56F3 /* ProductGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F22820D6618400AB56F3 /* ProductGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 		0103F21020D65EFA00AB56F3 /* JohnLewisDishwasherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JohnLewisDishwasherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0103F21620D65EFA00AB56F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0103F21F20D65FE500AB56F3 /* ProductGridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridTests.swift; sourceTree = "<group>"; };
+		0103F22320D6608700AB56F3 /* ProductGridProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridProtocols.swift; sourceTree = "<group>"; };
+		0103F22520D6613500AB56F3 /* ProductGridRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridRouter.swift; sourceTree = "<group>"; };
+		0103F22820D6618400AB56F3 /* ProductGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 		0103F1FE20D65EF800AB56F3 /* JohnLewisDishwasherApp */ = {
 			isa = PBXGroup;
 			children = (
+				0103F22120D6605B00AB56F3 /* ProductGrid */,
 				0103F1FF20D65EF800AB56F3 /* AppDelegate.swift */,
 				0103F20320D65EF800AB56F3 /* Main.storyboard */,
 				0103F20620D65EF900AB56F3 /* Assets.xcassets */,
@@ -91,6 +98,32 @@
 				0103F21F20D65FE500AB56F3 /* ProductGridTests.swift */,
 			);
 			path = JohnLewisDishwasherAppTests;
+			sourceTree = "<group>";
+		};
+		0103F22120D6605B00AB56F3 /* ProductGrid */ = {
+			isa = PBXGroup;
+			children = (
+				0103F22720D6617100AB56F3 /* View */,
+				0103F22220D6606B00AB56F3 /* Router */,
+				0103F22320D6608700AB56F3 /* ProductGridProtocols.swift */,
+			);
+			path = ProductGrid;
+			sourceTree = "<group>";
+		};
+		0103F22220D6606B00AB56F3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0103F22520D6613500AB56F3 /* ProductGridRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		0103F22720D6617100AB56F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0103F22820D6618400AB56F3 /* ProductGridView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +229,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0103F20020D65EF800AB56F3 /* AppDelegate.swift in Sources */,
+				0103F22620D6613500AB56F3 /* ProductGridRouter.swift in Sources */,
+				0103F22920D6618400AB56F3 /* ProductGridView.swift in Sources */,
+				0103F22420D6608700AB56F3 /* ProductGridProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

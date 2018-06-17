@@ -13,7 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="JDL-To-NsC">
             <objects>
-                <navigationController id="ZdA-1d-iMu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProductsNavigationController" id="ZdA-1d-iMu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BNp-LB-JL3">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-306" y="113"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Grid View-->
         <scene sceneID="jYW-Zb-827">
             <objects>
-                <viewController id="l6c-bW-0md" sceneMemberID="viewController">
+                <viewController id="l6c-bW-0md" customClass="ProductGridView" customModule="JohnLewisDishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gbG-Gi-hqA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

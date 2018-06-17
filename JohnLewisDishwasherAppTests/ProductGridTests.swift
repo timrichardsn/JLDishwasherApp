@@ -15,7 +15,7 @@ class ProductGridTests: XCTestCase {
         
         let productGridView = ProductGridRouter.createProductGridModule()
         
-        XCTAssertTrue(productGridView is ProductGridView)
+        XCTAssertTrue(productGridView.childViewControllers.first is ProductGridView)
     }
 
 }
