@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct API {
+    static let rootUrlString = "https://api.johnlewis.com/v1"
+    static let key = "Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb"
+}
+
 enum APIAction {
     case search
     
@@ -46,11 +51,6 @@ enum RequestParameterKey {
     }
 }
 
-struct API {
-    static let rootUrlString = "https://api.johnlewis.com/v1"
-    static let key = "Wu1Xqn3vNrd1p7hqkvB6hEu0G9OrsYGb"
-}
-
 struct RequestData {
     let endPoint: Endpoint
     let parameters: [RequestParameterKey: Any]
@@ -65,4 +65,8 @@ struct RequestData {
         
         return parametersForRequest
     }
+}
+
+protocol NetworkDataRequest {
+    func checkResponse(callback: @escaping (Any?, Error?) -> Void)
 }

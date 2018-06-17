@@ -15,8 +15,12 @@ class ProductGridInteractor: ProductGridInteractorProtocol {
     
     func fetchProducts() {
         
+        let parameters: [RequestParameterKey: Any] = [
+            .product : "dishwasher",
+            .pageSize: "20"
+        ]
         
-        let requestData = RequestData(endPoint: .products(action: .search), parameters: [:])
+        let requestData = RequestData(endPoint: .products(action: .search), parameters: parameters)
         remoteDataManager?.performRequest(with: requestData)
     }
 }

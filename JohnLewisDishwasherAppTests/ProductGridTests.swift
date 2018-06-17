@@ -102,11 +102,7 @@ class ProductGridTests: XCTestCase {
         
         remoteDataManager.remoteDataOutputHandler = mockRemoteDataOutput
         
-        let parameters: [RequestParameterKey: Any] = [
-            .product : "dishwasher",
-            .pageSize: "20"
-        ]
-        
+        let parameters: [RequestParameterKey: Any] = [.product : "dishwasher", .pageSize: "20"]
         let requestData = RequestData(endPoint: .products(action: .search), parameters: parameters)
         
         remoteDataManager.performRequest(with: requestData, networkDataRequest: mockNetworkDataRequest)
@@ -143,10 +139,15 @@ private class MockProductRemoteDataManager: ProductGridRemoteDataProtocol {
     
     var performRequestWasCalled = false
     var requestData: RequestData?
+    var remoteDataOutputHandler: ProductGridRemoteDataOutputProtocol?
     
     func performRequest(with requestData: RequestData) {
         performRequestWasCalled = true
         self.requestData = requestData
+    }
+    
+    func performRequest(with requestData: RequestData, networkDataRequest: NetworkDataRequest?) {
+        
     }
 }
 
