@@ -133,6 +133,28 @@ class ProductGridTests: XCTestCase {
         
         XCTAssertTrue(view.showProductsCalled)
     }
+    
+    func testProductsCountOnView() {
+        
+        let presenter = ProductGridPresenter()
+        let productGridView = ProductGridRouter.createProductGridModule().childViewControllers.first as! ProductGridView
+        
+        let products = [
+            Product(productId: "", title: "", imageUrl: "", priceData: [:]),
+            Product(productId: "", title: "", imageUrl: "", priceData: [:]),
+            Product(productId: "", title: "", imageUrl: "", priceData: [:]),
+            Product(productId: "", title: "", imageUrl: "", priceData: [:]),
+            Product(productId: "", title: "", imageUrl: "", priceData: [:])
+        ]
+        
+        presenter.view = productGridView
+        presenter.didReceive(products: products)
+        
+        productGridView.view.setNeedsLayout()
+        
+        let productsCount = productGridView.collectionView(productGridView.collectionView!, numberOfItemsInSection: 0)
+        XCTAssertEqual(productsCount, products.count)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
