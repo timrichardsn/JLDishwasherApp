@@ -131,7 +131,7 @@ class ProductGridTests: XCTestCase {
         presenter.view = view
         presenter.didReceive(products: [])
         
-        XCTAssertTrue(view.showProductsCalled)
+        XCTAssertTrue(view.reloadDataCalled)
     }
     
     func testProductsCountOnView() {
@@ -239,9 +239,9 @@ private class MockProductGridView: ProductGridViewProtocol {
     
     var presenter: ProductGridPresenterProtocol?
     
-    var showProductsCalled = false
+    var reloadDataCalled = false
     
-    func show(products: [Product]) {
-        showProductsCalled = true
+    func reloadData() {
+        reloadDataCalled = true
     }
 }
