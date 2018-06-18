@@ -95,7 +95,7 @@
 		0103F1FE20D65EF800AB56F3 /* JohnLewisDishwasherApp */ = {
 			isa = PBXGroup;
 			children = (
-				0103F23A20D7AE8600AB56F3 /* Entities */,
+				0103F23A20D7AE8600AB56F3 /* Model */,
 				0103F23720D6771400AB56F3 /* Network */,
 				0103F22120D6605B00AB56F3 /* ProductGrid */,
 				0103F1FF20D65EF800AB56F3 /* AppDelegate.swift */,
@@ -185,12 +185,12 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		0103F23A20D7AE8600AB56F3 /* Entities */ = {
+		0103F23A20D7AE8600AB56F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0103F23B20D7AE9500AB56F3 /* Product.swift */,
 			);
-			path = Entities;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
