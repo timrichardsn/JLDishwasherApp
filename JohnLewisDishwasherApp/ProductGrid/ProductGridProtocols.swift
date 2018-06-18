@@ -26,6 +26,7 @@ protocol ProductGridPresenterProtocol: class {
     var productCount: Int { get }
     
     func viewDidLoad()
+    func viewDidAppear()
     func didReceive(products: [Product])
     func product(at indexPath: IndexPath) -> Product
 }

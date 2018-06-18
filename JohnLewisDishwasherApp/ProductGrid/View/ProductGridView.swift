@@ -19,6 +19,12 @@ class ProductGridView: UIViewController {
         
         presenter?.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        presenter?.viewDidAppear()
+    }
 }
 
 extension ProductGridView: UICollectionViewDelegate, UICollectionViewDataSource {

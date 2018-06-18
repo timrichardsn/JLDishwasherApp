@@ -24,6 +24,10 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
         interactor?.fetchProducts()
     }
     
+    func viewDidAppear() {
+        
+    }
+    
     func didReceive(products: [Product]) {
         self.products = products
         view?.reloadData()
