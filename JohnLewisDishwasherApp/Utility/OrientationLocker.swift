@@ -16,4 +16,18 @@ struct OrientationLocker {
             delegate.orientation = orientation
         }
     }
+    
+    static func lockAndRotateToLandscape() {
+        
+        lockOrientation(.landscape)
+        
+        switch UIDevice.current.orientation {
+            
+        case .portrait, .portraitUpsideDown:
+            UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+            
+        default:
+            break
+        }
+    }
 }

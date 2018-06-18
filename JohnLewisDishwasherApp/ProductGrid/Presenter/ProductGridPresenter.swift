@@ -25,7 +25,7 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     }
     
     func viewDidAppear() {
-        
+        OrientationLocker.lockAndRotateToLandscape()
     }
     
     func didReceive(products: [Product]) {
