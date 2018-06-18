@@ -11,7 +11,6 @@ import UIKit
 class ProductGridView: UICollectionViewController {
 
     var presenter: ProductGridPresenterProtocol?
-    var products = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,7 @@ class ProductGridView: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products.count
+        return presenter?.productCount ?? 0
     }
 }
 

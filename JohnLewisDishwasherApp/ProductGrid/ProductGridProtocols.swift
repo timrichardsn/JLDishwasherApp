@@ -23,6 +23,7 @@ protocol ProductGridPresenterProtocol: class {
     var view: ProductGridViewProtocol? { get set }
     var interactor: ProductGridInteractorProtocol? { get set }
     var router: ProductGridRouterProtocol? { get set }
+    var productCount: Int { get }
     
     func viewDidLoad()
     func didReceive(products: [Product])

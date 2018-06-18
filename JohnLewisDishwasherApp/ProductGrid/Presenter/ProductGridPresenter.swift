@@ -14,11 +14,18 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     var interactor: ProductGridInteractorProtocol?
     var router: ProductGridRouterProtocol?
     
+    var productCount: Int {
+        return products.count
+    }
+    
+    private var products = [Product]()
+    
     func viewDidLoad() {
         interactor?.fetchProducts()
     }
     
     func didReceive(products: [Product]) {
+        self.products = products
         view?.reloadData()
     }
 }
