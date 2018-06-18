@@ -30,6 +30,8 @@ class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
             if let json = json as? [String: Any], let products = json["products"] as? [[String: Any]] {
                 
                 let products = products.map {
+                    
+                    // Would not force unwrap here in production...
                     Product(productId: $0["productId"] as! String,
                             title: $0["title"] as! String,
                             imageUrl: $0["image"] as! String,
