@@ -147,7 +147,8 @@ class ProductGridTests: XCTestCase {
             Product(productId: "", title: "", imageUrl: "", priceData: [:])
         ]
         
-        presenter.view = productGridView
+        productGridView.presenter = presenter
+        
         presenter.didReceive(products: products)
         
         productGridView.view.setNeedsLayout()
@@ -159,6 +160,7 @@ class ProductGridTests: XCTestCase {
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
     
+    var productCount: Int = 0
     var view: ProductGridViewProtocol?
     var interactor: ProductGridInteractorProtocol?
     var router: ProductGridRouterProtocol?
@@ -236,7 +238,7 @@ private class MockNetworkDataRequest: NetworkDataRequest {
 }
 
 private class MockProductGridView: ProductGridViewProtocol {
-    
+
     var presenter: ProductGridPresenterProtocol?
     
     var reloadDataCalled = false
