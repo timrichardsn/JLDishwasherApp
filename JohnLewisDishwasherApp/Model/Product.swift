@@ -12,5 +12,18 @@ struct Product {
     let productId: String
     let title: String
     let imageUrl: String
-    let priceData: [String: String]
+    let price: String
+    
+    init(productId: String, title: String, imageUrl: String, priceData: [String: String]) {
+        self.productId = productId
+        self.title = title
+        self.imageUrl = imageUrl
+        self.price = priceData["now"] ?? "0"
+    }
+}
+
+extension Product {
+    var priceString: String {
+        return "£\(price)"
+    }
 }

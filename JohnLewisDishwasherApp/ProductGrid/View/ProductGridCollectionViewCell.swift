@@ -10,7 +10,11 @@ import UIKit
 
 class ProductGridCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var productTitle: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    
     func configure(with product: Product) {
-        
+        productTitle.text = product.title
+        productPrice.text = product.priceString
     }
 }
