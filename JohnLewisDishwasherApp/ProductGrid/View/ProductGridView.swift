@@ -8,28 +8,39 @@
 
 import UIKit
 
-class ProductGridView: UICollectionViewController {
+class ProductGridView: UIViewController {
 
     var presenter: ProductGridPresenterProtocol?
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter?.viewDidLoad()
     }
+}
+
+extension ProductGridView: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter?.productCount ?? 0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+    }
 }
+
 
 extension ProductGridView: ProductGridViewProtocol {
     
     func reloadData() {
-        collectionView?.reloadData()
+        collectionView.reloadData()
     }
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZdA-1d-iMu">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,11 +15,11 @@
             <objects>
                 <navigationController storyboardIdentifier="ProductsNavigationController" id="ZdA-1d-iMu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BNp-LB-JL3">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="gjo-N1-rUh" kind="relationship" relationship="rootViewController" id="FLW-X8-rpq"/>
+                        <segue destination="eMa-5K-8qG" kind="relationship" relationship="rootViewController" id="0Lx-VB-DoH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAP-Wd-mgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -26,39 +27,55 @@
             <point key="canvasLocation" x="-306" y="113"/>
         </scene>
         <!--Product Grid View-->
-        <scene sceneID="uiC-1b-okM">
+        <scene sceneID="r7v-qc-Ir4">
             <objects>
-                <collectionViewController id="gjo-N1-rUh" customClass="ProductGridView" customModule="JohnLewisDishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="WfF-7r-LrI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="eMa-5K-8qG" customClass="ProductGridView" customModule="JohnLewisDishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7ug-hX-00D">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lM1-Uf-WNJ">
+                                <rect key="frame" x="0.0" y="32" width="667" height="343"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="k9b-ir-mhh">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="bTc-2g-M2Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="eMa-5K-8qG" id="46K-RE-yHW"/>
+                                    <outlet property="delegate" destination="eMa-5K-8qG" id="IeN-wY-liB"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eJU-hQ-qhy">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="V6C-xP-fSD">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="gjo-N1-rUh" id="ARV-yJ-l1K"/>
-                            <outlet property="delegate" destination="gjo-N1-rUh" id="RQ8-5g-gjV"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="ZX7-9L-ega"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EPk-Xq-IUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="lM1-Uf-WNJ" firstAttribute="bottom" secondItem="aL7-HG-OWK" secondAttribute="bottom" id="C4q-xo-xCs"/>
+                            <constraint firstItem="lM1-Uf-WNJ" firstAttribute="leading" secondItem="aL7-HG-OWK" secondAttribute="leading" id="FjA-MD-gOP"/>
+                            <constraint firstItem="lM1-Uf-WNJ" firstAttribute="trailing" secondItem="aL7-HG-OWK" secondAttribute="trailing" id="gOd-4H-aaL"/>
+                            <constraint firstItem="lM1-Uf-WNJ" firstAttribute="top" secondItem="aL7-HG-OWK" secondAttribute="top" id="shO-1B-Das"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aL7-HG-OWK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="08n-Me-9zt"/>
+                    <connections>
+                        <outlet property="collectionView" destination="lM1-Uf-WNJ" id="EGI-jx-1LO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UWn-Yh-dqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="668" y="113"/>
+            <point key="canvasLocation" x="438.53073463268368" y="112.8"/>
         </scene>
     </scenes>
 </document>
