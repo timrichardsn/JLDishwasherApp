@@ -44,6 +44,18 @@ class ProductGridTests: XCTestCase {
         XCTAssertTrue(presenter.viewDidLoadWasCalled)
     }
     
+    func testPresenterViewDidAppearCalled() {
+        
+        let productGridView = ProductGridRouter.createProductGridModule().childViewControllers.first as? ProductGridView
+        let presenter = MockProductGridPresenter()
+        
+        productGridView?.presenter = presenter
+        productGridView?.view.setNeedsLayout()
+        productGridView?.viewDidAppear(true)
+        
+        XCTAssertTrue(presenter.viewDidAppearWasCalled)
+    }
+    
     func testInteractorFetchProductsCalled() {
         
         let presenter = ProductGridPresenter()
@@ -186,10 +198,15 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     var router: ProductGridRouterProtocol?
     
     var viewDidLoadWasCalled = false
+    var viewDidAppearWasCalled = false
     var didReceiveProductsCalled = false
     
     func viewDidLoad() {
         viewDidLoadWasCalled = true
+    }
+    
+    func viewDidAppear() {
+        viewDidAppearWasCalled = true
     }
     
     func didReceive(products: [Product]) {
