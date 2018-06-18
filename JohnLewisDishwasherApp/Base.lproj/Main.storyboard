@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="l6c-bW-0md" kind="relationship" relationship="rootViewController" id="uy2-4Q-PEh"/>
+                        <segue destination="gjo-N1-rUh" kind="relationship" relationship="rootViewController" id="FLW-X8-rpq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAP-Wd-mgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -27,20 +26,39 @@
             <point key="canvasLocation" x="-306" y="113"/>
         </scene>
         <!--Product Grid View-->
-        <scene sceneID="jYW-Zb-827">
+        <scene sceneID="uiC-1b-okM">
             <objects>
-                <viewController id="l6c-bW-0md" customClass="ProductGridView" customModule="JohnLewisDishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gbG-Gi-hqA">
+                <collectionViewController id="gjo-N1-rUh" customClass="ProductGridView" customModule="JohnLewisDishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="WfF-7r-LrI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="6z5-dH-1Qs"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="xEi-Le-NvP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Xm-ct-h6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eJU-hQ-qhy">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="V6C-xP-fSD">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gjo-N1-rUh" id="ARV-yJ-l1K"/>
+                            <outlet property="delegate" destination="gjo-N1-rUh" id="RQ8-5g-gjV"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="ZX7-9L-ega"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EPk-Xq-IUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="601" y="113"/>
+            <point key="canvasLocation" x="668" y="113"/>
         </scene>
     </scenes>
 </document>

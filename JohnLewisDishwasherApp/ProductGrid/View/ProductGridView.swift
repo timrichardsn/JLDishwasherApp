@@ -8,20 +8,30 @@
 
 import UIKit
 
-class ProductGridView: UIViewController {
+class ProductGridView: UICollectionViewController {
 
     var presenter: ProductGridPresenterProtocol?
+    var products = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter?.viewDidLoad()
     }
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return products.count
+    }
 }
 
 extension ProductGridView: ProductGridViewProtocol {
     
     func show(products: [Product]) {
-        
+        self.products = products
+        collectionView?.reloadData()
     }
 }
