@@ -19,6 +19,6 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     }
     
     func didReceive(products: [Product]) {
-        view?.show(products: products)
+        view?.reloadData()
     }
 }

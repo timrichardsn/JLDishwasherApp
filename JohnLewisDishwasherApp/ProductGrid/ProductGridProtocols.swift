@@ -15,7 +15,7 @@ protocol ProductGridRouterProtocol: class {
 protocol ProductGridViewProtocol: class {
     var presenter: ProductGridPresenterProtocol? { get set }
     
-    func show(products: [Product])
+    func reloadData()
 }
 
 protocol ProductGridPresenterProtocol: class {

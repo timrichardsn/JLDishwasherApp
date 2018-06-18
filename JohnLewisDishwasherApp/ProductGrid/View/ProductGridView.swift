@@ -30,8 +30,7 @@ class ProductGridView: UICollectionViewController {
 
 extension ProductGridView: ProductGridViewProtocol {
     
-    func show(products: [Product]) {
-        self.products = products
+    func reloadData() {
         collectionView?.reloadData()
     }
 }
