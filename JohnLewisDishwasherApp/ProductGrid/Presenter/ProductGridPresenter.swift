@@ -17,4 +17,8 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     func viewDidLoad() {
         interactor?.fetchProducts()
     }
+    
+    func didReceive(products: [Product]) {
+        
+    }
 }

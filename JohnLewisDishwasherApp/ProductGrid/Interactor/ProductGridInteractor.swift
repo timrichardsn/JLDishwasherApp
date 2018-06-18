@@ -28,7 +28,7 @@ class ProductGridInteractor: ProductGridInteractorProtocol {
 extension ProductGridInteractor: ProductGridRemoteDataOutputProtocol {
     
     func onProductsReceived(products: [Product]) {
-        
+        presenter?.didReceive(products: products)
     }
     
     func onError() {
