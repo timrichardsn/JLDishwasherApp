@@ -188,6 +188,20 @@ class ProductGridTests: XCTestCase {
         
         XCTAssertEqual(product.productId, products[indexPath.row].productId)
     }
+    
+    func testCellSizeCalculation() {
+        
+        // Cell width should be 1/4 of the container width, height 1/2 of the container width (locked to landscape)
+        let presenter = ProductGridPresenter()
+        
+        let collectionViewSize = Size(100, 50)
+        let indexPath = IndexPath(row: 0, section: 0)
+        
+        let cellSize = presenter.cellSizeFrom(collectionViewSize: collectionViewSize, at: indexPath)
+        
+        XCTAssertEqual(cellSize.width, collectionViewSize.width / 4)
+        XCTAssertEqual(cellSize.height, collectionViewSize.height / 2)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
