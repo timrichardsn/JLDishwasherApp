@@ -202,6 +202,22 @@ class ProductGridTests: XCTestCase {
         XCTAssertEqual(cellSize.width, collectionViewSize.width / 4)
         XCTAssertEqual(cellSize.height, collectionViewSize.height / 2)
     }
+    
+    func testPresenterCellSizeIsCalled() {
+        
+        let presenter = MockProductGridPresenter()
+        let productGridView = ProductGridRouter.createProductGridModule().childViewControllers.first as! ProductGridView
+        let indexPath = IndexPath(row: 0, section: 0)
+        
+        productGridView.presenter = presenter
+        productGridView.view.setNeedsLayout()
+        
+        let collectionView = productGridView.collectionView
+        
+        _ = productGridView.collectionView(collectionView!, layout: collectionView!.collectionViewLayout, sizeForItemAt: indexPath)
+        
+        XCTAssertTrue(presenter.cellSizeFromWasCalled)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
@@ -214,6 +230,7 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     var viewDidLoadWasCalled = false
     var viewDidAppearWasCalled = false
     var didReceiveProductsCalled = false
+    var cellSizeFromWasCalled = false
     
     func viewDidLoad() {
         viewDidLoadWasCalled = true
@@ -232,6 +249,7 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     }
     
     func cellSizeFrom(collectionViewSize: Size, at indexPath: IndexPath) -> Size {
+        cellSizeFromWasCalled = true
         return Size(0, 0)
     }
 }
