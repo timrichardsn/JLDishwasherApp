@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias Size = (width: Float, height: Float)
+
 protocol ProductGridRouterProtocol: class {
     static func createProductGridModule() -> UIViewController
 }
@@ -29,6 +31,7 @@ protocol ProductGridPresenterProtocol: class {
     func viewDidAppear()
     func didReceive(products: [Product])
     func product(at indexPath: IndexPath) -> Product
+    func cellSizeFrom(collectionViewSize: Size, at indexPath: IndexPath) -> Size
 }
 
 protocol ProductGridInteractorProtocol: class {

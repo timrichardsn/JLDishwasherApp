@@ -36,4 +36,9 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     func product(at indexPath: IndexPath) -> Product {
         return products[indexPath.row]
     }
+    
+    func cellSizeFrom(collectionViewSize: Size, at indexPath: IndexPath) -> Size {
+        
+        return Size(width: collectionViewSize.width / 4, height: collectionViewSize.height / 2)
+    }
 }

@@ -230,6 +230,10 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     func product(at indexPath: IndexPath) -> Product {
         return Product(productId: "", title: "", imageUrl: "", priceData: [:])
     }
+    
+    func cellSizeFrom(collectionViewSize: Size, at indexPath: IndexPath) -> Size {
+        return Size(0, 0)
+    }
 }
 
 private class MockProductGridInteractor: ProductGridInteractorProtocol {
