@@ -122,6 +122,17 @@ class ProductGridTests: XCTestCase {
         
         XCTAssertTrue(mockPresenter.didReceiveProductsCalled)
     }
+    
+    func testPresenterCallsShowProductsOnView() {
+        
+        let presenter = ProductGridPresenter()
+        let view = MockProductGridView()
+        
+        presenter.view = view
+        presenter.didReceive(products: [])
+        
+        XCTAssertTrue(view.showProductsCalled)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
@@ -199,5 +210,16 @@ private class MockNetworkDataRequest: NetworkDataRequest {
         let mockData = ["products": products]
         
         callback(mockData, nil)
+    }
+}
+
+private class MockProductGridView: ProductGridViewProtocol {
+    
+    var presenter: ProductGridPresenterProtocol?
+    
+    var showProductsCalled = false
+    
+    func show(products: [Product]) {
+        showProductsCalled = true
     }
 }
