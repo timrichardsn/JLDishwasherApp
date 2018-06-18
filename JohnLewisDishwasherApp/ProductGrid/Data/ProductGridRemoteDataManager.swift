@@ -26,9 +26,20 @@ class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
         
         networkDataRequest?.checkResponse(callback: { [remoteDataOutputHandler] json, error in
             
-            if let json = json {
+            // Need to add better error feedback here, via a custom enum error type
+            if let json = json as? [String: Any], let products = json["products"] as? [[String: Any]] {
                 print("Success: \(json)")
-                remoteDataOutputHandler?.onProductsReceived()
+                
+                let products = products.map {
+                    Product(productId: $0["productId"] as! String,
+                            title: $0["title"] as! String,
+                            imageUrl: $0["image"] as! String,
+                            priceData: $0["price"] as! [String: String])
+                }
+                
+                remoteDataOutputHandler?.onProductsReceived(products: products)
+                
+                
             } else {
                 remoteDataOutputHandler?.onError()
             }

@@ -42,6 +42,6 @@ protocol ProductGridRemoteDataProtocol: class {
 
 protocol ProductGridRemoteDataOutputProtocol: class {
     
-    func onProductsReceived()
+    func onProductsReceived(products: [Product])
     func onError()
 }
