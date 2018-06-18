@@ -172,11 +172,11 @@ private class MockNetworkDataRequest: NetworkDataRequest {
     func checkResponse(callback: @escaping (Any?, Error?) -> Void) {
         
         let products = [
-            ["productId": "1", "title": "Product 1", "image": "https://someapi.com/image1.png"],
-            ["productId": "2", "title": "Product 2", "image": "https://someapi.com/image2.png"],
-            ["productId": "3", "title": "Product 3", "image": "https://someapi.com/image3.png"],
-            ["productId": "4", "title": "Product 4", "image": "https://someapi.com/image4.png"],
-            ["productId": "5", "title": "Product 5", "image": "https://someapi.com/image5.png"],
+            ["productId": "1", "title": "Product 1", "image": "https://someapi.com/image1.png", "price": ["now": "1"]],
+            ["productId": "2", "title": "Product 2", "image": "https://someapi.com/image2.png", "price": ["now": "2"]],
+            ["productId": "3", "title": "Product 3", "image": "https://someapi.com/image3.png", "price": ["now": "3"]],
+            ["productId": "4", "title": "Product 4", "image": "https://someapi.com/image4.png", "price": ["now": "4"]],
+            ["productId": "5", "title": "Product 5", "image": "https://someapi.com/image5.png", "price": ["now": "5"]]
         ]
         
         let mockData = ["products": products]
