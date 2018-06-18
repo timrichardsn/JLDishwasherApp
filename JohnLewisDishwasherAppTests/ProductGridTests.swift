@@ -29,6 +29,7 @@ class ProductGridTests: XCTestCase {
         XCTAssertNotNil(interactor?.remoteDataManager)
         
         XCTAssert(interactor?.presenter === presenter)
+        XCTAssert(interactor?.remoteDataManager?.remoteDataOutputHandler === interactor)
     }
     
     func testPresenterViewDidLoadCalled() {
