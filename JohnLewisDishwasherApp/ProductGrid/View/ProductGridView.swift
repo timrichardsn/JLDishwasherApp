@@ -21,4 +21,7 @@ class ProductGridView: UIViewController {
 
 extension ProductGridView: ProductGridViewProtocol {
     
+    func show(products: [Product]) {
+        
+    }
 }
