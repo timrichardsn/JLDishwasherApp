@@ -156,6 +156,26 @@ class ProductGridTests: XCTestCase {
         let productsCount = productGridView.collectionView(productGridView.collectionView!, numberOfItemsInSection: 0)
         XCTAssertEqual(productsCount, products.count)
     }
+    
+    func testPresenterProductReturn() {
+        
+        let presenter = ProductGridPresenter()
+        
+        let products = [
+            Product(productId: "1", title: "", imageUrl: "", priceData: [:]),
+            Product(productId: "2", title: "", imageUrl: "", priceData: [:]),
+            Product(productId: "3", title: "", imageUrl: "", priceData: [:]),
+            Product(productId: "4", title: "", imageUrl: "", priceData: [:]),
+            Product(productId: "5", title: "", imageUrl: "", priceData: [:])
+        ]
+        
+        presenter.didReceive(products: products)
+        
+        let indexPath = IndexPath(row: 2, section: 0)
+        let product = presenter.product(at: indexPath)
+        
+        XCTAssertEqual(product.productId, products[indexPath.row].productId)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
