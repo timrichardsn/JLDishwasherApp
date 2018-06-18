@@ -111,6 +111,17 @@ class ProductGridTests: XCTestCase {
         XCTAssertTrue(mockRemoteDataOutput.onProductsReceivedCalled)
         XCTAssertNotNil(mockRemoteDataOutput.products)
     }
+    
+    func testInteractorCallsDidReceiveProducts() {
+        
+        let interactor = ProductGridInteractor()
+        let mockPresenter = MockProductGridPresenter()
+        interactor.presenter = mockPresenter
+        
+        interactor.onProductsReceived(products: [])
+        
+        XCTAssertTrue(mockPresenter.didReceiveProductsCalled)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
@@ -120,9 +131,14 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     var router: ProductGridRouterProtocol?
     
     var viewDidLoadWasCalled = false
+    var didReceiveProductsCalled = false
     
     func viewDidLoad() {
         viewDidLoadWasCalled = true
+    }
+    
+    func didReceive(products: [Product]) {
+        didReceiveProductsCalled = true
     }
 }
 
