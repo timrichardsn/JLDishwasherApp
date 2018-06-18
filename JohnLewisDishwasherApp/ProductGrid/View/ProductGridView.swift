@@ -27,7 +27,7 @@ class ProductGridView: UIViewController {
     }
 }
 
-extension ProductGridView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ProductGridView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -41,6 +41,13 @@ extension ProductGridView: UICollectionViewDelegate, UICollectionViewDataSource 
         
         return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let size = presenter?.cellSizeFrom(collectionViewSize: collectionView.size, at: indexPath) ?? Size(0, 0)
+        
+        return CGSize(width: size.width.cgFloatValue, height: size.height.cgFloatValue)
+    }
 }
 
 
@@ -48,5 +55,23 @@ extension ProductGridView: ProductGridViewProtocol {
     
     func reloadData() {
         collectionView.reloadData()
+    }
+}
+
+private extension CGFloat {
+    var floatValue: Float {
+        return Float(self)
+    }
+}
+
+private extension Float {
+    var cgFloatValue: CGFloat {
+        return CGFloat(self)
+    }
+}
+
+private extension UICollectionView {
+    var size: Size {
+        return Size(bounds.width.floatValue, bounds.height.floatValue)
     }
 }
