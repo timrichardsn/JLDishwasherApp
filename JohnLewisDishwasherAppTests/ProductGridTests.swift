@@ -123,7 +123,7 @@ class ProductGridTests: XCTestCase {
         XCTAssertTrue(mockPresenter.didReceiveProductsCalled)
     }
     
-    func testPresenterCallsShowProductsOnView() {
+    func testViewReloadDataIsCalled() {
         
         let presenter = ProductGridPresenter()
         let view = MockProductGridView()
