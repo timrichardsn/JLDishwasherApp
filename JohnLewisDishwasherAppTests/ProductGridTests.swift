@@ -94,7 +94,7 @@ class ProductGridTests: XCTestCase {
         XCTAssertEqual(RequestParameterKey.pageSize.stringValue, "pageSize")
     }
     
-    func testPerformRequestCallbackCalled() {
+    func testPerformRequestCallbackCalledWithProducts() {
         
         let remoteDataManager = ProductGridRemoteDataManager()
         let mockRemoteDataOutput = MockProductRemoteDataOutput()
@@ -108,6 +108,7 @@ class ProductGridTests: XCTestCase {
         remoteDataManager.performRequest(with: requestData, networkDataRequest: mockNetworkDataRequest)
         
         XCTAssertTrue(mockRemoteDataOutput.onProductsReceivedCalled)
+        XCTAssertNotNil(mockRemoteDataOutput.products)
     }
 }
 
@@ -154,9 +155,11 @@ private class MockProductRemoteDataManager: ProductGridRemoteDataProtocol {
 private class MockProductRemoteDataOutput: ProductGridRemoteDataOutputProtocol {
     
     var onProductsReceivedCalled = false
+    var products: [Product]?
     
-    func onProductsReceived() {
+    func onProductsReceived(products: [Product]) {
         onProductsReceivedCalled = true
+        self.products = products
     }
     
     func onError() {
@@ -167,6 +170,17 @@ private class MockProductRemoteDataOutput: ProductGridRemoteDataOutputProtocol {
 private class MockNetworkDataRequest: NetworkDataRequest {
     
     func checkResponse(callback: @escaping (Any?, Error?) -> Void) {
-        callback("success", nil)
+        
+        let products = [
+            ["productId": "1", "title": "Product 1", "image": "https://someapi.com/image1.png"],
+            ["productId": "2", "title": "Product 2", "image": "https://someapi.com/image2.png"],
+            ["productId": "3", "title": "Product 3", "image": "https://someapi.com/image3.png"],
+            ["productId": "4", "title": "Product 4", "image": "https://someapi.com/image4.png"],
+            ["productId": "5", "title": "Product 5", "image": "https://someapi.com/image5.png"],
+        ]
+        
+        let mockData = ["products": products]
+        
+        callback(mockData, nil)
     }
 }
