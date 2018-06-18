@@ -29,6 +29,8 @@ class ProductGridRouter: ProductGridRouterProtocol {
             
             interactor.presenter = presenter
             interactor.remoteDataManager = remoteDataManager
+            
+            remoteDataManager.remoteDataOutputHandler = interactor
         }
         
         return navigationController

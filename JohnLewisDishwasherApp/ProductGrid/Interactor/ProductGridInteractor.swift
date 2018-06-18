@@ -24,3 +24,14 @@ class ProductGridInteractor: ProductGridInteractorProtocol {
         remoteDataManager?.performRequest(with: requestData)
     }
 }
+
+extension ProductGridInteractor: ProductGridRemoteDataOutputProtocol {
+    
+    func onProductsReceived(products: [Product]) {
+        
+    }
+    
+    func onError() {
+        
+    }
+}
