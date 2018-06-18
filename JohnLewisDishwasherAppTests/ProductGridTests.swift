@@ -195,6 +195,10 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     func didReceive(products: [Product]) {
         didReceiveProductsCalled = true
     }
+    
+    func product(at indexPath: IndexPath) -> Product {
+        return Product(productId: "", title: "", imageUrl: "", priceData: [:])
+    }
 }
 
 private class MockProductGridInteractor: ProductGridInteractorProtocol {

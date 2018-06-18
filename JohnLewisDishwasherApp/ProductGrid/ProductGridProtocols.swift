@@ -27,6 +27,7 @@ protocol ProductGridPresenterProtocol: class {
     
     func viewDidLoad()
     func didReceive(products: [Product])
+    func product(at indexPath: IndexPath) -> Product
 }
 
 protocol ProductGridInteractorProtocol: class {

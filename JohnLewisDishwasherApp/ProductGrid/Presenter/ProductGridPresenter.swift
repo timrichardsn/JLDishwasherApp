@@ -28,4 +28,8 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
         self.products = products
         view?.reloadData()
     }
+    
+    func product(at indexPath: IndexPath) -> Product {
+        return products[indexPath.row]
+    }
 }
