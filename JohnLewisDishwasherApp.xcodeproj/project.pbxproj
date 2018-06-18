@@ -23,6 +23,7 @@
 		0103F23C20D7AE9500AB56F3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F23B20D7AE9500AB56F3 /* Product.swift */; };
 		0103F23F20D7F02800AB56F3 /* OrientationLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F23E20D7F02800AB56F3 /* OrientationLocker.swift */; };
 		0103F24120D80C4700AB56F3 /* ProductGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F24020D80C4700AB56F3 /* ProductGridCollectionViewCell.swift */; };
+		0103F24320D8121200AB56F3 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103F24220D8121200AB56F3 /* AlamofireImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		0103F23B20D7AE9500AB56F3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		0103F23E20D7F02800AB56F3 /* OrientationLocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationLocker.swift; sourceTree = "<group>"; };
 		0103F24020D80C4700AB56F3 /* ProductGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridCollectionViewCell.swift; sourceTree = "<group>"; };
+		0103F24220D8121200AB56F3 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0103F24320D8121200AB56F3 /* AlamofireImage.framework in Frameworks */,
 				0103F23520D674D700AB56F3 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +181,7 @@
 		0103F23320D674D600AB56F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0103F24220D8121200AB56F3 /* AlamofireImage.framework */,
 				0103F23420D674D700AB56F3 /* Alamofire.framework */,
 			);
 			name = Frameworks;
@@ -313,9 +317,11 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AlamofireImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
