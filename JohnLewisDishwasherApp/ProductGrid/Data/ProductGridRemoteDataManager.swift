@@ -28,7 +28,6 @@ class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
             
             // Need to add better error feedback here, via a custom enum error type
             if let json = json as? [String: Any], let products = json["products"] as? [[String: Any]] {
-                print("Success: \(json)")
                 
                 let products = products.map {
                     Product(productId: $0["productId"] as! String,
