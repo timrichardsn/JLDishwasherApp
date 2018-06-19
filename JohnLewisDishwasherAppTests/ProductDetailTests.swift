@@ -62,10 +62,8 @@ class ProductDetailTests: XCTestCase {
         
         presenter.viewDidLoad()
         
-        XCTAssertTrue(view.showProductCalled)
-        XCTAssertEqual(view.showProduct?.productId, product.productId)
+        XCTAssertTrue(view.refreshCalled)
     }
-    
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
@@ -89,11 +87,9 @@ private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
 private class MockProductView: ProductDetailViewProtocol {
     var presenter: ProductDetailViewPresenterProtocol?
     
-    var showProductCalled = false
-    var showProduct: Product?
+    var refreshCalled = false
     
-    func show(product: Product) {
-        showProductCalled = true
-        showProduct = product
+    func refresh() {
+        refreshCalled = true
     }
 }
