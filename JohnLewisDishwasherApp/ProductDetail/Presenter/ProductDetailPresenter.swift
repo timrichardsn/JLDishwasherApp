@@ -9,7 +9,16 @@
 import Foundation
 
 class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
+    
     weak var view: ProductDetailViewProtocol?
     var router: ProductDetailRouterProtocol?
     var product: Product?
+    
+    func viewDidLoad() {
+        
+    }
+    
+    func viewDidAppear() {
+        
+    }
 }

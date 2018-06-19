@@ -10,6 +10,18 @@ import UIKit
 
 class ProductDetailView: UIViewController {
     var presenter: ProductDetailViewPresenterProtocol?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter?.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        presenter?.viewDidAppear()
+    }
 }
 
 extension ProductDetailView: ProductDetailViewProtocol {

@@ -20,4 +20,7 @@ protocol ProductDetailViewPresenterProtocol {
     var view: ProductDetailViewProtocol? { get set }
     var router: ProductDetailRouterProtocol? { get set }
     var product: Product? { get set }
+    
+    func viewDidLoad()
+    func viewDidAppear()
 }
