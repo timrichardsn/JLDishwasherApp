@@ -16,7 +16,7 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     var isLandscape: Bool?
     
     func viewDidLoad() {
-        view?.show(product: product!)
+        view?.refresh()
     }
     
     func viewWillAppear() {

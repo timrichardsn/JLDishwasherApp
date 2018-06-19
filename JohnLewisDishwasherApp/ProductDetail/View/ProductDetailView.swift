@@ -59,7 +59,7 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
 
 extension ProductDetailView: ProductDetailViewProtocol {
     
-    func show(product: Product) {
+    func refresh() {
         tableView.reloadData()
     }
 }
