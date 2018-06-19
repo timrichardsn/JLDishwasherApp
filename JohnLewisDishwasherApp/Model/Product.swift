@@ -14,6 +14,12 @@ struct Product {
     let price: String
     
     var imageUrl: String?
+    var urls: [String]?
+    var productInformation: String?
+    var displaySpecialOffer: String?
+    var guaranteeInformation: [String]?
+    var code: String?
+    var attributes: [[String: Any]]?
     
     init(productId: String, title: String, priceData: [String: String], imageUrl: String?) {
         self.productId = productId
