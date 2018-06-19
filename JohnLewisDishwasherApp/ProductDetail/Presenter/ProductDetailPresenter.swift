@@ -19,6 +19,6 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     }
     
     func viewDidAppear() {
-        
+        OrientationLocker.lockOrientation(.all)
     }
 }
