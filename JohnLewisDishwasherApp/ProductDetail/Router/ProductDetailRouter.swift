@@ -15,11 +15,13 @@ class ProductDetailRouter: ProductDetailRouterProtocol {
         let productDetailView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductDetailView") as! ProductDetailView
         let presenter = ProductDetailPresenter()
         let router = ProductDetailRouter()
+        let interactor = ProductDetailInteractor()
         
         productDetailView.presenter = presenter
         
         presenter.view = productDetailView
         presenter.product = product
+        presenter.interactor = interactor
         presenter.router = router
         
         return productDetailView

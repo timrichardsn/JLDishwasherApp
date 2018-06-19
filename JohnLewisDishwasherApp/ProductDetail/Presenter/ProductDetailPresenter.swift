@@ -14,6 +14,7 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     
     weak var view: ProductDetailViewProtocol?
     var router: ProductDetailRouterProtocol?
+    var interactor: ProductDetailInteractorProtocol?
     var product: Product?
     
     var isLandscape: Bool? {
@@ -30,7 +31,7 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     }
     
     func viewDidLoad() {
-        
+        interactor?.fetchProductData(for: product!)
     }
     
     func viewWillAppear() {
