@@ -38,5 +38,10 @@ class ProductGridRouter: ProductGridRouterProtocol {
     
     func presentProductDetailScreen(for product: Product, from view: ProductGridViewProtocol) {
         
+        let productDetailView = ProductDetailRouter.createProductDetailModule(for: product)
+        
+        if let fromView = view as? UIViewController {
+            fromView.navigationController?.pushViewController(productDetailView, animated: true)
+        }
     }
 }
