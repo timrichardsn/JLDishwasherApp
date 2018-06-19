@@ -119,11 +119,11 @@
             <objects>
                 <viewController storyboardIdentifier="ProductDetailView" id="Nb2-LV-vYV" customClass="ProductDetailView" customModule="JohnLewisDishwasherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UOg-Yz-EXt">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="1375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ik-nF-XPG">
-                                <rect key="frame" x="447" y="0.0" width="220" height="375"/>
+                                <rect key="frame" x="447" y="20" width="220" height="1355"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kZY-5q-ZL5">
                                         <rect key="frame" x="16" y="16" width="188" height="58"/>
@@ -156,16 +156,112 @@
                                     <constraint firstItem="kZY-5q-ZL5" firstAttribute="leading" secondItem="7Ik-nF-XPG" secondAttribute="leading" constant="16" id="SjH-1H-LQD"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OWV-OL-aKH">
-                                <rect key="frame" x="0.0" y="0.0" width="447" height="375"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OWV-OL-aKH">
+                                <rect key="frame" x="16" y="20" width="415" height="1355"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aon-oW-wzO">
-                                        <rect key="frame" x="0.0" y="28" width="447" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="200" id="aon-oW-wzO">
+                                        <rect key="frame" x="0.0" y="55.5" width="415" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aon-oW-wzO" id="ITo-BR-7S0">
-                                            <rect key="frame" x="0.0" y="0.0" width="447" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productInformation" rowHeight="127" id="hIO-sr-IQE" customClass="ProductInformationCell" customModule="JohnLewisDishwasherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="255.5" width="415" height="127"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hIO-sr-IQE" id="LOC-gV-9ac">
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="126.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-Mj-Exf">
+                                                    <rect key="frame" x="16" y="16" width="383" height="94"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product code: 1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUo-uU-eLd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="383" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNL-iF-zfP">
+                                                            <rect key="frame" x="0.0" y="27" width="383" height="67"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment>
+                                                                    <string key="content">&lt;p&gt;Equipped with a variety of advanced features inside a sleek, integrated design, the S513K60X0G dishwasher from Neff will make doing the dishes easier than ever.&lt;/p&gt;\r\r&lt;p&gt;&lt;strong&gt;Energy efficient</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" metaFont="system" size="14"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="g0l-Mj-Exf" secondAttribute="trailing" constant="16" id="2Uj-AJ-k2X"/>
+                                                <constraint firstItem="g0l-Mj-Exf" firstAttribute="top" secondItem="LOC-gV-9ac" secondAttribute="top" constant="16" id="KO2-7Y-fsF"/>
+                                                <constraint firstAttribute="bottom" secondItem="g0l-Mj-Exf" secondAttribute="bottom" constant="16.5" id="LJk-yJ-fb3"/>
+                                                <constraint firstItem="g0l-Mj-Exf" firstAttribute="leading" secondItem="LOC-gV-9ac" secondAttribute="leading" constant="16" id="gE7-Im-hxs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productCodeLabel" destination="CUo-uU-eLd" id="heN-O3-7mn"/>
+                                            <outlet property="productInformationLabel" destination="KNL-iF-zfP" id="5UR-dh-soz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="featureCell" rowHeight="60" id="Gnp-hV-cMY" customClass="ProductFeatureCell" customModule="JohnLewisDishwasherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="382.5" width="415" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gnp-hV-cMY" id="va7-Fr-3jY">
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFB-Hs-Db9">
+                                                    <rect key="frame" x="16" y="19.5" width="325" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cde-fr-MdN">
+                                                    <rect key="frame" x="357" y="19.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Cde-fr-MdN" secondAttribute="trailing" constant="16" id="G7R-WZ-6kN"/>
+                                                <constraint firstItem="oFB-Hs-Db9" firstAttribute="centerY" secondItem="va7-Fr-3jY" secondAttribute="centerY" id="IBa-2f-1qf"/>
+                                                <constraint firstItem="oFB-Hs-Db9" firstAttribute="leading" secondItem="va7-Fr-3jY" secondAttribute="leading" constant="16" id="Ycr-iR-P6k"/>
+                                                <constraint firstItem="Cde-fr-MdN" firstAttribute="leading" secondItem="oFB-Hs-Db9" secondAttribute="trailing" constant="16" id="dbc-Ry-P8P"/>
+                                                <constraint firstItem="Cde-fr-MdN" firstAttribute="centerY" secondItem="va7-Fr-3jY" secondAttribute="centerY" id="sCK-6F-2No"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="featureName" destination="oFB-Hs-Db9" id="gQf-no-xHF"/>
+                                            <outlet property="featureValue" destination="Cde-fr-MdN" id="5ua-D7-9dA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="priceDataCell" rowHeight="60" id="k5x-h0-yG2">
+                                        <rect key="frame" x="0.0" y="442.5" width="415" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k5x-h0-yG2" id="x8e-8D-60V">
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Te-vh-7de">
+                                                    <rect key="frame" x="16" y="19.5" width="39" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Te-vh-7de" firstAttribute="centerY" secondItem="x8e-8D-60V" secondAttribute="centerY" id="RZL-6y-yDE"/>
+                                                <constraint firstItem="6Te-vh-7de" firstAttribute="leading" secondItem="x8e-8D-60V" secondAttribute="leading" constant="16" id="gj1-el-dCQ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -178,11 +274,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7Ik-nF-XPG" firstAttribute="top" secondItem="psB-hN-kU8" secondAttribute="top" id="1bZ-2L-xAI"/>
-                            <constraint firstItem="7Ik-nF-XPG" firstAttribute="leading" secondItem="OWV-OL-aKH" secondAttribute="trailing" id="3hR-BR-1qj"/>
-                            <constraint firstItem="OWV-OL-aKH" firstAttribute="leading" secondItem="psB-hN-kU8" secondAttribute="leading" id="4YZ-E8-vDR"/>
+                            <constraint firstItem="7Ik-nF-XPG" firstAttribute="leading" secondItem="OWV-OL-aKH" secondAttribute="trailing" constant="16" id="3hR-BR-1qj"/>
+                            <constraint firstItem="OWV-OL-aKH" firstAttribute="leading" secondItem="psB-hN-kU8" secondAttribute="leading" constant="16" id="4YZ-E8-vDR"/>
                             <constraint firstItem="OWV-OL-aKH" firstAttribute="bottom" secondItem="psB-hN-kU8" secondAttribute="bottom" id="GRq-g6-hmm"/>
                             <constraint firstItem="psB-hN-kU8" firstAttribute="trailing" secondItem="7Ik-nF-XPG" secondAttribute="trailing" id="LCf-u0-Xc3"/>
-                            <constraint firstItem="OWV-OL-aKH" firstAttribute="trailing" secondItem="psB-hN-kU8" secondAttribute="trailing" id="bLG-zr-GRh"/>
+                            <constraint firstItem="OWV-OL-aKH" firstAttribute="trailing" secondItem="psB-hN-kU8" secondAttribute="trailing" constant="-16" id="bLG-zr-GRh"/>
                             <constraint firstItem="psB-hN-kU8" firstAttribute="bottom" secondItem="7Ik-nF-XPG" secondAttribute="bottom" id="bjV-N1-qdd"/>
                             <constraint firstItem="OWV-OL-aKH" firstAttribute="top" secondItem="psB-hN-kU8" secondAttribute="top" id="j9g-SF-Yxe"/>
                             <constraint firstItem="7Ik-nF-XPG" firstAttribute="width" secondItem="UOg-Yz-EXt" secondAttribute="width" multiplier="0.33" id="yOo-e7-IvJ"/>
@@ -205,6 +301,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <size key="freeformSize" width="667" height="1375"/>
                     <connections>
                         <outlet property="guarantee" destination="222-dt-cET" id="SYi-qQ-VX1"/>
                         <outlet property="priceLabel" destination="3Ah-Yu-onH" id="RiW-QT-6oH"/>
@@ -214,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6s-7I-cHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="111.99400299850076"/>
+            <point key="canvasLocation" x="1375" y="112"/>
         </scene>
     </scenes>
 </document>
