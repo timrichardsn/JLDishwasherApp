@@ -31,10 +31,8 @@ class ProductDetailTests: XCTestCase {
         let presenter = MockProductDetailPresenter()
         
         productDetailView.presenter = presenter
-        productDetailView.view.setNeedsLayout()
         productDetailView.viewWillAppear(true)
         
-        XCTAssertTrue(presenter.viewDidLoadWasCalled)
         XCTAssertTrue(presenter.viewWillAppearWasCalled)
     }
     
@@ -93,12 +91,7 @@ private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
     var product: Product?
     var isLandscape: Bool?
     
-    var viewDidLoadWasCalled = false
     var viewWillAppearWasCalled = false
-    
-    func viewDidLoad() {
-        viewDidLoadWasCalled = true
-    }
     
     func viewWillAppear() {
         viewWillAppearWasCalled = true
