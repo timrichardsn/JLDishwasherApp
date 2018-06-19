@@ -77,6 +77,7 @@ class ProductDetailTests: XCTestCase {
         let interactor = MockProductInteractor()
         
         presenter.interactor = interactor
+        presenter.product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
         presenter.viewDidLoad()
         
         XCTAssertTrue(interactor.fetchProductDataCalled)
@@ -85,6 +86,7 @@ class ProductDetailTests: XCTestCase {
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
     
+    var interactor: ProductDetailInteractorProtocol?
     var view: ProductDetailViewProtocol?
     var router: ProductDetailRouterProtocol?
     var product: Product?
