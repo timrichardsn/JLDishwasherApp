@@ -37,6 +37,22 @@ class ProductDetailTests: XCTestCase {
         XCTAssertTrue(presenter.viewDidLoadWasCalled)
         XCTAssertTrue(presenter.viewWillAppearWasCalled)
     }
+    
+    func testViewShowProductInPresenterViewDidLoad() {
+        
+        let presenter = ProductDetailPresenter()
+        let view = MockProductView()
+        let product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
+        
+        presenter.view = view
+        presenter.product = product
+        
+        presenter.viewDidLoad()
+        
+        XCTAssertTrue(view.showProductCalled)
+        XCTAssertEqual(view.showProduct?.productId, product.productId)
+    }
+    
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
@@ -53,5 +69,17 @@ private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
     
     func viewWillAppear() {
         viewWillAppearWasCalled = true
+    }
+}
+
+private class MockProductView: ProductDetailViewProtocol {
+    var presenter: ProductDetailViewPresenterProtocol?
+    
+    var showProductCalled = false
+    var showProduct: Product?
+    
+    func show(product: Product) {
+        showProductCalled = true
+        showProduct = product
     }
 }
