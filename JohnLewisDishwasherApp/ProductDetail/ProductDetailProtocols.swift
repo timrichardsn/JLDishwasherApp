@@ -13,5 +13,11 @@ protocol ProductDetailRouterProtocol: class {
 }
 
 protocol ProductDetailViewProtocol: class {
-    
+    var presenter: ProductDetailViewPresenterProtocol? { get set }
+}
+
+protocol ProductDetailViewPresenterProtocol {
+    var view: ProductDetailViewProtocol? { get set }
+    var router: ProductDetailRouterProtocol? { get set }
+    var product: Product? { get set }
 }

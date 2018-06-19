@@ -9,9 +9,9 @@
 import UIKit
 
 class ProductDetailView: UIViewController {
-
+    var presenter: ProductDetailViewPresenterProtocol?
 }
 
 extension ProductDetailView: ProductDetailViewProtocol {
-    
+
 }
