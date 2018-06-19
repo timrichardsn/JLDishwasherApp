@@ -22,5 +22,5 @@ protocol ProductDetailViewPresenterProtocol {
     var product: Product? { get set }
     
     func viewDidLoad()
-    func viewDidAppear()
+    func viewWillAppear()
 }
