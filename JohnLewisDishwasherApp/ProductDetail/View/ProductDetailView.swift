@@ -9,6 +9,9 @@
 import UIKit
 
 class ProductDetailView: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var presenter: ProductDetailViewPresenterProtocol?
     
     override func viewDidLoad() {
