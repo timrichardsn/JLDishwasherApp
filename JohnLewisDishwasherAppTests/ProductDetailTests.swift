@@ -51,6 +51,27 @@ class ProductDetailTests: XCTestCase {
         XCTAssertNotNil(presenter.isLandscape)
     }
     
+    func testViewRefreshCalledWhenIsLandscapeIsChangedToDifferentValue() {
+        
+        let presenter = ProductDetailPresenter()
+        
+        let view = MockProductView()
+        
+        presenter.view = view
+        
+        presenter.isLandscape = true
+        XCTAssertTrue(view.refreshCalled)
+        
+        // reset
+        view.refreshCalled = false
+        
+        presenter.isLandscape = true
+        XCTAssertFalse(view.refreshCalled)
+        
+        presenter.isLandscape = false
+        XCTAssertTrue(view.refreshCalled)
+    }
+    
     func testViewShowProductInPresenterViewDidLoad() {
         
         let presenter = ProductDetailPresenter()
