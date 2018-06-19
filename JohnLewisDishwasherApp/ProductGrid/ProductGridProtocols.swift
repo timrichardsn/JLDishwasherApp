@@ -32,6 +32,7 @@ protocol ProductGridPresenterProtocol: class {
     func didReceive(products: [Product])
     func product(at indexPath: IndexPath) -> Product
     func cellSizeFrom(collectionViewSize: Size, at indexPath: IndexPath) -> Size
+    func configure(productGridCell: ProductGridCellProtocol, at indexPath: IndexPath)
 }
 
 protocol ProductGridInteractorProtocol: class {
@@ -53,4 +54,8 @@ protocol ProductGridRemoteDataOutputProtocol: class {
     
     func onProductsReceived(products: [Product])
     func onError()
+}
+
+protocol ProductGridCellProtocol: class {
+    func configure(with product: Product)
 }

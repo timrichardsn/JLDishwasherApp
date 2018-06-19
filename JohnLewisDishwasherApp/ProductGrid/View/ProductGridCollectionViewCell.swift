@@ -9,7 +9,7 @@
 import UIKit
 import AlamofireImage
 
-class ProductGridCollectionViewCell: UICollectionViewCell {
+class ProductGridCollectionViewCell: UICollectionViewCell, ProductGridCellProtocol {
     
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productTitle: UILabel!

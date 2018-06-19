@@ -41,4 +41,8 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
         
         return Size(width: collectionViewSize.width / 4, height: collectionViewSize.height / 2)
     }
+    
+    func configure(productGridCell: ProductGridCellProtocol, at indexPath: IndexPath) {
+        productGridCell.configure(with: product(at: indexPath))
+    }
 }
