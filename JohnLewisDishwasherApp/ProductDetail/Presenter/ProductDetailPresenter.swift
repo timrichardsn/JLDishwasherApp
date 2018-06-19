@@ -10,10 +10,24 @@ import Foundation
 
 class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     
+    private var _isLandscape: Bool?
+    
     weak var view: ProductDetailViewProtocol?
     var router: ProductDetailRouterProtocol?
     var product: Product?
-    var isLandscape: Bool?
+    
+    var isLandscape: Bool? {
+        set {
+            let oldValue = _isLandscape
+            _isLandscape = newValue
+            if oldValue != newValue {
+                view?.refresh()
+            }
+        }
+        get {
+            return _isLandscape
+        }
+    }
     
     func viewDidLoad() {
         view?.refresh()
