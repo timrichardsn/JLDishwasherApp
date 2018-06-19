@@ -20,6 +20,7 @@ class ProductDetailTests: XCTestCase {
         XCTAssertNotNil(productDetailView.presenter?.view)
         XCTAssertNotNil(productDetailView.presenter?.router)
         XCTAssertNotNil(productDetailView.presenter?.product)
+        XCTAssertNotNil(productDetailView.presenter?.interactor)
         XCTAssertEqual(productDetailView.presenter?.product?.productId, product.productId)
     }
     
