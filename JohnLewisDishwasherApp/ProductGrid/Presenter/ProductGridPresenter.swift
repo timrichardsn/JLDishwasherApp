@@ -14,12 +14,6 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     var interactor: ProductGridInteractorProtocol?
     var router: ProductGridRouterProtocol?
     
-    var productCount: Int {
-        return products.count
-    }
-    
-    private var products = [Product]()
-    
     func viewDidLoad() {
         interactor?.fetchProducts()
     }
@@ -29,12 +23,7 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     }
     
     func didReceive(products: [Product]) {
-        self.products = products
-        view?.reloadData()
-    }
-    
-    func product(at indexPath: IndexPath) -> Product {
-        return products[indexPath.row]
+        view?.show(products: products)
     }
     
     func cellSizeFrom(collectionViewSize: Size, at indexPath: IndexPath) -> Size {

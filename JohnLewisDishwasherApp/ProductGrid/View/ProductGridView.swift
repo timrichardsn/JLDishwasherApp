@@ -11,6 +11,7 @@ import UIKit
 class ProductGridView: UIViewController {
 
     var presenter: ProductGridPresenterProtocol?
+    var products = [Product]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -34,7 +35,7 @@ extension ProductGridView: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter?.productCount ?? 0
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -58,7 +59,8 @@ extension ProductGridView: UICollectionViewDelegate, UICollectionViewDataSource,
 
 extension ProductGridView: ProductGridViewProtocol {
     
-    func reloadData() {
+    func show(products: [Product]) {
+        self.products = products
         collectionView.reloadData()
     }
 }

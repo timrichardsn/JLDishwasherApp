@@ -160,10 +160,10 @@ class ProductGridTests: XCTestCase {
         ]
         
         productGridView.presenter = presenter
-        
-        presenter.didReceive(products: products)
+        presenter.view = productGridView
         
         productGridView.view.setNeedsLayout()
+        presenter.didReceive(products: products)
         
         let productsCount = productGridView.collectionView(productGridView.collectionView!, numberOfItemsInSection: 0)
         XCTAssertEqual(productsCount, products.count)
@@ -171,7 +171,13 @@ class ProductGridTests: XCTestCase {
     
     func testPresenterProductReturn() {
         
+        let productGridView = ProductGridRouter.createProductGridModule().childViewControllers.first as! ProductGridView
         let presenter = ProductGridPresenter()
+        
+        productGridView.presenter = presenter
+        presenter.view = productGridView
+        
+        productGridView.view.setNeedsLayout()
         
         let products = [
             Product(productId: "1", title: "", imageUrl: "", priceData: [:]),
@@ -184,7 +190,7 @@ class ProductGridTests: XCTestCase {
         presenter.didReceive(products: products)
         
         let indexPath = IndexPath(row: 2, section: 0)
-        let product = presenter.product(at: indexPath)
+        let product = productGridView.products[indexPath.row]
         
         XCTAssertEqual(product.productId, products[indexPath.row].productId)
     }

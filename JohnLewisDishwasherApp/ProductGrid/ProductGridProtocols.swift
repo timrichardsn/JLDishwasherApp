@@ -17,7 +17,7 @@ protocol ProductGridRouterProtocol: class {
 protocol ProductGridViewProtocol: class {
     var presenter: ProductGridPresenterProtocol? { get set }
     
-    func reloadData()
+    func show(products: [Product])
 }
 
 protocol ProductGridPresenterProtocol: class {
@@ -25,12 +25,10 @@ protocol ProductGridPresenterProtocol: class {
     var view: ProductGridViewProtocol? { get set }
     var interactor: ProductGridInteractorProtocol? { get set }
     var router: ProductGridRouterProtocol? { get set }
-    var productCount: Int { get }
     
     func viewDidLoad()
     func viewDidAppear()
     func didReceive(products: [Product])
-    func product(at indexPath: IndexPath) -> Product
     func cellSizeFrom(collectionViewSize: Size, at indexPath: IndexPath) -> Size
     func configure(productGridCell: ProductGridCellProtocol, at indexPath: IndexPath)
 }
