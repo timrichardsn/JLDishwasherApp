@@ -26,6 +26,12 @@ class ProductDetailView: UIViewController {
         presenter?.viewWillAppear()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        presenter?.isLandscape = UIDevice.current.orientation.isLandscape
+    }
+    
     override var traitCollection: UITraitCollection {
         
         if UIDevice.current.userInterfaceIdiom == .pad {
