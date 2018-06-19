@@ -22,6 +22,20 @@ class ProductDetailView: UIViewController {
         
         presenter?.viewWillAppear()
     }
+    
+    override var traitCollection: UITraitCollection {
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            
+            if UIDevice.current.orientation.isPortrait {
+                return UITraitCollection(traitsFrom: [UITraitCollection(horizontalSizeClass: .compact), UITraitCollection(verticalSizeClass: .regular)])
+            } else if UIDevice.current.orientation.isLandscape {
+                return UITraitCollection(traitsFrom: [UITraitCollection(horizontalSizeClass: .compact), UITraitCollection(verticalSizeClass: .compact)])
+            }
+        }
+        
+        return super.traitCollection
+    }
 }
 
 extension ProductDetailView: ProductDetailViewProtocol {
