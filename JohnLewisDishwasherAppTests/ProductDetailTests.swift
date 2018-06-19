@@ -69,23 +69,10 @@ class ProductDetailTests: XCTestCase {
         presenter.isLandscape = false
         XCTAssertTrue(view.refreshCalled)
     }
-    
-    func testViewShowProductInPresenterViewDidLoad() {
-        
-        let presenter = ProductDetailPresenter()
-        let view = MockProductView()
-        let product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
-        
-        presenter.view = view
-        presenter.product = product
-        
-        presenter.viewDidLoad()
-        
-        XCTAssertTrue(view.refreshCalled)
-    }
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
+    
     var view: ProductDetailViewProtocol?
     var router: ProductDetailRouterProtocol?
     var product: Product?
@@ -95,6 +82,10 @@ private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
     
     func viewWillAppear() {
         viewWillAppearWasCalled = true
+    }
+    
+    func viewDidLoad() {
+        
     }
 }
 

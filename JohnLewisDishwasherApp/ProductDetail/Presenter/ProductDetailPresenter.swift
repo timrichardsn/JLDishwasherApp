@@ -30,7 +30,7 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     }
     
     func viewDidLoad() {
-        view?.refresh()
+        
     }
     
     func viewWillAppear() {
