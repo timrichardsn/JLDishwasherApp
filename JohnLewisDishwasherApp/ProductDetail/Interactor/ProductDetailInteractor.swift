@@ -10,7 +10,12 @@ import Foundation
 
 class ProductDetailInteractor: ProductDetailInteractorProtocol {
     
+    var remoteDataManager: ProductDetailRemoteDataProtocol?
+    
     func fetchProductData(for product: Product) {
         
+        let requestData = RequestData(endPoint: .products(action: .search), parameters: [:])
+        
+        remoteDataManager?.performRequest(with: requestData)
     }
 }

@@ -30,5 +30,11 @@ protocol ProductDetailViewPresenterProtocol {
 }
 
 protocol ProductDetailInteractorProtocol: class {
+    var remoteDataManager: ProductDetailRemoteDataProtocol? { get set }
+    
     func fetchProductData(for product: Product)
+}
+
+protocol ProductDetailRemoteDataProtocol: class {
+    func performRequest(with requestData: RequestData)
 }

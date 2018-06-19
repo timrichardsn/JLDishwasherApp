@@ -16,6 +16,7 @@ class ProductDetailRouter: ProductDetailRouterProtocol {
         let presenter = ProductDetailPresenter()
         let router = ProductDetailRouter()
         let interactor = ProductDetailInteractor()
+        let remoteDataManager = ProductDetailRemoteDataManager()
         
         productDetailView.presenter = presenter
         
@@ -23,6 +24,8 @@ class ProductDetailRouter: ProductDetailRouterProtocol {
         presenter.product = product
         presenter.interactor = interactor
         presenter.router = router
+        
+        interactor.remoteDataManager = remoteDataManager
         
         return productDetailView
     }

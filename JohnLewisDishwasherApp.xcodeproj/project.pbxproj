@@ -31,6 +31,7 @@
 		0103F25220D9138300AB56F3 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F25120D9138300AB56F3 /* ProductDetailView.swift */; };
 		0103F25520D915F300AB56F3 /* ProductDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F25420D915F300AB56F3 /* ProductDetailPresenter.swift */; };
 		0103F25E20D98EDD00AB56F3 /* ProductDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F25D20D98EDD00AB56F3 /* ProductDetailInteractor.swift */; };
+		0103F26120D9923100AB56F3 /* ProductDetailRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F26020D9923100AB56F3 /* ProductDetailRemoteDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		0103F25120D9138300AB56F3 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		0103F25420D915F300AB56F3 /* ProductDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenter.swift; sourceTree = "<group>"; };
 		0103F25D20D98EDD00AB56F3 /* ProductDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailInteractor.swift; sourceTree = "<group>"; };
+		0103F26020D9923100AB56F3 /* ProductDetailRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailRemoteDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 		0103F24A20D912CE00AB56F3 /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
+				0103F25F20D9921A00AB56F3 /* Data */,
 				0103F25C20D98ECA00AB56F3 /* Interactor */,
 				0103F25320D915E100AB56F3 /* Presenter */,
 				0103F25020D9136C00AB56F3 /* View */,
@@ -270,6 +273,14 @@
 				0103F25D20D98EDD00AB56F3 /* ProductDetailInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0103F25F20D9921A00AB56F3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0103F26020D9923100AB56F3 /* ProductDetailRemoteDataManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +409,7 @@
 				0103F23F20D7F02800AB56F3 /* OrientationLocker.swift in Sources */,
 				0103F25220D9138300AB56F3 /* ProductDetailView.swift in Sources */,
 				0103F24120D80C4700AB56F3 /* ProductGridCollectionViewCell.swift in Sources */,
+				0103F26120D9923100AB56F3 /* ProductDetailRemoteDataManager.swift in Sources */,
 				0103F20020D65EF800AB56F3 /* AppDelegate.swift in Sources */,
 				0103F22620D6613500AB56F3 /* ProductGridRouter.swift in Sources */,
 				0103F24D20D912EE00AB56F3 /* ProductDetailProtocols.swift in Sources */,
