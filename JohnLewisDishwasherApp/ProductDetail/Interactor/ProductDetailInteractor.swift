@@ -15,8 +15,7 @@ class ProductDetailInteractor: ProductDetailInteractorProtocol {
     
     func fetchProductData(for product: Product) {
         
-        let requestData = RequestData(endPoint: .products(action: .search), parameters: [:])
-        
+        let requestData = RequestData(endPoint: .products(action: .data(id: product.productId)), parameters: [:])
         remoteDataManager?.performRequest(with: requestData)
     }
 }
