@@ -124,7 +124,37 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ik-nF-XPG">
                                 <rect key="frame" x="447" y="0.0" width="220" height="375"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kZY-5q-ZL5">
+                                        <rect key="frame" x="16" y="16" width="188" height="58"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ah-Yu-onH">
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP2-8B-l9C">
+                                                <rect key="frame" x="0.0" y="24" width="188" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.70844802461139889" green="0.035515147707244746" blue="0.003630302983244653" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="222-dt-cET">
+                                                <rect key="frame" x="0.0" y="41" width="188" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kZY-5q-ZL5" secondAttribute="trailing" constant="16" id="4HC-ft-Nev"/>
+                                    <constraint firstItem="kZY-5q-ZL5" firstAttribute="top" secondItem="7Ik-nF-XPG" secondAttribute="top" constant="16" id="J8e-dp-PL7"/>
+                                    <constraint firstItem="kZY-5q-ZL5" firstAttribute="leading" secondItem="7Ik-nF-XPG" secondAttribute="leading" constant="16" id="SjH-1H-LQD"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OWV-OL-aKH">
                                 <rect key="frame" x="0.0" y="0.0" width="447" height="375"/>
@@ -147,7 +177,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7Ik-nF-XPG" firstAttribute="top" secondItem="UOg-Yz-EXt" secondAttribute="top" id="1bZ-2L-xAI"/>
+                            <constraint firstItem="7Ik-nF-XPG" firstAttribute="top" secondItem="psB-hN-kU8" secondAttribute="top" id="1bZ-2L-xAI"/>
                             <constraint firstItem="7Ik-nF-XPG" firstAttribute="leading" secondItem="OWV-OL-aKH" secondAttribute="trailing" id="3hR-BR-1qj"/>
                             <constraint firstItem="OWV-OL-aKH" firstAttribute="leading" secondItem="psB-hN-kU8" secondAttribute="leading" id="4YZ-E8-vDR"/>
                             <constraint firstItem="OWV-OL-aKH" firstAttribute="bottom" secondItem="psB-hN-kU8" secondAttribute="bottom" id="GRq-g6-hmm"/>
@@ -176,6 +206,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="guarantee" destination="222-dt-cET" id="SYi-qQ-VX1"/>
+                        <outlet property="priceLabel" destination="3Ah-Yu-onH" id="RiW-QT-6oH"/>
+                        <outlet property="specialOffer" destination="DP2-8B-l9C" id="bu2-hV-mCn"/>
                         <outlet property="tableView" destination="OWV-OL-aKH" id="5qu-3s-bIc"/>
                     </connections>
                 </viewController>

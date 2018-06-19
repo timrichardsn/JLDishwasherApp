@@ -12,6 +12,10 @@ class ProductDetailView: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var specialOffer: UILabel!
+    @IBOutlet weak var guarantee: UILabel!
+    
     var presenter: ProductDetailViewPresenterProtocol?
     
     override func viewDidLoad() {
