@@ -218,11 +218,32 @@ class ProductGridTests: XCTestCase {
         
         XCTAssertTrue(presenter.cellSizeFromWasCalled)
     }
+    
+    func testPresenterConfigureCell() {
+        
+        let productGridView = ProductGridRouter.createProductGridModule().childViewControllers.first as! ProductGridView
+        productGridView.view.setNeedsLayout()
+        
+        let presenter = MockProductGridPresenter()
+        let products = [
+            Product(productId: "1", title: "", imageUrl: "", priceData: [:])
+        ]
+        
+        productGridView.presenter = presenter
+        
+        presenter.view = productGridView
+        presenter.products = products
+        
+        _ = productGridView.collectionView(productGridView.collectionView, cellForItemAt: IndexPath(row: 0, section: 0))
+        
+        XCTAssertTrue(presenter.configureProductCellWasCalled)
+        XCTAssertEqual(presenter.configureProductCellIndexPath!.row, 0)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
     
-    var productCount: Int = 0
+    
     var view: ProductGridViewProtocol?
     var interactor: ProductGridInteractorProtocol?
     var router: ProductGridRouterProtocol?
@@ -231,6 +252,14 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     var viewDidAppearWasCalled = false
     var didReceiveProductsCalled = false
     var cellSizeFromWasCalled = false
+    var configureProductCellWasCalled = false
+    var configureProductCellIndexPath: IndexPath?
+    
+    var products = [Product]()
+    
+    var productCount: Int {
+        return products.count
+    }
     
     func viewDidLoad() {
         viewDidLoadWasCalled = true
@@ -251,6 +280,11 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     func cellSizeFrom(collectionViewSize: Size, at indexPath: IndexPath) -> Size {
         cellSizeFromWasCalled = true
         return Size(0, 0)
+    }
+    
+    func configure(productGridCell: ProductGridCellProtocol, at indexPath: IndexPath) {
+        configureProductCellWasCalled = true
+        configureProductCellIndexPath = indexPath
     }
 }
 
@@ -322,5 +356,14 @@ private class MockProductGridView: ProductGridViewProtocol {
     
     func reloadData() {
         reloadDataCalled = true
+    }
+}
+
+private class MockProductGridCell: ProductGridCellProtocol {
+    
+    var configureWasCalled = false
+    
+    func configure(with product: Product) {
+        configureWasCalled = true
     }
 }
