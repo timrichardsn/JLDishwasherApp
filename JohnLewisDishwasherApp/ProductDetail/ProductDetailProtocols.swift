@@ -36,5 +36,13 @@ protocol ProductDetailInteractorProtocol: class {
 }
 
 protocol ProductDetailRemoteDataProtocol: class {
+    var remoteDataOutputHandler: ProductDetailRemoteDataOutputProtocol? { get set }
+    
     func performRequest(with requestData: RequestData)
+}
+
+protocol ProductDetailRemoteDataOutputProtocol: class {
+    
+    func onProductDataReceived(product: Product)
+    func onError()
 }

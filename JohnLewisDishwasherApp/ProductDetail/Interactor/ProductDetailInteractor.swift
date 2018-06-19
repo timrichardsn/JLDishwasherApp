@@ -19,3 +19,14 @@ class ProductDetailInteractor: ProductDetailInteractorProtocol {
         remoteDataManager?.performRequest(with: requestData)
     }
 }
+
+extension ProductDetailInteractor: ProductDetailRemoteDataOutputProtocol {
+    
+    func onProductDataReceived(product: Product) {
+        
+    }
+    
+    func onError() {
+        
+    }
+}

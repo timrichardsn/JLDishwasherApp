@@ -10,6 +10,8 @@ import Foundation
 
 class ProductDetailRemoteDataManager: ProductDetailRemoteDataProtocol {
     
+    var remoteDataOutputHandler: ProductDetailRemoteDataOutputProtocol?
+    
     func performRequest(with requestData: RequestData) {
         
     }

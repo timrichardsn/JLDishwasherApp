@@ -27,6 +27,8 @@ class ProductDetailRouter: ProductDetailRouterProtocol {
         
         interactor.remoteDataManager = remoteDataManager
         
+        remoteDataManager.remoteDataOutputHandler = interactor
+        
         return productDetailView
     }
 }
