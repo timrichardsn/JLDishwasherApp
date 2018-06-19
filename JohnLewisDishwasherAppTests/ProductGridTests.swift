@@ -141,7 +141,7 @@ class ProductGridTests: XCTestCase {
         let view = MockProductGridView()
         
         presenter.view = view
-        presenter.show(products: [])
+        presenter.didReceive(products: [])
         
         XCTAssertTrue(view.showProductsCalled)
     }
@@ -230,9 +230,9 @@ class ProductGridTests: XCTestCase {
         ]
         
         productGridView.presenter = presenter
+        productGridView.products = products
         
         presenter.view = productGridView
-        presenter.products = products
         
         _ = productGridView.collectionView(productGridView.collectionView, cellForItemAt: IndexPath(row: 0, section: 0))
         
@@ -255,10 +255,8 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     var configureProductCellWasCalled = false
     var configureProductCellIndexPath: IndexPath?
     
-    var products = [Product]()
-    
     var productCount: Int {
-        return products.count
+        return 0
     }
     
     func viewDidLoad() {
