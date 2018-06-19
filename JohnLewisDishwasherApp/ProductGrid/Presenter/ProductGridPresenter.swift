@@ -34,4 +34,8 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     func configure(productGridCell: ProductGridCellProtocol, with product: Product) {
         productGridCell.configure(with: product)
     }
+    
+    func showProductDetail(forProduct product: Product) {
+        
+    }
 }

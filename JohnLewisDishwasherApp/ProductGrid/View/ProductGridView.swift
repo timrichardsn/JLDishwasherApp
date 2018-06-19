@@ -54,8 +54,11 @@ extension ProductGridView: UICollectionViewDelegate, UICollectionViewDataSource,
         
         return CGSize(width: size.width.cgFloatValue, height: size.height.cgFloatValue)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.showProductDetail(forProduct: products[indexPath.row])
+    }
 }
-
 
 extension ProductGridView: ProductGridViewProtocol {
     
