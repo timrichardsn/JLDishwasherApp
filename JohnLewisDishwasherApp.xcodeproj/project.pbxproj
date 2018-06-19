@@ -24,6 +24,7 @@
 		0103F23F20D7F02800AB56F3 /* OrientationLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F23E20D7F02800AB56F3 /* OrientationLocker.swift */; };
 		0103F24120D80C4700AB56F3 /* ProductGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F24020D80C4700AB56F3 /* ProductGridCollectionViewCell.swift */; };
 		0103F24320D8121200AB56F3 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0103F24220D8121200AB56F3 /* AlamofireImage.framework */; };
+		0103F24520D9069500AB56F3 /* ProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F24420D9069500AB56F3 /* ProductTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		0103F23E20D7F02800AB56F3 /* OrientationLocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationLocker.swift; sourceTree = "<group>"; };
 		0103F24020D80C4700AB56F3 /* ProductGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		0103F24220D8121200AB56F3 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		0103F24420D9069500AB56F3 /* ProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				0103F21620D65EFA00AB56F3 /* Info.plist */,
 				0103F21F20D65FE500AB56F3 /* ProductGridTests.swift */,
+				0103F24420D9069500AB56F3 /* ProductTests.swift */,
 			);
 			path = JohnLewisDishwasherAppTests;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0103F22020D65FE500AB56F3 /* ProductGridTests.swift in Sources */,
+				0103F24520D9069500AB56F3 /* ProductTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
