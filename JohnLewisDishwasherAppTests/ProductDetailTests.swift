@@ -82,6 +82,17 @@ class ProductDetailTests: XCTestCase {
         
         XCTAssertTrue(interactor.fetchProductDataCalled)
     }
+    
+    func testFetchProductDataCallsPerformRequestOnRemoteDataManager() {
+        
+        let dataManager = MockDataManager()
+        let interactor = ProductDetailInteractor()
+        interactor.remoteDataManager = dataManager
+        
+        interactor.fetchProductData(for: Product(productId: "", title: "", imageUrl: "", priceData: [:]))
+        
+        XCTAssertTrue(dataManager.performRequestCalled)
+    }
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
@@ -115,9 +126,19 @@ private class MockProductView: ProductDetailViewProtocol {
 
 private class MockProductInteractor: ProductDetailInteractorProtocol {
     
+    var remoteDataManager: ProductDetailRemoteDataProtocol?
     var fetchProductDataCalled = false
     
     func fetchProductData(for product: Product) {
         fetchProductDataCalled = true
+    }
+}
+
+private class MockDataManager: ProductDetailRemoteDataProtocol {
+    
+    var performRequestCalled = false
+    
+    func performRequest(with requestData: RequestData) {
+        performRequestCalled = true
     }
 }
