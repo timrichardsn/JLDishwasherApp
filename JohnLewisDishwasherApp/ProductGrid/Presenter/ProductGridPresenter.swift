@@ -18,7 +18,7 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
         interactor?.fetchProducts()
     }
     
-    func viewDidAppear() {
+    func viewWillAppear() {
         OrientationLocker.lockAndRotateToLandscape()
     }
     

@@ -28,7 +28,7 @@ protocol ProductGridPresenterProtocol: class {
     var router: ProductGridRouterProtocol? { get set }
     
     func viewDidLoad()
-    func viewDidAppear()
+    func viewWillAppear()
     func didReceive(products: [Product])
     func cellSizeFrom(collectionViewSize: Size) -> Size
     func configure(productGridCell: ProductGridCellProtocol, with product: Product)
