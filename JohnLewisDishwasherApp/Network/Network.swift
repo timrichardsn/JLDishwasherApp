@@ -14,12 +14,14 @@ struct API {
 }
 
 enum APIAction {
-    case search
+    case search, data(id: String)
     
     var endpointString: String {
         switch self {
         case .search:
             return "search"
+        case .data(let id):
+            return id
         }
     }
 }
