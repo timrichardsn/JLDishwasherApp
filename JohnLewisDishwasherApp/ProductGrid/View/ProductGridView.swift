@@ -50,7 +50,7 @@ extension ProductGridView: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let size = presenter?.cellSizeFrom(collectionViewSize: collectionView.size, at: indexPath) ?? Size(0, 0)
+        let size = presenter?.cellSizeFrom(collectionViewSize: collectionView.size) ?? Size(0, 0)
         
         return CGSize(width: size.width.cgFloatValue, height: size.height.cgFloatValue)
     }

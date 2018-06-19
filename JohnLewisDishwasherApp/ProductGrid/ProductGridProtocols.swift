@@ -29,7 +29,7 @@ protocol ProductGridPresenterProtocol: class {
     func viewDidLoad()
     func viewDidAppear()
     func didReceive(products: [Product])
-    func cellSizeFrom(collectionViewSize: Size, at indexPath: IndexPath) -> Size
+    func cellSizeFrom(collectionViewSize: Size) -> Size
     func configure(productGridCell: ProductGridCellProtocol, at indexPath: IndexPath)
 }
 

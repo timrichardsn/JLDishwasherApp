@@ -201,9 +201,8 @@ class ProductGridTests: XCTestCase {
         let presenter = ProductGridPresenter()
         
         let collectionViewSize = Size(100, 50)
-        let indexPath = IndexPath(row: 0, section: 0)
         
-        let cellSize = presenter.cellSizeFrom(collectionViewSize: collectionViewSize, at: indexPath)
+        let cellSize = presenter.cellSizeFrom(collectionViewSize: collectionViewSize)
         
         XCTAssertEqual(cellSize.width, collectionViewSize.width / 4)
         XCTAssertEqual(cellSize.height, collectionViewSize.height / 2)
@@ -281,7 +280,7 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
         return Product(productId: "", title: "", imageUrl: "", priceData: [:])
     }
     
-    func cellSizeFrom(collectionViewSize: Size, at indexPath: IndexPath) -> Size {
+    func cellSizeFrom(collectionViewSize: Size) -> Size {
         cellSizeFromWasCalled = true
         return Size(0, 0)
     }
