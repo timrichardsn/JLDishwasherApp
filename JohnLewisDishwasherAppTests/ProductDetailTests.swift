@@ -11,4 +11,9 @@ import XCTest
 
 class ProductDetailTests: XCTestCase {
     
+    func testProductDetailModule() {
+        
+        let productDetailView = ProductDetailRouter.createProductDetailModule()
+        
+    }
 }
