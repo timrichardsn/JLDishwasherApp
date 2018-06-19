@@ -18,17 +18,28 @@ class EndpointTests: XCTestCase {
             .pageSize: "20"
         ]
         
-        let requestData = RequestData(endPoint: .products(action: .search), parameters: parameters)
+        var requestData = RequestData(endPoint: .products(action: .search), parameters: parameters)
         
         XCTAssertEqual(requestData.endPoint.endpointString, "products/search")
         XCTAssertEqual(requestData.endPoint.urlString, "\(API.rootUrlString)/products/search")
         XCTAssertNotNil(requestData.parameters)
         
-        let parametersForRequest = requestData.parametersForRequest(includeKey: true)
+        var parametersForRequest = requestData.parametersForRequest(includeKey: true)
         
         XCTAssertEqual(parametersForRequest.count, 3)
         XCTAssertEqual(parametersForRequest[RequestParameterKey.product.stringValue] as? String, parameters[.product] as? String)
         XCTAssertEqual(parametersForRequest[RequestParameterKey.pageSize.stringValue] as? String, parameters[.pageSize] as? String)
+        XCTAssertEqual(parametersForRequest[RequestParameterKey.key.stringValue] as? String, API.key)
+        
+        requestData = RequestData(endPoint: .products(action: .data(id: "123")), parameters: [:])
+        
+        XCTAssertEqual(requestData.endPoint.endpointString, "products/123")
+        XCTAssertEqual(requestData.endPoint.urlString, "\(API.rootUrlString)/products/123")
+        XCTAssertNotNil(requestData.parameters)
+        
+        parametersForRequest = requestData.parametersForRequest(includeKey: true)
+        
+        XCTAssertEqual(parametersForRequest.count, 1)
         XCTAssertEqual(parametersForRequest[RequestParameterKey.key.stringValue] as? String, API.key)
     }
     
