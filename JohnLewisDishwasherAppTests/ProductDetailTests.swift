@@ -32,10 +32,10 @@ class ProductDetailTests: XCTestCase {
         
         productDetailView.presenter = presenter
         productDetailView.view.setNeedsLayout()
-        productDetailView.viewDidAppear(true)
+        productDetailView.viewWillAppear(true)
         
         XCTAssertTrue(presenter.viewDidLoadWasCalled)
-        XCTAssertTrue(presenter.viewDidLoadWasCalled)
+        XCTAssertTrue(presenter.viewWillAppearWasCalled)
     }
 }
 
@@ -45,13 +45,13 @@ private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
     var product: Product?
     
     var viewDidLoadWasCalled = false
-    var viewDidAppearWasCalled = false
+    var viewWillAppearWasCalled = false
     
     func viewDidLoad() {
         viewDidLoadWasCalled = true
     }
     
-    func viewDidAppear() {
-        viewDidAppearWasCalled = true
+    func viewWillAppear() {
+        viewWillAppearWasCalled = true
     }
 }
