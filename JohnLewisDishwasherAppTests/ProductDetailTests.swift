@@ -22,6 +22,7 @@ class ProductDetailTests: XCTestCase {
         XCTAssertNotNil(productDetailView.presenter?.product)
         XCTAssertNotNil(productDetailView.presenter?.interactor)
         XCTAssertNotNil(productDetailView.presenter?.interactor?.remoteDataManager)
+        XCTAssertNotNil(productDetailView.presenter?.interactor?.remoteDataManager?.remoteDataOutputHandler)
         XCTAssertEqual(productDetailView.presenter?.product?.productId, product.productId)
     }
     
@@ -137,6 +138,7 @@ private class MockProductInteractor: ProductDetailInteractorProtocol {
 
 private class MockDataManager: ProductDetailRemoteDataProtocol {
     
+    var remoteDataOutputHandler: ProductDetailRemoteDataOutputProtocol?
     var performRequestCalled = false
     
     func performRequest(with requestData: RequestData) {
