@@ -13,7 +13,9 @@ class ProductDetailTests: XCTestCase {
     
     func testProductDetailModule() {
         
-        let productDetailView = ProductDetailRouter.createProductDetailModule()
+        let product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
+        
+        let productDetailView = ProductDetailRouter.createProductDetailModule(for: product)
         
     }
 }
