@@ -34,8 +34,8 @@ class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
                     // Would not force unwrap here in production...
                     Product(productId: $0["productId"] as! String,
                             title: $0["title"] as! String,
-                            imageUrl: $0["image"] as! String,
-                            priceData: $0["price"] as! [String: String])
+                            priceData: $0["price"] as! [String: String],
+                            imageUrl: $0["image"] as? String)
                 }
                 
                 remoteDataOutputHandler?.onProductsReceived(products: products)

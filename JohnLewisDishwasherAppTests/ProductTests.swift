@@ -18,7 +18,7 @@ class ProductTests: XCTestCase {
         let imageUrl = "https://someurl.com"
         var priceData: [String: String] = [:]
         
-        var product = Product(productId: productId, title: productTitle, imageUrl: imageUrl, priceData: priceData)
+        var product = Product(productId: productId, title: productTitle, priceData: priceData, imageUrl: imageUrl)
         
         XCTAssertEqual(product.productId, productId)
         XCTAssertEqual(product.title, productTitle)
@@ -28,7 +28,7 @@ class ProductTests: XCTestCase {
         
         priceData = ["now": "123"]
         
-        product = Product(productId: productId, title: productTitle, imageUrl: imageUrl, priceData: priceData)
+        product = Product(productId: productId, title: productTitle, priceData: priceData, imageUrl: imageUrl)
         
         XCTAssertEqual(product.price, "123")
         XCTAssertEqual(product.priceString, "£123")

@@ -124,11 +124,11 @@ class ProductGridTests: XCTestCase {
         let productGridView = ProductGridRouter.createProductGridModule().childViewControllers.first as! ProductGridView
         
         let products = [
-            Product(productId: "", title: "", imageUrl: "", priceData: [:]),
-            Product(productId: "", title: "", imageUrl: "", priceData: [:]),
-            Product(productId: "", title: "", imageUrl: "", priceData: [:]),
-            Product(productId: "", title: "", imageUrl: "", priceData: [:]),
-            Product(productId: "", title: "", imageUrl: "", priceData: [:])
+            Product(productId: "", title: "", priceData: [:], imageUrl: ""),
+            Product(productId: "", title: "", priceData: [:], imageUrl: ""),
+            Product(productId: "", title: "", priceData: [:], imageUrl: ""),
+            Product(productId: "", title: "", priceData: [:], imageUrl: ""),
+            Product(productId: "", title: "", priceData: [:], imageUrl: "")
         ]
         
         productGridView.presenter = presenter
@@ -152,11 +152,11 @@ class ProductGridTests: XCTestCase {
         productGridView.view.setNeedsLayout()
         
         let products = [
-            Product(productId: "1", title: "", imageUrl: "", priceData: [:]),
-            Product(productId: "2", title: "", imageUrl: "", priceData: [:]),
-            Product(productId: "3", title: "", imageUrl: "", priceData: [:]),
-            Product(productId: "4", title: "", imageUrl: "", priceData: [:]),
-            Product(productId: "5", title: "", imageUrl: "", priceData: [:])
+            Product(productId: "1", title: "", priceData: [:], imageUrl: ""),
+            Product(productId: "2", title: "", priceData: [:], imageUrl: ""),
+            Product(productId: "3", title: "", priceData: [:], imageUrl: ""),
+            Product(productId: "4", title: "", priceData: [:], imageUrl: ""),
+            Product(productId: "5", title: "", priceData: [:], imageUrl: "")
         ]
         
         presenter.didReceive(products: products)
@@ -203,7 +203,7 @@ class ProductGridTests: XCTestCase {
         
         let presenter = MockProductGridPresenter()
         let products = [
-            Product(productId: "1", title: "", imageUrl: "", priceData: [:])
+            Product(productId: "1", title: "", priceData: [:], imageUrl: "")
         ]
         
         productGridView.presenter = presenter
@@ -225,8 +225,8 @@ class ProductGridTests: XCTestCase {
         let indexPath = IndexPath(row: 1, section: 0)
         
         let products = [
-            Product(productId: "1", title: "", imageUrl: "", priceData: [:]),
-            Product(productId: "2", title: "", imageUrl: "", priceData: [:])
+            Product(productId: "1", title: "", priceData: [:], imageUrl: ""),
+            Product(productId: "2", title: "", priceData: [:], imageUrl: "")
         ]
         
         let presenter = MockProductGridPresenter()
@@ -247,7 +247,7 @@ class ProductGridTests: XCTestCase {
         presenter.router = router
         presenter.view = view
         
-        let product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
+        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
         
         presenter.showProductDetail(forProduct: product)
         
@@ -288,7 +288,7 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     }
     
     func product(at indexPath: IndexPath) -> Product {
-        return Product(productId: "", title: "", imageUrl: "", priceData: [:])
+        return Product(productId: "", title: "", priceData: [:], imageUrl: "")
     }
     
     func cellSizeFrom(collectionViewSize: Size) -> Size {

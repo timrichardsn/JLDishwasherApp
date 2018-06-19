@@ -11,10 +11,11 @@ import Foundation
 struct Product {
     let productId: String
     let title: String
-    let imageUrl: String
     let price: String
     
-    init(productId: String, title: String, imageUrl: String, priceData: [String: String]) {
+    var imageUrl: String?
+    
+    init(productId: String, title: String, priceData: [String: String], imageUrl: String?) {
         self.productId = productId
         self.title = title
         self.imageUrl = imageUrl

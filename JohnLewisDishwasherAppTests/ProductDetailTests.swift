@@ -13,7 +13,7 @@ class ProductDetailTests: XCTestCase {
     
     func testProductDetailModule() {
         
-        let product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
+        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
         let productDetailView = ProductDetailRouter.createProductDetailModule(for: product) as! ProductDetailViewProtocol
         
         XCTAssertNotNil(productDetailView.presenter)
@@ -29,7 +29,7 @@ class ProductDetailTests: XCTestCase {
     
     func testPresenterViewDidLoadAndAppearCalled() {
         
-        let product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
+        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
         let productDetailView = ProductDetailRouter.createProductDetailModule(for: product) as! ProductDetailView
         
         let presenter = MockProductDetailPresenter()
@@ -42,7 +42,7 @@ class ProductDetailTests: XCTestCase {
     
     func testPresenterIsLandscapeIsSetInViewDidLoad() {
         
-        let product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
+        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
         let productDetailView = ProductDetailRouter.createProductDetailModule(for: product) as! ProductDetailView
         
         let presenter = MockProductDetailPresenter()
@@ -80,7 +80,7 @@ class ProductDetailTests: XCTestCase {
         let interactor = MockProductInteractor()
         
         presenter.interactor = interactor
-        presenter.product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
+        presenter.product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
         presenter.viewDidLoad()
         
         XCTAssertTrue(interactor.fetchProductDataCalled)
@@ -92,7 +92,7 @@ class ProductDetailTests: XCTestCase {
         let interactor = ProductDetailInteractor()
         interactor.remoteDataManager = dataManager
         
-        interactor.fetchProductData(for: Product(productId: "", title: "", imageUrl: "", priceData: [:]))
+        interactor.fetchProductData(for: Product(productId: "1", title: "", priceData: [:], imageUrl: ""))
         
         XCTAssertTrue(dataManager.performRequestCalled)
     }

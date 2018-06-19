@@ -19,7 +19,9 @@ class ProductGridCollectionViewCell: UICollectionViewCell, ProductGridCellProtoc
         productTitle.text = product.title
         productPrice.text = product.priceString
         
-        let url = URL(string: "https:\(product.imageUrl)")
-        productImage.af_setImage(withURL: url!)
+        if let imageUrl = product.imageUrl {
+            let url = URL(string: "https:\(imageUrl)")
+            productImage.af_setImage(withURL: url!)
+        }
     }
 }
