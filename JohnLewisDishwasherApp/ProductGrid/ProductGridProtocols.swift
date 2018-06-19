@@ -12,7 +12,7 @@ typealias Size = (width: Float, height: Float)
 
 protocol ProductGridRouterProtocol: class {
     static func createProductGridModule() -> UIViewController
-    func presentProductDetailScreen(for product: Product)
+    func presentProductDetailScreen(for product: Product, from view: ProductGridViewProtocol)
 }
 
 protocol ProductGridViewProtocol: class {

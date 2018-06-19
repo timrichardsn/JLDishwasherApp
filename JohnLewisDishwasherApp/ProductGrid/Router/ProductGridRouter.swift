@@ -36,7 +36,7 @@ class ProductGridRouter: ProductGridRouterProtocol {
         return navigationController
     }
     
-    func presentProductDetailScreen(for product: Product) {
+    func presentProductDetailScreen(for product: Product, from view: ProductGridViewProtocol) {
         
     }
 }
