@@ -18,7 +18,6 @@ class ProductDetailView: UIViewController {
         super.viewDidLoad()
         
         presenter?.isLandscape = UIDevice.current.orientation.isLandscape
-        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
