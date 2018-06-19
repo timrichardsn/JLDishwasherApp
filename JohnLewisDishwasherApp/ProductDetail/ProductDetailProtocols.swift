@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ProductDetailRouterProtocol: class {
-    static func createProductDetailModule() -> UIViewController
+    static func createProductDetailModule(for product: Product) -> UIViewController
 }
 
 protocol ProductDetailViewProtocol: class {

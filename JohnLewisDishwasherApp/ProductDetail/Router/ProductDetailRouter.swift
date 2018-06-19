@@ -10,7 +10,7 @@ import UIKit
 
 class ProductDetailRouter: ProductDetailRouterProtocol {
     
-    static func createProductDetailModule() -> UIViewController {
+    static func createProductDetailModule(for product: Product) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductDetailView")
     }
 }
