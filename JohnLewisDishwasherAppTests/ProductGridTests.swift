@@ -44,16 +44,16 @@ class ProductGridTests: XCTestCase {
         XCTAssertTrue(presenter.viewDidLoadWasCalled)
     }
     
-    func testPresenterViewDidAppearCalled() {
+    func testPresenterViewWillAppearCalled() {
         
         let productGridView = ProductGridRouter.createProductGridModule().childViewControllers.first as? ProductGridView
         let presenter = MockProductGridPresenter()
         
         productGridView?.presenter = presenter
         productGridView?.view.setNeedsLayout()
-        productGridView?.viewDidAppear(true)
+        productGridView?.viewWillAppear(true)
         
-        XCTAssertTrue(presenter.viewDidAppearWasCalled)
+        XCTAssertTrue(presenter.viewWillAppearWasCalled)
     }
     
     func testInteractorFetchProductsCalled() {
@@ -291,7 +291,7 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     var router: ProductGridRouterProtocol?
     
     var viewDidLoadWasCalled = false
-    var viewDidAppearWasCalled = false
+    var viewWillAppearWasCalled = false
     var didReceiveProductsCalled = false
     var cellSizeFromWasCalled = false
     var configureProductCellWasCalled = false
@@ -307,8 +307,8 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
         viewDidLoadWasCalled = true
     }
     
-    func viewDidAppear() {
-        viewDidAppearWasCalled = true
+    func viewWillAppear() {
+        viewWillAppearWasCalled = true
     }
     
     func didReceive(products: [Product]) {
