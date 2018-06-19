@@ -270,8 +270,10 @@ class ProductGridTests: XCTestCase {
         
         let presenter = ProductGridPresenter()
         let router = MockProductGridRouter()
+        let view = MockProductGridView()
         
         presenter.router = router
+        presenter.view = view
         
         let product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
         
@@ -427,7 +429,7 @@ private class MockProductGridRouter: ProductGridRouterProtocol {
         return UIViewController()
     }
     
-    func presentProductDetailScreen(for product: Product) {
+    func presentProductDetailScreen(for product: Product, from view: ProductGridViewProtocol) {
         presentProductDetailScreenWasCalled = true
         presentProductDetailScreenProduct = product
     }
