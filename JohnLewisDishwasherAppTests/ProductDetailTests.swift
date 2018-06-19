@@ -69,6 +69,17 @@ class ProductDetailTests: XCTestCase {
         presenter.isLandscape = false
         XCTAssertTrue(view.refreshCalled)
     }
+    
+    func testFetchProductDataCalledInPresenterViewDidLoad() {
+        
+        let presenter = ProductDetailPresenter()
+        let interactor = MockProductInteractor()
+        
+        presenter.interactor = interactor
+        presenter.viewDidLoad()
+        
+        XCTAssertTrue(interactor.fetchProductDataCalled)
+    }
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
@@ -96,5 +107,14 @@ private class MockProductView: ProductDetailViewProtocol {
     
     func refresh() {
         refreshCalled = true
+    }
+}
+
+private class MockProductInteractor: ProductDetailInteractorProtocol {
+    
+    var fetchProductDataCalled = false
+    
+    func fetchProductData(for product: Product) {
+        fetchProductDataCalled = true
     }
 }
