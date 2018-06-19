@@ -43,7 +43,7 @@ extension ProductGridView: UICollectionViewDelegate, UICollectionViewDataSource,
         let productGridCell =  collectionView.dequeueReusableCell(withReuseIdentifier: "productGridCell",
                                                                   for: indexPath) as! ProductGridCollectionViewCell
         
-        presenter?.configure(productGridCell: productGridCell, at: indexPath)
+        presenter?.configure(productGridCell: productGridCell, with: products[indexPath.row])
         
         return productGridCell
     }
