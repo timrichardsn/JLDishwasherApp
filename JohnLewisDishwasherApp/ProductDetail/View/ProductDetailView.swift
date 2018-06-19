@@ -42,5 +42,8 @@ class ProductDetailView: UIViewController {
 }
 
 extension ProductDetailView: ProductDetailViewProtocol {
-
+    
+    func show(product: Product) {
+        
+    }
 }

@@ -15,7 +15,7 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     var product: Product?
     
     func viewDidLoad() {
-        
+        view?.show(product: product!)
     }
     
     func viewWillAppear() {

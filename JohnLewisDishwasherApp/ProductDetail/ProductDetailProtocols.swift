@@ -14,6 +14,7 @@ protocol ProductDetailRouterProtocol: class {
 
 protocol ProductDetailViewProtocol: class {
     var presenter: ProductDetailViewPresenterProtocol? { get set }
+    func show(product: Product)
 }
 
 protocol ProductDetailViewPresenterProtocol {
