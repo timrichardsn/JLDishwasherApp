@@ -15,7 +15,12 @@ class ProductDetailTests: XCTestCase {
         
         let product = Product(productId: "1", title: "", imageUrl: "", priceData: [:])
         
-        let productDetailView = ProductDetailRouter.createProductDetailModule(for: product)
+        let productDetailView = ProductDetailRouter.createProductDetailModule(for: product) as! ProductDetailViewProtocol
         
+        XCTAssertNotNil(productDetailView.presenter)
+        XCTAssertNotNil(productDetailView.presenter?.view)
+        XCTAssertNotNil(productDetailView.presenter?.router)
+        XCTAssertNotNil(productDetailView.presenter?.product)
+        XCTAssertEqual(productDetailView.presenter?.product?.productId, product.productId)
     }
 }
