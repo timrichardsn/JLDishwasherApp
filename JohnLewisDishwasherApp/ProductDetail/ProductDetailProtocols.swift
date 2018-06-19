@@ -17,7 +17,7 @@ protocol ProductDetailViewProtocol: class {
     func refresh()
 }
 
-protocol ProductDetailViewPresenterProtocol {
+protocol ProductDetailViewPresenterProtocol: class {
     var view: ProductDetailViewProtocol? { get set }
     var router: ProductDetailRouterProtocol? { get set }
     var interactor: ProductDetailInteractorProtocol? { get set }
@@ -30,6 +30,7 @@ protocol ProductDetailViewPresenterProtocol {
 }
 
 protocol ProductDetailInteractorProtocol: class {
+    var presenter: ProductDetailViewPresenterProtocol? { get set }
     var remoteDataManager: ProductDetailRemoteDataProtocol? { get set }
     
     func fetchProductData(for product: Product)

@@ -129,6 +129,7 @@ private class MockProductView: ProductDetailViewProtocol {
 
 private class MockProductInteractor: ProductDetailInteractorProtocol {
     
+    var presenter: ProductDetailViewPresenterProtocol?
     var remoteDataManager: ProductDetailRemoteDataProtocol?
     var fetchProductDataCalled = false
     

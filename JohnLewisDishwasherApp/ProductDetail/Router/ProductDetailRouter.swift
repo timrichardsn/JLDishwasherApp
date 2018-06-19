@@ -25,6 +25,7 @@ class ProductDetailRouter: ProductDetailRouterProtocol {
         presenter.interactor = interactor
         presenter.router = router
         
+        interactor.presenter = presenter
         interactor.remoteDataManager = remoteDataManager
         
         remoteDataManager.remoteDataOutputHandler = interactor

@@ -10,6 +10,7 @@ import Foundation
 
 class ProductDetailInteractor: ProductDetailInteractorProtocol {
     
+    weak var presenter: ProductDetailViewPresenterProtocol?
     var remoteDataManager: ProductDetailRemoteDataProtocol?
     
     func fetchProductData(for product: Product) {
