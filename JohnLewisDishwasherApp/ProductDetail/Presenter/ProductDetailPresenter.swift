@@ -13,6 +13,7 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     weak var view: ProductDetailViewProtocol?
     var router: ProductDetailRouterProtocol?
     var product: Product?
+    var isLandscape: Bool?
     
     func viewDidLoad() {
         view?.show(product: product!)

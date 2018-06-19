@@ -21,6 +21,7 @@ protocol ProductDetailViewPresenterProtocol {
     var view: ProductDetailViewProtocol? { get set }
     var router: ProductDetailRouterProtocol? { get set }
     var product: Product? { get set }
+    var isLandscape: Bool? { get set }
     
     func viewDidLoad()
     func viewWillAppear()
