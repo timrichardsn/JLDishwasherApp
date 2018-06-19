@@ -242,7 +242,7 @@ class ProductGridTests: XCTestCase {
         _ = productGridView.collectionView(productGridView.collectionView, cellForItemAt: IndexPath(row: 0, section: 0))
         
         XCTAssertTrue(presenter.configureProductCellWasCalled)
-        XCTAssertEqual(presenter.configureProductCellIndexPath!.row, 0)
+        XCTAssertEqual(presenter.configureProductCellProduct?.productId, products[0].productId)
     }
 }
 
@@ -258,7 +258,7 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     var didReceiveProductsCalled = false
     var cellSizeFromWasCalled = false
     var configureProductCellWasCalled = false
-    var configureProductCellIndexPath: IndexPath?
+    var configureProductCellProduct: Product?
     
     var productCount: Int {
         return 0
@@ -285,9 +285,9 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
         return Size(0, 0)
     }
     
-    func configure(productGridCell: ProductGridCellProtocol, at indexPath: IndexPath) {
+    func configure(productGridCell: ProductGridCellProtocol, with product: Product) {
         configureProductCellWasCalled = true
-        configureProductCellIndexPath = indexPath
+        configureProductCellProduct = product
     }
 }
 
