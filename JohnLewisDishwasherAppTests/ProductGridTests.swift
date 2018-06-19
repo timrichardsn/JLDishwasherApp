@@ -244,10 +244,30 @@ class ProductGridTests: XCTestCase {
         XCTAssertTrue(presenter.configureProductCellWasCalled)
         XCTAssertEqual(presenter.configureProductCellProduct?.productId, products[0].productId)
     }
+    
+    func testPresenterShowProductDetail() {
+        
+        let productGridView = ProductGridRouter.createProductGridModule().childViewControllers.first as! ProductGridView
+        productGridView.view.setNeedsLayout()
+        
+        let indexPath = IndexPath(row: 1, section: 0)
+        
+        let products = [
+            Product(productId: "1", title: "", imageUrl: "", priceData: [:]),
+            Product(productId: "2", title: "", imageUrl: "", priceData: [:])
+        ]
+        
+        let presenter = MockProductGridPresenter()
+        productGridView.presenter = presenter
+        productGridView.products = products
+        productGridView.collectionView(productGridView.collectionView, didSelectItemAt: indexPath)
+        
+        XCTAssertTrue(presenter.showProductDetailCalled)
+        XCTAssertEqual(presenter.showProductDetailProduct?.productId, products[indexPath.row].productId)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
-    
     
     var view: ProductGridViewProtocol?
     var interactor: ProductGridInteractorProtocol?
@@ -259,6 +279,8 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     var cellSizeFromWasCalled = false
     var configureProductCellWasCalled = false
     var configureProductCellProduct: Product?
+    var showProductDetailCalled = false
+    var showProductDetailProduct: Product?
     
     var productCount: Int {
         return 0
@@ -288,6 +310,11 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     func configure(productGridCell: ProductGridCellProtocol, with product: Product) {
         configureProductCellWasCalled = true
         configureProductCellProduct = product
+    }
+    
+    func showProductDetail(forProduct product: Product) {
+        showProductDetailCalled = true
+        showProductDetailProduct = product
     }
 }
 
