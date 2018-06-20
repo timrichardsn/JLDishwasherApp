@@ -139,7 +139,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP2-8B-l9C">
                                                 <rect key="frame" x="0.0" y="24" width="188" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.70844802461139889" green="0.035515147707244746" blue="0.003630302983244653" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.70980392156862748" green="0.035294117647058823" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="222-dt-cET">
@@ -265,25 +265,49 @@
                                             <outlet property="featureValue" destination="Cde-fr-MdN" id="5ua-D7-9dA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="priceDataCell" rowHeight="60" id="k5x-h0-yG2">
-                                        <rect key="frame" x="0.0" y="442.5" width="415" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="priceDataCell" rowHeight="100" id="k5x-h0-yG2" customClass="PriceDataCell" customModule="JohnLewisDishwasherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="442.5" width="415" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k5x-h0-yG2" id="x8e-8D-60V">
-                                            <rect key="frame" x="0.0" y="0.0" width="415" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Te-vh-7de">
-                                                    <rect key="frame" x="16" y="19.5" width="39" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JvM-fr-rbY">
+                                                    <rect key="frame" x="16" y="16" width="207.5" height="67.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Te-vh-7de">
+                                                            <rect key="frame" x="0.0" y="0.0" width="207.5" height="33.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S9-gd-kAf">
+                                                            <rect key="frame" x="0.0" y="33.5" width="207.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.70980392156862748" green="0.035294117647058823" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJy-v9-L0K">
+                                                            <rect key="frame" x="0.0" y="50.5" width="207.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6Te-vh-7de" firstAttribute="centerY" secondItem="x8e-8D-60V" secondAttribute="centerY" id="RZL-6y-yDE"/>
-                                                <constraint firstItem="6Te-vh-7de" firstAttribute="leading" secondItem="x8e-8D-60V" secondAttribute="leading" constant="16" id="gj1-el-dCQ"/>
+                                                <constraint firstItem="JvM-fr-rbY" firstAttribute="top" secondItem="x8e-8D-60V" secondAttribute="top" constant="16" id="Jfj-P0-cl6"/>
+                                                <constraint firstAttribute="bottom" secondItem="JvM-fr-rbY" secondAttribute="bottom" constant="16" id="ZeZ-hl-g7a"/>
+                                                <constraint firstItem="JvM-fr-rbY" firstAttribute="width" secondItem="x8e-8D-60V" secondAttribute="width" multiplier="0.5" id="cji-ZV-ilv"/>
+                                                <constraint firstItem="JvM-fr-rbY" firstAttribute="leading" secondItem="x8e-8D-60V" secondAttribute="leading" constant="16" id="hPI-Bs-foA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="guaranteeLabel" destination="NJy-v9-L0K" id="PcV-eU-1bt"/>
+                                            <outlet property="priceLabel" destination="6Te-vh-7de" id="kHx-hF-Hu2"/>
+                                            <outlet property="specialOfferLabel" destination="9S9-gd-kAf" id="8ek-k4-tAS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

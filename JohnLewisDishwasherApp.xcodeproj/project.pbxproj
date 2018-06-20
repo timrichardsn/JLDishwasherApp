@@ -36,6 +36,7 @@
 		0103F26520D9AF9000AB56F3 /* ProductFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F26420D9AF9000AB56F3 /* ProductFeatureCell.swift */; };
 		0103F26720D9B13600AB56F3 /* ProductInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F26620D9B13600AB56F3 /* ProductInformationCell.swift */; };
 		0103F26920DA58E300AB56F3 /* ProductScrollableImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F26820DA58E300AB56F3 /* ProductScrollableImagesCell.swift */; };
+		0103F26B20DA6AD000AB56F3 /* PriceDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F26A20DA6AD000AB56F3 /* PriceDataCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		0103F26420D9AF9000AB56F3 /* ProductFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFeatureCell.swift; sourceTree = "<group>"; };
 		0103F26620D9B13600AB56F3 /* ProductInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationCell.swift; sourceTree = "<group>"; };
 		0103F26820DA58E300AB56F3 /* ProductScrollableImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductScrollableImagesCell.swift; sourceTree = "<group>"; };
+		0103F26A20DA6AD000AB56F3 /* PriceDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceDataCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 				0103F26420D9AF9000AB56F3 /* ProductFeatureCell.swift */,
 				0103F26620D9B13600AB56F3 /* ProductInformationCell.swift */,
 				0103F26820DA58E300AB56F3 /* ProductScrollableImagesCell.swift */,
+				0103F26A20DA6AD000AB56F3 /* PriceDataCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0103F23F20D7F02800AB56F3 /* OrientationLocker.swift in Sources */,
+				0103F26B20DA6AD000AB56F3 /* PriceDataCell.swift in Sources */,
 				0103F25220D9138300AB56F3 /* ProductDetailView.swift in Sources */,
 				0103F24120D80C4700AB56F3 /* ProductGridCollectionViewCell.swift in Sources */,
 				0103F26120D9923100AB56F3 /* ProductDetailRemoteDataManager.swift in Sources */,
