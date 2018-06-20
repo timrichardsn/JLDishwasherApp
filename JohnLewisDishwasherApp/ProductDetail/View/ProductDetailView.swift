@@ -70,7 +70,13 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             
             if indexPath.row == 0 {
-                return tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath)
+                let imagesCell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ProductScrollableImagesCell
+                
+                if let imageUrls = presenter?.product?.urls {
+                    imagesCell.configure(with: imageUrls)
+                }
+                
+                return imagesCell
             } else if indexPath.row == 1 {
                 return tableView.dequeueReusableCell(withIdentifier: "priceDataCell", for: indexPath)
             }

@@ -167,14 +167,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="415" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKQ-JA-EFG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="415" height="199.5"/>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKQ-JA-EFG">
+                                                    <rect key="frame" x="0.0" y="16" width="415" height="167.5"/>
                                                 </scrollView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="PKQ-JA-EFG" firstAttribute="leading" secondItem="ITo-BR-7S0" secondAttribute="leading" id="N83-PX-pbH"/>
-                                                <constraint firstAttribute="bottom" secondItem="PKQ-JA-EFG" secondAttribute="bottom" id="aFZ-VG-9aW"/>
-                                                <constraint firstItem="PKQ-JA-EFG" firstAttribute="top" secondItem="ITo-BR-7S0" secondAttribute="top" id="qHQ-3C-DMb"/>
+                                                <constraint firstAttribute="bottom" secondItem="PKQ-JA-EFG" secondAttribute="bottom" constant="16" id="aFZ-VG-9aW"/>
+                                                <constraint firstItem="PKQ-JA-EFG" firstAttribute="top" secondItem="ITo-BR-7S0" secondAttribute="top" constant="16" id="qHQ-3C-DMb"/>
                                                 <constraint firstAttribute="trailing" secondItem="PKQ-JA-EFG" secondAttribute="trailing" id="rX1-q3-kfx"/>
                                             </constraints>
                                         </tableViewCellContentView>
