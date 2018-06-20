@@ -54,10 +54,12 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     }
     
     func heightForCellAt(row: Int, section: Int) -> Int? {
+        
+        // Need more descriptive references here, i.e. if section == sectionForFeatures etc
         if section == 0 {
             
             if row == 0 {
-                return 200
+                return 500
             } else if row == 1 {
                 return 60
             }
