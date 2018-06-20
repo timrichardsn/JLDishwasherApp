@@ -82,7 +82,9 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
                 
                 return imagesCell
             } else if indexPath.row == 1 {
-                return tableView.dequeueReusableCell(withIdentifier: "priceDataCell", for: indexPath)
+                let priceDataCell = tableView.dequeueReusableCell(withIdentifier: "priceDataCell", for: indexPath) as! PriceDataCell
+                priceDataCell.configure(product: presenter?.product)
+                return priceDataCell
             }
             
         } else if indexPath.section == 1 {
