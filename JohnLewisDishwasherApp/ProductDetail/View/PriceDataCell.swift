@@ -14,5 +14,10 @@ class PriceDataCell: UITableViewCell {
     @IBOutlet weak var specialOfferLabel: UILabel!
     @IBOutlet weak var guaranteeLabel: UILabel!
     
-    
+    func configure(product: Product?) {
+        
+        priceLabel.text = product?.priceString ?? ""
+        specialOfferLabel.text = product?.displaySpecialOffer ?? ""
+        guaranteeLabel.text = product?.guaranteeInformation?.first ?? ""
+    }
 }
