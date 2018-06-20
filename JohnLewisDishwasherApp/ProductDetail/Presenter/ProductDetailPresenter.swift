@@ -60,8 +60,6 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
             
             if row == 0 {
                 return 500
-            } else if row == 1 {
-                return 60
             }
             
         } else if section == 2 {
