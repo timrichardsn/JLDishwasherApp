@@ -253,23 +253,6 @@ class ProductGridTests: XCTestCase {
         XCTAssertEqual(presenter.showProductDetailProduct?.productId, products[indexPath.row].productId)
     }
     
-//    func testRouterPresentProductDetail() {
-//
-//        let presenter = ProductGridPresenter()
-//        let router = MockProductGridRouter()
-//        let view = MockProductGridView()
-//
-//        presenter.router = router
-//        presenter.view = view
-//
-//        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
-//
-//        presenter.showProductDetail(forProduct: product)
-//
-//        XCTAssertTrue(router.presentProductDetailScreenWasCalled)
-//        XCTAssertEqual(router.presentProductDetailScreenProduct?.productId, product.productId)
-//    }
-    
     func testPresenterCallsFetchDataForProduct() {
         
         let presenter = ProductGridPresenter()
@@ -294,6 +277,18 @@ class ProductGridTests: XCTestCase {
         
         XCTAssertTrue(dataManager.fetchProductDataWithRequestWasCalled)
     }
+    
+    func testPresenterDidReceiveProductCalledOnNetworkCallbackInInteractor() {
+        
+        let interactor = ProductGridInteractor()
+        let presenter = MockProductGridPresenter()
+        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: nil)
+        
+        interactor.presenter = presenter
+        interactor.onProductReceived(product: product)
+        
+        XCTAssertTrue(presenter.didReceiveProductCalled)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
@@ -305,6 +300,7 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     var viewDidLoadWasCalled = false
     var viewWillAppearWasCalled = false
     var didReceiveProductsCalled = false
+    var didReceiveProductCalled = false
     var cellSizeFromWasCalled = false
     var configureProductCellWasCalled = false
     var configureProductCellProduct: Product?
@@ -325,6 +321,10 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
     
     func didReceive(products: [Product]) {
         didReceiveProductsCalled = true
+    }
+    
+    func didReceive(product: Product) {
+        didReceiveProductCalled = true
     }
     
     func product(at indexPath: IndexPath) -> Product {
