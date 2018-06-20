@@ -289,6 +289,24 @@ class ProductGridTests: XCTestCase {
         
         XCTAssertTrue(presenter.didReceiveProductCalled)
     }
+    
+    func testRouterPresentProductDetail() {
+        
+        let presenter = ProductGridPresenter()
+        let router = MockProductGridRouter()
+        let view = MockProductGridView()
+        
+        presenter.router = router
+        presenter.view = view
+        
+        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
+        
+        presenter.didReceive(product: product)
+        
+        XCTAssertTrue(router.presentProductDetailScreenWasCalled)
+        XCTAssertEqual(router.presentProductDetailScreenProduct?.productId, product.productId)
+    }
+
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
