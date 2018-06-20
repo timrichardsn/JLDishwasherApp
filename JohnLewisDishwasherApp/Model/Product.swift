@@ -33,4 +33,8 @@ extension Product {
     var priceString: String {
         return "£\(price)"
     }
+    
+    var productCodeDisplayString: String {
+        return "Product code: \(code ?? "")"
+    }
 }
