@@ -21,8 +21,9 @@ After this, the project should build and run.
 
 - I chose to use VIPER as the architecture since I'm quite fond of it and find it separates the app responsibilities nicely and in a format that encourages testing.
 - I chose to use 2 dependencies, Alamofire and AlamofireImage. Alamofire is a widely used and recognised tool for making network calls in iOS. Regarding AlamofireImage, I could've used one of the other image caching libraries out there such as Kingfisher or SDWebImage, but for consistency sake I decided to use AlamofireImage.
+- I chose Carthage as the dependency manager as in my experience I've found it less problematic to integrate with CI solutions such as Jenkins.
 - To handle landscape and portrait view on the product detail page, I opted against using UISplitViewController as the UI layout was fairly simple and can be achieved using adaptive layout constraints.
 
 # Final thoughts
 
-I'm a big fan of TDD in production level apps. As you'll be able to see from the commit history I have approached this task as if I were in a production environment. The only difference I suppose is that I haven't worked on feature branches and then merged my work in as I've been going. Normally I would work from feature branches (i.e. following Git Flow practices), submit pull requests, and then merge once approved. I did work from a "develop" branch and upon completion merged this into the "master" branch.
+I'm a big fan of TDD in production level apps. As you'll be able to see from the commit history I have approached this task as if I were in a production environment. The only difference I suppose is that I haven't worked on feature branches and then merged my work in as I've been going. Normally I would work from feature branches from JIRA and follow Git Flow practices, submit pull requests, and then merge once approved. I did work from a "develop" branch and upon completion merged this into the "master" branch.
