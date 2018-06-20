@@ -31,7 +31,7 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     }
     
     func viewDidLoad() {
-        interactor?.fetchProductData(for: product!)
+        
     }
     
     func viewWillAppear() {

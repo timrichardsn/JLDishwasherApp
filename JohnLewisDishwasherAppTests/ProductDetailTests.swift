@@ -74,18 +74,6 @@ class ProductDetailTests: XCTestCase {
         XCTAssertTrue(view.refreshCalled)
     }
     
-    func testFetchProductDataCalledInPresenterViewDidLoad() {
-        
-        let presenter = ProductDetailPresenter()
-        let interactor = MockProductInteractor()
-        
-        presenter.interactor = interactor
-        presenter.product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
-        presenter.viewDidLoad()
-        
-        XCTAssertTrue(interactor.fetchProductDataCalled)
-    }
-    
     func testFetchProductDataCallsPerformRequestOnRemoteDataManager() {
         
         let dataManager = MockDataManager()
