@@ -134,6 +134,16 @@ class ProductDetailTests: XCTestCase {
         XCTAssertEqual(presenter.numberOfRows(inSection: 1), 1)
         XCTAssertEqual(presenter.numberOfRows(inSection: 2), product.attributes?.count)
     }
+    
+    func testHeightForRowAtIndexPath() {
+        
+        let presenter = ProductDetailPresenter()
+        
+        XCTAssertEqual(presenter.heightForRowAt(row: 0, section: 0), 200)
+        XCTAssertEqual(presenter.heightForRowAt(row: 1, section: 0), 60)
+        XCTAssertEqual(presenter.heightForRowAt(row: 0, section: 2), 60)
+        XCTAssertNil(presenter.heightForRowAt(row: 0, section: 1))
+    }
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
