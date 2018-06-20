@@ -67,6 +67,31 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            
+            if indexPath.row == 0 {
+                return tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath)
+            } else if indexPath.row == 1 {
+                return tableView.dequeueReusableCell(withIdentifier: "priceDataCell", for: indexPath)
+            }
+            
+        } else if indexPath.section == 1 {
+            let productInformation = tableView.dequeueReusableCell(withIdentifier: "productInformation", for: indexPath) as! ProductInformationCell
+            
+            if let product = presenter?.product {
+                productInformation.configure(product: product)
+            }
+            
+            return productInformation
+        } else if indexPath.section == 2 {
+            let featureCell = tableView.dequeueReusableCell(withIdentifier: "featureCell", for: indexPath) as! ProductFeatureCell
+            
+            let data = presenter?.product?.displayPropertiesForAttribute(atIndex: indexPath.row) ?? (name: nil, value: nil)
+            featureCell.configure(name: data.name, value: data.value)
+            
+            return featureCell
+        }
+        
         return UITableViewCell()
     }
 }
