@@ -39,4 +39,17 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     func viewWillAppear() {
         OrientationLocker.lockOrientation(.all)
     }
+    
+    func numberOfRows(inSection section: Int) -> Int {
+        
+        if section == 0 {
+            return isLandscape == true ? 1 : 2
+        } else if section == 1 {
+            return 1
+        } else if section == 2 {
+            return product?.attributes?.count ?? 0
+        }
+        
+        return 0
+    }
 }

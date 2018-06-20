@@ -137,6 +137,7 @@ class ProductDetailTests: XCTestCase {
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
+    
     var numberOfSections: Int = 3
     var interactor: ProductDetailInteractorProtocol?
     var view: ProductDetailViewProtocol?
@@ -152,6 +153,10 @@ private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
     
     func viewDidLoad() {
         
+    }
+    
+    func numberOfRows(inSection section: Int) -> Int {
+        return 0
     }
 }
 
