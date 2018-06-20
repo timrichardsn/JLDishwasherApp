@@ -74,6 +74,11 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
 extension ProductDetailView: ProductDetailViewProtocol {
     
     func refresh() {
+        
+        priceLabel.text = presenter?.product?.priceString ?? ""
+        specialOffer.text = presenter?.product?.displaySpecialOffer ?? ""
+        guarantee.text = presenter?.product?.guaranteeInformation?.first ?? ""
+        
         tableView.reloadData()
     }
 }
