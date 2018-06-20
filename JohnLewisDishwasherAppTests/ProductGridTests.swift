@@ -254,6 +254,19 @@ class ProductGridTests: XCTestCase {
         XCTAssertTrue(router.presentProductDetailScreenWasCalled)
         XCTAssertEqual(router.presentProductDetailScreenProduct?.productId, product.productId)
     }
+    
+    func testPresenterCallsFetchDataForProduct() {
+        
+        let presenter = ProductGridPresenter()
+        let interactor = MockProductGridInteractor()
+        
+        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: nil)
+        
+        presenter.interactor = interactor
+        presenter.showProductDetail(forProduct: product)
+        
+        XCTAssertTrue(interactor.fetchProductDataWasCalled)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
@@ -311,10 +324,16 @@ private class MockProductGridInteractor: ProductGridInteractorProtocol {
     
     var remoteDataManager: ProductGridRemoteDataProtocol?
     var presenter: ProductGridPresenterProtocol?
+    
     var fetchProductsWasCalled = false
+    var fetchProductDataWasCalled = false
     
     func fetchProducts() {
         fetchProductsWasCalled = true
+    }
+    
+    func fetchData(for: Product) {
+        fetchProductDataWasCalled = true
     }
 }
 
