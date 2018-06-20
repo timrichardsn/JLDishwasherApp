@@ -94,6 +94,15 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
         
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if let cellHeight = presenter?.heightForCellAt(row: indexPath.row, section: indexPath.section) {
+            return CGFloat(cellHeight)
+        }
+        
+        return UITableViewAutomaticDimension
+    }
 }
 
 extension ProductDetailView: ProductDetailViewProtocol {
