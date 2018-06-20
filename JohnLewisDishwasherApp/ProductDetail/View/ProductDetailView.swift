@@ -116,10 +116,6 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
         return UITableViewAutomaticDimension
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return presenter?.titleForHeaderIn(section: section)
-    }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         if let sectionHeight = presenter?.heightForHeaderIn(section: section) {
@@ -127,6 +123,23 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
         }
         
         return .leastNonzeroMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        guard let sectionHeight = presenter?.heightForHeaderIn(section: section) else {
+            return nil
+        }
+        
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: CGFloat(sectionHeight)))
+        
+        let label = UILabel(frame: CGRect(x: 16, y: 0, width: tableView.frame.width - 16, height: CGFloat(sectionHeight)))
+        label.font = UIFont.systemFont(ofSize: 34)
+        label.text = presenter?.titleForHeaderIn(section: section)
+
+        containerView.addSubview(label)
+        
+        return containerView
     }
 }
 
