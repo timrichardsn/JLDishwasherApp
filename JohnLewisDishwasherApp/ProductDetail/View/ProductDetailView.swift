@@ -151,6 +151,8 @@ extension ProductDetailView: ProductDetailViewProtocol {
         specialOffer.text = presenter?.product?.displaySpecialOffer ?? ""
         guarantee.text = presenter?.product?.guaranteeInformation?.first ?? ""
         
+        title = presenter?.product?.title
+        
         tableView.reloadData()
     }
 }
