@@ -105,7 +105,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aL7-HG-OWK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="08n-Me-9zt"/>
+                    <navigationItem key="navigationItem" id="TjY-SG-OtT">
+                        <barButtonItem key="backBarButtonItem" title=" " id="e19-pp-fp2"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="lM1-Uf-WNJ" id="EGI-jx-1LO"/>
                     </connections>
@@ -315,6 +317,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="5A3-9H-4oQ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="MUS-Sh-gaN"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <size key="freeformSize" width="667" height="1375"/>
                     <connections>
