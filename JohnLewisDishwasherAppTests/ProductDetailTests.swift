@@ -139,7 +139,7 @@ class ProductDetailTests: XCTestCase {
         
         let presenter = ProductDetailPresenter()
         
-        XCTAssertEqual(presenter.heightForCellAt(row: 0, section: 0), 200)
+        XCTAssertEqual(presenter.heightForCellAt(row: 0, section: 0), 500)
         XCTAssertEqual(presenter.heightForCellAt(row: 1, section: 0), 60)
         XCTAssertEqual(presenter.heightForCellAt(row: 0, section: 2), 60)
         XCTAssertNil(presenter.heightForCellAt(row: 0, section: 1))
