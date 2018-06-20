@@ -64,6 +64,9 @@ extension ProductGridView: ProductGridViewProtocol {
     
     func show(products: [Product]) {
         self.products = products
+        
+        title = presenter?.titleForView(productCount: products.count)
+        
         collectionView.reloadData()
     }
 }
