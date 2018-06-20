@@ -84,6 +84,27 @@ class ProductDetailTests: XCTestCase {
         
         XCTAssertTrue(dataManager.performRequestCalled)
     }
+    
+    func testProductUIDisplay() {
+        
+        var product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
+        product.displaySpecialOffer = "Some special offer"
+        product.guaranteeInformation = ["2 years"]
+        
+        let productDetailView = ProductDetailRouter.createProductDetailModule(for: product) as! ProductDetailView
+        
+        let presenter = MockProductDetailPresenter()
+        presenter.product = product
+        
+        productDetailView.presenter = presenter
+        
+        productDetailView.view.setNeedsLayout()
+        productDetailView.refresh()
+        
+        XCTAssertEqual(productDetailView.priceLabel.text, product.priceString)
+        XCTAssertEqual(productDetailView.specialOffer.text, product.displaySpecialOffer ?? "")
+        XCTAssertEqual(productDetailView.guarantee.text, product.guaranteeInformation?.first ?? "")
+    }
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
