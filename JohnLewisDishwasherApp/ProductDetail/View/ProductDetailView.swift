@@ -103,6 +103,10 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
         
         return UITableViewAutomaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return presenter?.titleForHeaderIn(section: section)
+    }
 }
 
 extension ProductDetailView: ProductDetailViewProtocol {
