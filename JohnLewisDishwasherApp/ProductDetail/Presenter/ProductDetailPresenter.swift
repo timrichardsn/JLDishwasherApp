@@ -68,4 +68,14 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
         
         return nil
     }
+    
+    func titleForHeaderIn(section: Int) -> String? {
+        if section == 1 {
+            return "Product information"
+        } else if section == 2 {
+            return "Product specification"
+        }
+        
+        return nil
+    }
 }

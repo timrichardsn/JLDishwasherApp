@@ -180,6 +180,10 @@ private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
     func heightForCellAt(row: Int, section: Int) -> Int? {
         return nil
     }
+    
+    func titleForHeaderIn(section: Int) -> String? {
+        return nil
+    }
 }
 
 private class MockProductView: ProductDetailViewProtocol {

@@ -30,6 +30,7 @@ protocol ProductDetailViewPresenterProtocol: class {
     func viewWillAppear()
     func numberOfRows(inSection section: Int) -> Int
     func heightForCellAt(row: Int, section: Int) -> Int?
+    func titleForHeaderIn(section: Int) -> String?
 }
 
 protocol ProductDetailInteractorProtocol: class {
