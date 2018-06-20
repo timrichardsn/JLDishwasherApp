@@ -203,7 +203,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-Mj-Exf">
-                                                    <rect key="frame" x="16" y="16" width="399" height="94"/>
+                                                    <rect key="frame" x="16" y="0.0" width="399" height="110"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Product code: 1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUo-uU-eLd">
                                                             <rect key="frame" x="0.0" y="0.0" width="399" height="20.5"/>
@@ -212,7 +212,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNL-iF-zfP">
-                                                            <rect key="frame" x="0.0" y="40.5" width="399" height="53.5"/>
+                                                            <rect key="frame" x="0.0" y="40.5" width="399" height="69.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -222,7 +222,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="g0l-Mj-Exf" secondAttribute="trailing" constant="16" id="2Uj-AJ-k2X"/>
-                                                <constraint firstItem="g0l-Mj-Exf" firstAttribute="top" secondItem="LOC-gV-9ac" secondAttribute="top" constant="16" id="KO2-7Y-fsF"/>
+                                                <constraint firstItem="g0l-Mj-Exf" firstAttribute="top" secondItem="LOC-gV-9ac" secondAttribute="top" id="KO2-7Y-fsF"/>
                                                 <constraint firstAttribute="bottom" secondItem="g0l-Mj-Exf" secondAttribute="bottom" constant="16.5" id="LJk-yJ-fb3"/>
                                                 <constraint firstItem="g0l-Mj-Exf" firstAttribute="leading" secondItem="LOC-gV-9ac" secondAttribute="leading" constant="16" id="gE7-Im-hxs"/>
                                             </constraints>
