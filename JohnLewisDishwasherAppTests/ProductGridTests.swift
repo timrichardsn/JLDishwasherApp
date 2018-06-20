@@ -282,6 +282,18 @@ class ProductGridTests: XCTestCase {
         
         XCTAssertTrue(interactor.fetchProductDataWasCalled)
     }
+    
+    func testInteractorCallsFetchProductData() {
+        
+        let interactor = ProductGridInteractor()
+        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: nil)
+        let dataManager = MockProductRemoteDataManager()
+        
+        interactor.remoteDataManager = dataManager
+        interactor.fetchData(for: product)
+        
+        XCTAssertTrue(dataManager.fetchProductDataWithRequestWasCalled)
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
@@ -355,7 +367,7 @@ private class MockProductGridInteractor: ProductGridInteractorProtocol {
 private class MockProductRemoteDataManager: ProductGridRemoteDataProtocol {
     
     var performRequestWasCalled = false
-    var fetchProductDataWasCalled = false
+    var fetchProductDataWithRequestWasCalled = false
     
     var requestData: RequestData?
     var remoteDataOutputHandler: ProductGridRemoteDataOutputProtocol?
@@ -374,7 +386,7 @@ private class MockProductRemoteDataManager: ProductGridRemoteDataProtocol {
     }
     
     func fetchProductData(with requestData: RequestData) {
-        fetchProductDataWasCalled = true
+        fetchProductDataWithRequestWasCalled = true
     }
 }
 
