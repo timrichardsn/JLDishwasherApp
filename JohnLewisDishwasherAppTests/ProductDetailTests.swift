@@ -158,8 +158,8 @@ class ProductDetailTests: XCTestCase {
         let presenter = ProductDetailPresenter()
         
         XCTAssertNil(presenter.heightForHeaderIn(section: 0))
-        XCTAssertEqual(presenter.heightForHeaderIn(section: 1), 40)
-        XCTAssertEqual(presenter.heightForHeaderIn(section: 2), 40)
+        XCTAssertEqual(presenter.heightForHeaderIn(section: 1), 100)
+        XCTAssertEqual(presenter.heightForHeaderIn(section: 2), 100)
     }
 }
 
