@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Product {
     let productId: String
@@ -40,11 +41,18 @@ extension Product {
     
     var productInformationAttributedString: NSAttributedString? {
         
-        if let attributedStringData = productInformation?.data(using: .unicode) {
+        if let attributedStringData = productInformation?.data(using: .utf8) {
             
-            return try? NSAttributedString(data: attributedStringData,
+            if let attrString = try? NSMutableAttributedString(data: attributedStringData,
                                            options: [.documentType: NSAttributedString.DocumentType.html],
-                                           documentAttributes: nil)
+                                           documentAttributes: nil) {
+                
+                var attrs = attrString.attributes(at: 0, effectiveRange: nil)
+                attrs[.font] = UIFont.systemFont(ofSize: 17)
+                attrString.setAttributes(attrs, range: NSRange(location: 0, length: attrString.length))
+                
+                return attrString
+            }
         }
         
         return nil
