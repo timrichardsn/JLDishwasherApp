@@ -24,8 +24,10 @@ class ProductGridInteractor: ProductGridInteractorProtocol {
         remoteDataManager?.fetchProducts(with: requestData)
     }
     
-    func fetchData(for: Product) {
+    func fetchData(for product: Product) {
         
+        let requestData = RequestData(endPoint: .products(action: .data(id: product.productId)), parameters: [:])
+        remoteDataManager?.fetchProductData(with: requestData)
     }
 }
 
