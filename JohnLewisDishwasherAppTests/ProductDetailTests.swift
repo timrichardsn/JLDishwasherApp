@@ -105,6 +105,13 @@ class ProductDetailTests: XCTestCase {
         XCTAssertEqual(productDetailView.specialOffer.text, product.displaySpecialOffer ?? "")
         XCTAssertEqual(productDetailView.guarantee.text, product.guaranteeInformation?.first ?? "")
     }
+    
+    func testPresenterNumberOfSections() {
+        
+        let presenter = ProductDetailPresenter()
+        
+        XCTAssertEqual(presenter.numberOfSections, 3)
+    }
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
