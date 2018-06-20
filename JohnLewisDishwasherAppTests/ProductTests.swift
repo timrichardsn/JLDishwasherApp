@@ -50,4 +50,28 @@ class ProductTests: XCTestCase {
         
         XCTAssertNotNil(product.productInformationAttributedString)
     }
+    
+    func testProductDisplayAttributesForAttributeAtIndex() {
+        
+        var product = Product(productId: "1", title: "", priceData: [:], imageUrl: nil)
+        product.attributes = [
+            ["name": "some name", "value": "some value"],
+            ["name": "some name 2", "value": "some value 2"]
+        ]
+        
+        var data = product.displayPropertiesForAttribute(atIndex: 0)
+        
+        XCTAssertEqual(data.name, "some name")
+        XCTAssertEqual(data.value, "some value")
+        
+        data = product.displayPropertiesForAttribute(atIndex: 1)
+        
+        XCTAssertEqual(data.name, "some name 2")
+        XCTAssertEqual(data.value, "some value 2")
+        
+        data = product.displayPropertiesForAttribute(atIndex: 2)
+        
+        XCTAssertNil(data.name)
+        XCTAssertNil(data.value)
+    }
 }
