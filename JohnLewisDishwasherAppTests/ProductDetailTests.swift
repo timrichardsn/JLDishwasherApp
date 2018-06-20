@@ -192,6 +192,10 @@ private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
     func titleForHeaderIn(section: Int) -> String? {
         return nil
     }
+    
+    func heightForHeaderIn(section: Int) -> Int? {
+        return nil
+    }
 }
 
 private class MockProductView: ProductDetailViewProtocol {

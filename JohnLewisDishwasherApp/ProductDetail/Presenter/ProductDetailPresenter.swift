@@ -78,4 +78,12 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
         
         return nil
     }
+    
+    func heightForHeaderIn(section: Int) -> Int? {
+        if section == 0 {
+            return nil
+        }
+        
+        return 40
+    }
 }
