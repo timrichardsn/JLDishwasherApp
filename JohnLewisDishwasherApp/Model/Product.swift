@@ -37,4 +37,16 @@ extension Product {
     var productCodeDisplayString: String {
         return "Product code: \(code ?? "")"
     }
+    
+    var productInformationAttributedString: NSAttributedString? {
+        
+        if let attributedStringData = productInformation?.data(using: .unicode) {
+            
+            return try? NSAttributedString(data: attributedStringData,
+                                           options: [.documentType: NSAttributedString.DocumentType.html],
+                                           documentAttributes: nil)
+        }
+        
+        return nil
+    }
 }
