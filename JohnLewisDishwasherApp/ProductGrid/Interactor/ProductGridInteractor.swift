@@ -9,7 +9,7 @@
 import Foundation
 
 class ProductGridInteractor: ProductGridInteractorProtocol {
-    
+   
     weak var presenter: ProductGridPresenterProtocol?
     var remoteDataManager: ProductGridRemoteDataProtocol?
     
@@ -22,6 +22,10 @@ class ProductGridInteractor: ProductGridInteractorProtocol {
         
         let requestData = RequestData(endPoint: .products(action: .search), parameters: parameters)
         remoteDataManager?.performRequest(with: requestData)
+    }
+    
+    func fetchData(for: Product) {
+        
     }
 }
 

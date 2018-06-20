@@ -238,22 +238,22 @@ class ProductGridTests: XCTestCase {
         XCTAssertEqual(presenter.showProductDetailProduct?.productId, products[indexPath.row].productId)
     }
     
-    func testRouterPresentProductDetail() {
-        
-        let presenter = ProductGridPresenter()
-        let router = MockProductGridRouter()
-        let view = MockProductGridView()
-        
-        presenter.router = router
-        presenter.view = view
-        
-        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
-        
-        presenter.showProductDetail(forProduct: product)
-        
-        XCTAssertTrue(router.presentProductDetailScreenWasCalled)
-        XCTAssertEqual(router.presentProductDetailScreenProduct?.productId, product.productId)
-    }
+//    func testRouterPresentProductDetail() {
+//
+//        let presenter = ProductGridPresenter()
+//        let router = MockProductGridRouter()
+//        let view = MockProductGridView()
+//
+//        presenter.router = router
+//        presenter.view = view
+//
+//        let product = Product(productId: "1", title: "", priceData: [:], imageUrl: "")
+//
+//        presenter.showProductDetail(forProduct: product)
+//
+//        XCTAssertTrue(router.presentProductDetailScreenWasCalled)
+//        XCTAssertEqual(router.presentProductDetailScreenProduct?.productId, product.productId)
+//    }
     
     func testPresenterCallsFetchDataForProduct() {
         

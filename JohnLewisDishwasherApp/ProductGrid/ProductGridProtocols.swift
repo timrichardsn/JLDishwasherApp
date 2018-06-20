@@ -40,6 +40,7 @@ protocol ProductGridInteractorProtocol: class {
     var remoteDataManager: ProductGridRemoteDataProtocol? { get set }
     
     func fetchProducts()
+    func fetchData(for: Product)
 }
 
 protocol ProductGridRemoteDataProtocol: class {

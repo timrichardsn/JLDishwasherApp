@@ -36,6 +36,6 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     }
     
     func showProductDetail(forProduct product: Product) {
-        router?.presentProductDetailScreen(for: product, from: view!)
+        interactor?.fetchData(for: product)
     }
 }
