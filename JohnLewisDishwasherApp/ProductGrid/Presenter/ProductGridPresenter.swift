@@ -42,4 +42,8 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     func showProductDetail(forProduct product: Product) {
         interactor?.fetchData(for: product)
     }
+    
+    func titleForView(productCount: Int) -> String {
+        return "Dishwashers (\(productCount))"
+    }
 }

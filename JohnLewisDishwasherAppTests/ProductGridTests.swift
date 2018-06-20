@@ -369,6 +369,10 @@ private class MockProductGridPresenter: ProductGridPresenterProtocol {
         showProductDetailCalled = true
         showProductDetailProduct = product
     }
+    
+    func titleForView(productCount: Int) -> String {
+        return ""
+    }
 }
 
 private class MockProductGridInteractor: ProductGridInteractorProtocol {

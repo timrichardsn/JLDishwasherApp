@@ -34,6 +34,7 @@ protocol ProductGridPresenterProtocol: class {
     func cellSizeFrom(collectionViewSize: Size) -> Size
     func configure(productGridCell: ProductGridCellProtocol, with product: Product)
     func showProductDetail(forProduct product: Product)
+    func titleForView(productCount: Int) -> String
 }
 
 protocol ProductGridInteractorProtocol: class {
