@@ -84,6 +84,6 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
             return nil
         }
         
-        return 40
+        return 100
     }
 }
