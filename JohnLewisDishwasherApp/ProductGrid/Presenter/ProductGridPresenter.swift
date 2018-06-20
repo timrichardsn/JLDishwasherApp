@@ -27,7 +27,7 @@ class ProductGridPresenter: ProductGridPresenterProtocol {
     }
     
     func didReceive(product: Product) {
-        
+        router?.presentProductDetailScreen(for: product, from: view!)
     }
     
     func cellSizeFrom(collectionViewSize: Size) -> Size {
