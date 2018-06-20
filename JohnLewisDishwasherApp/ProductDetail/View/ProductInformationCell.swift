@@ -13,9 +13,14 @@ class ProductInformationCell: UITableViewCell {
     @IBOutlet weak var productCodeLabel: UILabel!
     @IBOutlet weak var productInformationLabel: UILabel!
     
-    func configure(productCode: String?, productInformation: String?) {
-        productCodeLabel.text = productCode
-        productInformationLabel.text = productInformation
+    func configure(product: Product) {
+        
+        productCodeLabel.text = product.productCodeDisplayString
+        
+        if let attributedString = product.productInformationAttributedString {
+            productInformationLabel.attributedText = attributedString
+        } else {
+            productInformationLabel.text = ""
+        }
     }
-    
 }
