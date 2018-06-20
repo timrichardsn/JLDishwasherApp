@@ -96,6 +96,21 @@ class ProductGridTests: XCTestCase {
         XCTAssertNotNil(mockRemoteDataOutput.products)
     }
     
+    func testFetchProductDataCallbackCalled() {
+        
+        let remoteDataManager = ProductGridRemoteDataManager()
+        let mockRemoteDataOutput = MockProductRemoteDataOutput()
+        let mockProductNetworkDataRequest = MockProductDataNetworkDataRequest()
+        
+        remoteDataManager.remoteDataOutputHandler = mockRemoteDataOutput
+        
+        let requestData = RequestData(endPoint: .products(action: .data(id: "123")), parameters: [:])
+        
+        remoteDataManager.fetchProductData(with: requestData, networkDataRequest: mockProductNetworkDataRequest)
+        
+        XCTAssertTrue(mockRemoteDataOutput.onProductReceivedCalled)
+    }
+    
     func testInteractorCallsDidReceiveProducts() {
         
         let interactor = ProductGridInteractor()
@@ -340,6 +355,8 @@ private class MockProductGridInteractor: ProductGridInteractorProtocol {
 private class MockProductRemoteDataManager: ProductGridRemoteDataProtocol {
     
     var performRequestWasCalled = false
+    var fetchProductDataWasCalled = false
+    
     var requestData: RequestData?
     var remoteDataOutputHandler: ProductGridRemoteDataOutputProtocol?
     
@@ -352,19 +369,28 @@ private class MockProductRemoteDataManager: ProductGridRemoteDataProtocol {
         
     }
     
-    func fetchProductData(with requestData: RequestData) {
+    func fetchProductData(with requestData: RequestData, networkDataRequest: NetworkDataRequest?) {
         
+    }
+    
+    func fetchProductData(with requestData: RequestData) {
+        fetchProductDataWasCalled = true
     }
 }
 
 private class MockProductRemoteDataOutput: ProductGridRemoteDataOutputProtocol {
     
+    var onProductReceivedCalled = false
     var onProductsReceivedCalled = false
     var products: [Product]?
     
     func onProductsReceived(products: [Product]) {
         onProductsReceivedCalled = true
         self.products = products
+    }
+    
+    func onProductReceived(product: Product) {
+        onProductReceivedCalled = true
     }
     
     func onError() {
@@ -387,6 +413,20 @@ private class MockNetworkDataRequest: NetworkDataRequest {
         let mockData = ["products": products]
         
         callback(mockData, nil)
+    }
+}
+
+private class MockProductDataNetworkDataRequest: NetworkDataRequest {
+    
+    func checkResponse(callback: @escaping (Any?, Error?) -> Void) {
+        
+        let productData: [String: Any] = [
+            "productId": "1",
+            "title": "Bosch",
+            "price": ["now": "123"]
+        ]
+        
+        callback(productData, nil)
     }
 }
 
