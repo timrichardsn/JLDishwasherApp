@@ -115,7 +115,7 @@ class ProductDetailTests: XCTestCase {
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
-    
+    var numberOfSections: Int = 3
     var interactor: ProductDetailInteractorProtocol?
     var view: ProductDetailViewProtocol?
     var router: ProductDetailRouterProtocol?

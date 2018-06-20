@@ -17,6 +17,8 @@ class ProductDetailPresenter: ProductDetailViewPresenterProtocol {
     var interactor: ProductDetailInteractorProtocol?
     var product: Product?
     
+    let numberOfSections: Int = 3
+    
     var isLandscape: Bool? {
         set {
             let oldValue = _isLandscape

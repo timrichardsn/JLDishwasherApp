@@ -24,6 +24,7 @@ protocol ProductDetailViewPresenterProtocol: class {
     
     var product: Product? { get set }
     var isLandscape: Bool? { get set }
+    var numberOfSections: Int { get }
     
     func viewDidLoad()
     func viewWillAppear()
