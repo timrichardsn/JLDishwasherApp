@@ -112,6 +112,28 @@ class ProductDetailTests: XCTestCase {
         
         XCTAssertEqual(presenter.numberOfSections, 3)
     }
+    
+    func testNumberOfRowsInSection() {
+        
+        var product = Product(productId: "", title: "", priceData: [:], imageUrl: nil)
+        product.attributes = [
+            [:], [:], [:]
+        ]
+        
+        let presenter = ProductDetailPresenter()
+        presenter.product = product
+        presenter.isLandscape = true
+        
+        XCTAssertEqual(presenter.numberOfRows(in section: 0), 1)
+        XCTAssertEqual(presenter.numberOfRows(in section: 1), 1)
+        XCTAssertEqual(presenter.numberOfRows(in section: 2), product.attributes?.count)
+        
+        presenter.isLandscape = false
+        
+        XCTAssertEqual(presenter.numberOfRows(in section: 0), 2)
+        XCTAssertEqual(presenter.numberOfRows(in section: 1), 1)
+        XCTAssertEqual(presenter.numberOfRows(in section: 2), product.attributes?.count)
+    }
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
