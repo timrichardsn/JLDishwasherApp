@@ -306,7 +306,13 @@ class ProductGridTests: XCTestCase {
         XCTAssertTrue(router.presentProductDetailScreenWasCalled)
         XCTAssertEqual(router.presentProductDetailScreenProduct?.productId, product.productId)
     }
-
+    
+    func titleForView() {
+        
+        let presenter = ProductGridPresenter()
+        
+        XCTAssertEqual(presenter.titleForView(productCount: 10), "Dishwashers (10)")
+    }
 }
 
 private class MockProductGridPresenter: ProductGridPresenterProtocol {
