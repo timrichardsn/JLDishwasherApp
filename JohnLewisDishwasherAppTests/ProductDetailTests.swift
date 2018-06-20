@@ -124,15 +124,15 @@ class ProductDetailTests: XCTestCase {
         presenter.product = product
         presenter.isLandscape = true
         
-        XCTAssertEqual(presenter.numberOfRows(in section: 0), 1)
-        XCTAssertEqual(presenter.numberOfRows(in section: 1), 1)
-        XCTAssertEqual(presenter.numberOfRows(in section: 2), product.attributes?.count)
+        XCTAssertEqual(presenter.numberOfRows(inSection: 0), 1)
+        XCTAssertEqual(presenter.numberOfRows(inSection: 1), 1)
+        XCTAssertEqual(presenter.numberOfRows(inSection: 2), product.attributes?.count)
         
         presenter.isLandscape = false
         
-        XCTAssertEqual(presenter.numberOfRows(in section: 0), 2)
-        XCTAssertEqual(presenter.numberOfRows(in section: 1), 1)
-        XCTAssertEqual(presenter.numberOfRows(in section: 2), product.attributes?.count)
+        XCTAssertEqual(presenter.numberOfRows(inSection: 0), 2)
+        XCTAssertEqual(presenter.numberOfRows(inSection: 1), 1)
+        XCTAssertEqual(presenter.numberOfRows(inSection: 2), product.attributes?.count)
     }
 }
 
