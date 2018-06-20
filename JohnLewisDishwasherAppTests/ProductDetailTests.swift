@@ -139,8 +139,9 @@ class ProductDetailTests: XCTestCase {
         
         let presenter = ProductDetailPresenter()
         
+        // nil constitutes automatic cell height calculation, i.e. dynamic
         XCTAssertEqual(presenter.heightForCellAt(row: 0, section: 0), 500)
-        XCTAssertEqual(presenter.heightForCellAt(row: 1, section: 0), 60)
+        XCTAssertNil(presenter.heightForCellAt(row: 1, section: 0))
         XCTAssertEqual(presenter.heightForCellAt(row: 0, section: 2), 60)
         XCTAssertNil(presenter.heightForCellAt(row: 0, section: 1))
     }
