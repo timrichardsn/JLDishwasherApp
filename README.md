@@ -25,4 +25,4 @@ After this, the project should build and run.
 
 # Final thoughts
 
-I'm a big fan of TDD in production level apps. As you'll be able to see from the commit history I have approached this task as if I were in a production environment. The only difference I suppose is that I haven't worked on feature branches and then merged my work in as I've been going. Normally I would work from feature branches (i.e. following Git Flow practices), submit pull requests, and then merge once approved.
+I'm a big fan of TDD in production level apps. As you'll be able to see from the commit history I have approached this task as if I were in a production environment. The only difference I suppose is that I haven't worked on feature branches and then merged my work in as I've been going. Normally I would work from feature branches (i.e. following Git Flow practices), submit pull requests, and then merge once approved. I did work from a "develop" branch and upon completion merged this into the "master" branch.
