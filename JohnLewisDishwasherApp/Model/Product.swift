@@ -49,4 +49,13 @@ extension Product {
         
         return nil
     }
+    
+    func displayPropertiesForAttribute(atIndex index: Int) -> (name: String?, value: String?) {
+        
+        if (attributes?.count ?? 0) > index, let attribute = attributes?[index] {
+            return (attribute["name"] as? String, attribute["value"] as? String)
+        }
+        
+        return (nil, nil)
+    }
 }
