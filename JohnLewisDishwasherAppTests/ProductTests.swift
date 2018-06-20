@@ -41,4 +41,13 @@ class ProductTests: XCTestCase {
         
         XCTAssertEqual(product.productCodeDisplayString, "Product code: \(product.code!)")
     }
+    
+    func testProductInformationAttributedHtmlString() {
+        let productInformationTestString = "<p>Equipped with a variety of advanced features inside a sleek, integrated design, the S513K60X0G dishwasher from Neff will make doing the dishes easier than ever.</p>\r\r<p><strong>Energy efficient</strong><br>\rAwarded an excellent A++ for energy efficiency, you can rely on the S513K60X0G to help you save on your energy bills while keeping a green home.</p>\r\r<p><strong>DosageAssist</strong><br>\rThis useful function makes sure your detergent is completely dissolved for a more effective wash by releasing it into a special tray on top of the basket and mixing it into the cycle.</p>\r\r<p><strong>AquaSensor</strong><br>\rSaving water and energy, this feature automatically assesses how much water is needed, even during the rinsing stage, and will only use what's necessary.</p>\r\r<p><strong>Flexible loading</strong><br>\rThe S513K60X0G offers total flexibility with Neff's Flex basket and Vario drawer system. The top basket can be adjusted between 3 height positions and contains 2 foldable plate racks and 2 foldable cup shelves. Similarly, the bottom basket holds 4 foldable plate racks, while the Vario drawer offers extra storage on a third level.</p>\r\r<p><strong>Additional features and programmes:</strong><br>\r<ul>\r<li>Chef 70°C pro programme</li>\r<li>Aqua Stop</li>\r<li>Vario Speed Plus</li>\r<li>InfoLight status projection</li>\r\r<li>Efficient Drive</li>\r<li>Detergent Aware</li></ul></p>\r\r"
+        
+        var product = Product(productId: "1", title: "", priceData: [:], imageUrl: nil)
+        product.productInformation = productInformationTestString
+        
+        XCTAssertNotNil(product.productInformationAttributedString)
+    }
 }
