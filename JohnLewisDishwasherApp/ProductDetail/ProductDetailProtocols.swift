@@ -29,6 +29,7 @@ protocol ProductDetailViewPresenterProtocol: class {
     func viewDidLoad()
     func viewWillAppear()
     func numberOfRows(inSection section: Int) -> Int
+    func heightForCellAt(row: Int, section: Int) -> Int?
 }
 
 protocol ProductDetailInteractorProtocol: class {

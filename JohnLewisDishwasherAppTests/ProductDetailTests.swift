@@ -168,6 +168,10 @@ private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
     func numberOfRows(inSection section: Int) -> Int {
         return 0
     }
+    
+    func heightForCellAt(row: Int, section: Int) -> Int? {
+        return nil
+    }
 }
 
 private class MockProductView: ProductDetailViewProtocol {
