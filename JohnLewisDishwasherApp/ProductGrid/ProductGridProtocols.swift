@@ -50,11 +50,13 @@ protocol ProductGridRemoteDataProtocol: class {
     func fetchProducts(with requestData: RequestData)
     func fetchProductData(with requestData: RequestData)
     func fetchProducts(with requestData: RequestData, networkDataRequest: NetworkDataRequest?)
+    func fetchProductData(with requestData: RequestData, networkDataRequest: NetworkDataRequest?)
 }
 
 protocol ProductGridRemoteDataOutputProtocol: class {
     
     func onProductsReceived(products: [Product])
+    func onProductReceived(product: Product)
     func onError()
 }
 

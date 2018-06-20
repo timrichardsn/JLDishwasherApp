@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 
+private typealias ReturnData = [String: Any]
+
 class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
     
     weak var remoteDataOutputHandler: ProductGridRemoteDataOutputProtocol?
@@ -48,7 +50,54 @@ class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
     }
     
     func fetchProductData(with requestData: RequestData) {
+        fetchProductData(with: requestData, networkDataRequest: nil)
+    }
+    
+    func fetchProductData(with requestData: RequestData, networkDataRequest: NetworkDataRequest?) {
+        var networkDataRequest = networkDataRequest
+        networkDataRequest = networkDataRequest ?? Alamofire.request(requestData.endPoint.urlString,
+                                                                     parameters: requestData.parametersForRequest(includeKey: true))
         
+        networkDataRequest?.checkResponse(callback: { [remoteDataOutputHandler] json, error in
+            
+            // Need to add better error feedback here, via a custom enum error type
+            if let productData = json as? ReturnData {
+                
+                guard
+                    let productId = productData["productId"] as? String,
+                    let title = productData["title"] as? String,
+                    let priceData = productData["price"] as? [String: String]
+                    else {
+                        remoteDataOutputHandler?.onError()
+                        return
+                }
+                
+                var product = Product(productId: productId, title: title, priceData: priceData, imageUrl: nil)
+                product.displaySpecialOffer = productData["displaySpecialOffer"] as? String
+                product.code = productData["code"] as? String
+                
+                if let details = productData["details"] as? ReturnData {
+                    product.productInformation = details["productInformation"] as? String
+                    
+                    if let features = details["features"] as? [ReturnData], let firstFeature = features.first {
+                        product.attributes = firstFeature["attributes"] as? [ReturnData]
+                    }
+                }
+                
+                if let additionalServices = productData["additionalServices"] as? ReturnData {
+                    product.guaranteeInformation = additionalServices["includedServices"] as? [String]
+                }
+                
+                if let media = productData["media"] as? ReturnData, let images = media["images"] as? ReturnData {
+                    product.urls = images["urls"] as? [String]
+                }
+                
+                remoteDataOutputHandler?.onProductReceived(product: product)
+                
+            } else {
+                remoteDataOutputHandler?.onError()
+            }
+        })
     }
 }
 
