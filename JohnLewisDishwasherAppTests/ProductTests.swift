@@ -33,4 +33,12 @@ class ProductTests: XCTestCase {
         XCTAssertEqual(product.price, "123")
         XCTAssertEqual(product.priceString, "£123")
     }
+    
+    func testProductCodeDisplayString() {
+        
+        var product = Product(productId: "1", title: "", priceData: [:], imageUrl: nil)
+        product.code = "123"
+        
+        XCTAssertEqual(product.productCodeDisplayString, "Product code: \(product.code!)")
+    }
 }
