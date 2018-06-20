@@ -21,6 +21,10 @@ class ProductDetailView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+        tableView.tableFooterView = UIView()
+        
         presenter?.isLandscape = UIDevice.current.orientation.isLandscape
         presenter?.viewDidLoad()
     }
