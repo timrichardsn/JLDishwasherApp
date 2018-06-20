@@ -35,6 +35,7 @@
 		0103F26320D9966200AB56F3 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F26220D9966200AB56F3 /* EndpointTests.swift */; };
 		0103F26520D9AF9000AB56F3 /* ProductFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F26420D9AF9000AB56F3 /* ProductFeatureCell.swift */; };
 		0103F26720D9B13600AB56F3 /* ProductInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F26620D9B13600AB56F3 /* ProductInformationCell.swift */; };
+		0103F26920DA58E300AB56F3 /* ProductScrollableImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0103F26820DA58E300AB56F3 /* ProductScrollableImagesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		0103F26220D9966200AB56F3 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
 		0103F26420D9AF9000AB56F3 /* ProductFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFeatureCell.swift; sourceTree = "<group>"; };
 		0103F26620D9B13600AB56F3 /* ProductInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationCell.swift; sourceTree = "<group>"; };
+		0103F26820DA58E300AB56F3 /* ProductScrollableImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductScrollableImagesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 				0103F25120D9138300AB56F3 /* ProductDetailView.swift */,
 				0103F26420D9AF9000AB56F3 /* ProductFeatureCell.swift */,
 				0103F26620D9B13600AB56F3 /* ProductInformationCell.swift */,
+				0103F26820DA58E300AB56F3 /* ProductScrollableImagesCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				0103F26120D9923100AB56F3 /* ProductDetailRemoteDataManager.swift in Sources */,
 				0103F26720D9B13600AB56F3 /* ProductInformationCell.swift in Sources */,
 				0103F20020D65EF800AB56F3 /* AppDelegate.swift in Sources */,
+				0103F26920DA58E300AB56F3 /* ProductScrollableImagesCell.swift in Sources */,
 				0103F22620D6613500AB56F3 /* ProductGridRouter.swift in Sources */,
 				0103F24D20D912EE00AB56F3 /* ProductDetailProtocols.swift in Sources */,
 				0103F22C20D6640700AB56F3 /* ProductGridPresenter.swift in Sources */,

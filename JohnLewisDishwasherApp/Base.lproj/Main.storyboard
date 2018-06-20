@@ -160,13 +160,27 @@
                                 <rect key="frame" x="16" y="20" width="415" height="1355"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="200" id="aon-oW-wzO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="200" id="aon-oW-wzO" customClass="ProductScrollableImagesCell" customModule="JohnLewisDishwasherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="415" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aon-oW-wzO" id="ITo-BR-7S0">
                                             <rect key="frame" x="0.0" y="0.0" width="415" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKQ-JA-EFG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="415" height="199.5"/>
+                                                </scrollView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PKQ-JA-EFG" firstAttribute="leading" secondItem="ITo-BR-7S0" secondAttribute="leading" id="N83-PX-pbH"/>
+                                                <constraint firstAttribute="bottom" secondItem="PKQ-JA-EFG" secondAttribute="bottom" id="aFZ-VG-9aW"/>
+                                                <constraint firstItem="PKQ-JA-EFG" firstAttribute="top" secondItem="ITo-BR-7S0" secondAttribute="top" id="qHQ-3C-DMb"/>
+                                                <constraint firstAttribute="trailing" secondItem="PKQ-JA-EFG" secondAttribute="trailing" id="rX1-q3-kfx"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="scrollView" destination="PKQ-JA-EFG" id="Du2-GK-isM"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productInformation" rowHeight="127" id="hIO-sr-IQE" customClass="ProductInformationCell" customModule="JohnLewisDishwasherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="255.5" width="415" height="127"/>
