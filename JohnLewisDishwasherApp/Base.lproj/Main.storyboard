@@ -161,6 +161,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OWV-OL-aKH">
                                 <rect key="frame" x="16" y="52" width="415" height="1323"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="200" id="aon-oW-wzO" customClass="ProductScrollableImagesCell" customModule="JohnLewisDishwasherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="415" height="200"/>
@@ -194,7 +195,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-Mj-Exf">
                                                     <rect key="frame" x="16" y="16" width="383" height="94"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product code: 1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUo-uU-eLd">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Product code: 1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUo-uU-eLd">
                                                             <rect key="frame" x="0.0" y="0.0" width="383" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
@@ -202,14 +203,7 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNL-iF-zfP">
                                                             <rect key="frame" x="0.0" y="27" width="383" height="67"/>
-                                                            <attributedString key="attributedText">
-                                                                <fragment>
-                                                                    <string key="content">&lt;p&gt;Equipped with a variety of advanced features inside a sleek, integrated design, the S513K60X0G dishwasher from Neff will make doing the dishes easier than ever.&lt;/p&gt;\r\r&lt;p&gt;&lt;strong&gt;Energy efficient</string>
-                                                                    <attributes>
-                                                                        <font key="NSFont" metaFont="system" size="14"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
+                                                            <attributedString key="attributedText"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -234,24 +228,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="415" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5p-Ac-Hms">
+                                                    <rect key="frame" x="0.0" y="0.0" width="415" height="1"/>
+                                                    <color key="backgroundColor" red="0.861817269436436" green="0.861817269436436" blue="0.861817269436436" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="DPX-gS-JpT"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFB-Hs-Db9">
-                                                    <rect key="frame" x="16" y="19.5" width="325" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="16" y="22" width="331.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cde-fr-MdN">
-                                                    <rect key="frame" x="357" y="19.5" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="363.5" y="22" width="35.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="k5p-Ac-Hms" secondAttribute="trailing" id="BsO-Bt-kt4"/>
                                                 <constraint firstAttribute="trailing" secondItem="Cde-fr-MdN" secondAttribute="trailing" constant="16" id="G7R-WZ-6kN"/>
                                                 <constraint firstItem="oFB-Hs-Db9" firstAttribute="centerY" secondItem="va7-Fr-3jY" secondAttribute="centerY" id="IBa-2f-1qf"/>
                                                 <constraint firstItem="oFB-Hs-Db9" firstAttribute="leading" secondItem="va7-Fr-3jY" secondAttribute="leading" constant="16" id="Ycr-iR-P6k"/>
                                                 <constraint firstItem="Cde-fr-MdN" firstAttribute="leading" secondItem="oFB-Hs-Db9" secondAttribute="trailing" constant="16" id="dbc-Ry-P8P"/>
+                                                <constraint firstItem="k5p-Ac-Hms" firstAttribute="leading" secondItem="va7-Fr-3jY" secondAttribute="leading" id="dhE-JU-znj"/>
+                                                <constraint firstItem="k5p-Ac-Hms" firstAttribute="top" secondItem="va7-Fr-3jY" secondAttribute="top" id="oBn-Kf-FKz"/>
                                                 <constraint firstItem="Cde-fr-MdN" firstAttribute="centerY" secondItem="va7-Fr-3jY" secondAttribute="centerY" id="sCK-6F-2No"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -331,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6s-7I-cHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="112"/>
+            <point key="canvasLocation" x="1374.9625187406298" y="111.2"/>
         </scene>
     </scenes>
 </document>
