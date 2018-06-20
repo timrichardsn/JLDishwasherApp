@@ -47,8 +47,9 @@ protocol ProductGridRemoteDataProtocol: class {
     
     var remoteDataOutputHandler: ProductGridRemoteDataOutputProtocol? { get set }
     
-    func performRequest(with requestData: RequestData)
-    func performRequest(with requestData: RequestData, networkDataRequest: NetworkDataRequest?)
+    func fetchProducts(with requestData: RequestData)
+    func fetchProductData(with requestData: RequestData)
+    func fetchProducts(with requestData: RequestData, networkDataRequest: NetworkDataRequest?)
 }
 
 protocol ProductGridRemoteDataOutputProtocol: class {

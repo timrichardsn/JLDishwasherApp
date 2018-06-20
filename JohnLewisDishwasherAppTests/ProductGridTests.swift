@@ -90,7 +90,7 @@ class ProductGridTests: XCTestCase {
         let parameters: [RequestParameterKey: Any] = [.product : "dishwasher", .pageSize: "20"]
         let requestData = RequestData(endPoint: .products(action: .search), parameters: parameters)
         
-        remoteDataManager.performRequest(with: requestData, networkDataRequest: mockNetworkDataRequest)
+        remoteDataManager.fetchProducts(with: requestData, networkDataRequest: mockNetworkDataRequest)
         
         XCTAssertTrue(mockRemoteDataOutput.onProductsReceivedCalled)
         XCTAssertNotNil(mockRemoteDataOutput.products)
@@ -343,12 +343,16 @@ private class MockProductRemoteDataManager: ProductGridRemoteDataProtocol {
     var requestData: RequestData?
     var remoteDataOutputHandler: ProductGridRemoteDataOutputProtocol?
     
-    func performRequest(with requestData: RequestData) {
+    func fetchProducts(with requestData: RequestData) {
         performRequestWasCalled = true
         self.requestData = requestData
     }
     
-    func performRequest(with requestData: RequestData, networkDataRequest: NetworkDataRequest?) {
+    func fetchProducts(with requestData: RequestData, networkDataRequest: NetworkDataRequest?) {
+        
+    }
+    
+    func fetchProductData(with requestData: RequestData) {
         
     }
 }

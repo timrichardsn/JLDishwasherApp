@@ -13,12 +13,12 @@ class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
     
     weak var remoteDataOutputHandler: ProductGridRemoteDataOutputProtocol?
     
-    func performRequest(with requestData: RequestData) {
+    func fetchProducts(with requestData: RequestData) {
         
-        performRequest(with: requestData, networkDataRequest: nil)
+        fetchProducts(with: requestData, networkDataRequest: nil)
     }
     
-    func performRequest(with requestData: RequestData, networkDataRequest: NetworkDataRequest? = nil) {
+    func fetchProducts(with requestData: RequestData, networkDataRequest: NetworkDataRequest? = nil) {
         
         var networkDataRequest = networkDataRequest
         networkDataRequest = networkDataRequest ?? Alamofire.request(requestData.endPoint.urlString,
@@ -45,6 +45,10 @@ class ProductGridRemoteDataManager: ProductGridRemoteDataProtocol {
                 remoteDataOutputHandler?.onError()
             }
         })
+    }
+    
+    func fetchProductData(with requestData: RequestData) {
+        
     }
 }
 
