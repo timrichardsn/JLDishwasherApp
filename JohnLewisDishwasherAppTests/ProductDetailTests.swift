@@ -161,6 +161,17 @@ class ProductDetailTests: XCTestCase {
         XCTAssertEqual(presenter.heightForHeaderIn(section: 1), 100)
         XCTAssertEqual(presenter.heightForHeaderIn(section: 2), 100)
     }
+    
+    func testTitleIsSetToProductTitle() {
+        
+        let product = Product(productId: "", title: "Some title", priceData: [:], imageUrl: nil)
+        
+        let productDetailView = ProductDetailRouter.createProductDetailModule(for: product) as! ProductDetailView
+        productDetailView.view.setNeedsLayout()
+        productDetailView.refresh()
+        
+        XCTAssertEqual(productDetailView.title, product.title)
+    }
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
