@@ -54,6 +54,10 @@ class ProductDetailView: UIViewController {
         
         return super.traitCollection
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
 }
 
 extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {

@@ -123,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ik-nF-XPG">
-                                <rect key="frame" x="447" y="20" width="220" height="1355"/>
+                                <rect key="frame" x="447" y="52" width="220" height="1323"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kZY-5q-ZL5">
                                         <rect key="frame" x="16" y="16" width="188" height="58"/>
@@ -157,7 +157,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OWV-OL-aKH">
-                                <rect key="frame" x="16" y="20" width="415" height="1355"/>
+                                <rect key="frame" x="16" y="52" width="415" height="1323"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="200" id="aon-oW-wzO" customClass="ProductScrollableImagesCell" customModule="JohnLewisDishwasherApp" customModuleProvider="target">
@@ -315,6 +315,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <size key="freeformSize" width="667" height="1375"/>
                     <connections>
                         <outlet property="guarantee" destination="222-dt-cET" id="SYi-qQ-VX1"/>
