@@ -107,6 +107,15 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return presenter?.titleForHeaderIn(section: section)
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if let sectionHeight = presenter?.heightForHeaderIn(section: section) {
+            return CGFloat(sectionHeight)
+        }
+        
+        return .leastNonzeroMagnitude
+    }
 }
 
 extension ProductDetailView: ProductDetailViewProtocol {
