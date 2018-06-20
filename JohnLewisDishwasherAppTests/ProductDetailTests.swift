@@ -152,6 +152,14 @@ class ProductDetailTests: XCTestCase {
         XCTAssertEqual(presenter.titleForHeaderIn(section: 1), "Product information")
         XCTAssertEqual(presenter.titleForHeaderIn(section: 2), "Product specification")
     }
+    
+    func testHeaderHeightForSection() {
+        let presenter = ProductDetailPresenter()
+        
+        XCTAssertNil(presenter.heightForHeaderIn(section: 0))
+        XCTAssertEqual(presenter.heightForHeaderIn(section: 1), 40)
+        XCTAssertEqual(presenter.heightForHeaderIn(section: 2), 40)
+    }
 }
 
 private class MockProductDetailPresenter: ProductDetailViewPresenterProtocol {
